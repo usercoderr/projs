@@ -32,7 +32,7 @@ module.exports = {
         indent: [2, 4],
         'react/jsx-filename-extension': [
             2,
-            {extensions: ['.js', '.jsx', '.tsx']},
+            { extensions: ['.js', '.jsx', '.tsx'] },
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
@@ -43,6 +43,7 @@ module.exports = {
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
         'import/extensions': 'off',
+        'no-trailing-spaces': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': [
@@ -52,11 +53,12 @@ module.exports = {
                 ignoreAttribute: ['data-testid', 'to'],
             },
         ],
-        'max-len': ['error', {ignoreComments: true, code: 100}],
+        'max-len': ['error', { ignoreComments: true, code: 100 }],
         'jsx-a11y/click-events-have-key-events': 'off',
     },
     globals: {
         __IS_DEV__: true,
+        __API__: true,
     },
     overrides: [
         {

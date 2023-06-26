@@ -19,6 +19,11 @@
     color: var(--inverted-bg-color);
     background: none;
 }
+.outline_red {
+    border: 1px solid var(--red-light);
+    color: var(--red-light);
+    background: none;
+}
 .background{
     background: var(--bg-color);
     color: var(--primary-color);
@@ -53,3 +58,6 @@
      width: var(--font-line-xl);
      height: var(--font-line-xl);
  }
+.disabled{
+    opacity: 0.5;
+}

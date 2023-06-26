@@ -11,6 +11,23 @@
   "throw error": "throw error",
   "Главная": "Главная",
   "О сайте": "О сайте",
-  "toggle": "Toggle"
-
+  "toggle": "Toggle",
+  "Login": "Войти",
+  "Profile": "Profile",
+  "Edit": "Edit",
+  "Your Name": "Your Name",
+  "YourName": "YourName",
+  "YourSurname": "YourSurname",
+  "error": "error",
+  "reload": "reload",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "YourAge": "YourAge",
+  "YourCurrency": "YourCurrency",
+  "YourCountry": "YourCountry",
+  "YourCity": "YourCity",
+  "YourUsername": "YourUsername",
+  "YourAvatar": "YourAvatar",
+  "SelectCountry": "SelectCountry",
+  "SelectCurrency": "SelectCurrency"
 }

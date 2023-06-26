@@ -12,16 +12,28 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { useCallback, useState } from 'react';
+import { Button, EButtonTheme } from 'shared/ui/Button/Button';
+import { LoginModal } from 'features/AuthByUsername';
+import { useDispatch, useSelector } from 'react-redux';
+import { userActions } from 'entities/User/model/slices/userSlice';
+import { getUserAuthData } from 'entities/User';
 import cls from './Navbar.module.scss';
-import { Modal } from "shared/ui/Modal/Modal";
-import { useCallback, useState } from "react";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
 export var Navbar = function (_a) {
     var className = _a.className;
     var t = useTranslation().t;
     var _b = useState(false), isAuthModal = _b[0], setIsAuthModal = _b[1];
-    var onToggleModal = useCallback(function () {
-        setIsAuthModal(function (prev) { return !prev; });
+    var dispatch = useDispatch();
+    var authData = useSelector(getUserAuthData);
+    var onShowModal = useCallback(function () {
+        setIsAuthModal(true);
     }, []);
-    return (_jsxs("div", __assign({ className: classNames(cls.Navbar, {}, [className]) }, { children: [_jsx("div", __assign({ className: cls.links }, { children: _jsx(Button, __assign({ onClick: onToggleModal, theme: ButtonTheme.CLEAR_INVERTED }, { children: "Enter" }), void 0) }), void 0), _jsx(Modal, __assign({ onClose: onToggleModal, isOpen: isAuthModal }, { children: "loremsjbhvhvvgvgvgvgvgjvndsndjnsjfndfndfbskbf" }), void 0)] }), void 0));
+    var onCloseModal = useCallback(function () {
+        setIsAuthModal(false);
+    }, []);
+    var onLogOut = useCallback(function () {
+        dispatch(userActions.logOut());
+    }, [dispatch]);
+    return (_jsxs("div", __assign({ className: classNames(cls.Navbar, {}, [className]) }, { children: [_jsx("div", __assign({ className: cls.links }, { children: authData ? (_jsx(Button, __assign({ onClick: onLogOut, theme: EButtonTheme.CLEAR_INVERTED }, { children: "LogOut" }), void 0)) : (_jsx(Button, __assign({ onClick: onShowModal, theme: EButtonTheme.CLEAR_INVERTED }, { children: "LogIn" }), void 0)) }), void 0), isAuthModal
+                && _jsx(LoginModal, { isOpen: isAuthModal, onClose: onCloseModal }, void 0)] }), void 0));
 };

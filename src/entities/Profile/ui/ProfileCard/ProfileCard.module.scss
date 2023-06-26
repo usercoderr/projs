@@ -1,0 +1,44 @@
+.ProfileCard {
+  padding: 4px  200px;
+  border: 2px solid var(--inverted-bg-color);
+}
+
+
+.avatarWrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  margin-bottom: 10px;
+}
+
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+.editing{
+  border: 2px solid var(--inverted-primary-color);
+
+}
+.selectors{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}

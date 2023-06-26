@@ -2,7 +2,7 @@ import { jsx as _jsx } from "react/jsx-runtime";
 import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
 import { Counter } from 'entities/Counter';
 import { screen } from '@testing-library/react';
-import { userEvent } from "@storybook/testing-library";
+import { userEvent } from '@storybook/testing-library';
 describe('Counter', function () {
     test('', function () {
         componentRender(_jsx(Counter, {}, void 0), {

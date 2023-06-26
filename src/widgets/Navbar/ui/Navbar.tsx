@@ -1,9 +1,12 @@
-import {classNames} from 'shared/lib/classNames/classNames';
-import {useTranslation} from 'react-i18next';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+import React, { useCallback, useState } from 'react';
+import { Button, EButtonTheme } from 'shared/ui/Button/Button';
+import { LoginModal } from 'features/AuthByUsername';
+import { useDispatch, useSelector } from 'react-redux';
+import { userActions } from 'entities/User/model/slices/userSlice';
+import { getUserAuthData } from 'entities/User';
 import cls from './Navbar.module.scss';
-import {Modal} from "shared/ui/Modal/Modal";
-import React, {useCallback, useState} from "react";
-import {Button, ButtonTheme} from "shared/ui/Button/Button";
 
 interface NavbarProps {
     className?: string;
@@ -12,23 +15,42 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
+    const dispatch = useDispatch();
+    const authData = useSelector(getUserAuthData);
+    const onShowModal = useCallback(() => {
+        setIsAuthModal(true);
+    }, []);
+    const onCloseModal = useCallback(() => {
+        setIsAuthModal(false);
+    }, []);
 
-    const onToggleModal = useCallback(() =>{
-        setIsAuthModal((prev) => !prev)
-    },[])
+    const onLogOut = useCallback(() => {
+        dispatch(userActions.logOut());
+    }, [dispatch]);
+
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.links}>
-                <Button
-                    onClick={onToggleModal}
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                >
-                    Enter
-                </Button>
+                {authData ? (
+                    <Button
+                        onClick={onLogOut}
+                        theme={EButtonTheme.CLEAR_INVERTED}
+                    >
+                        LogOut
+                    </Button>
+                ) : (
+                    <Button
+                        onClick={onShowModal}
+                        theme={EButtonTheme.CLEAR_INVERTED}
+                    >
+                        LogIn
+                    </Button>
+                )}
             </div>
-            <Modal onClose={onToggleModal} isOpen={isAuthModal}>
-                loremsjbhvhvvgvgvgvgvgjvndsndjnsjfndfndfbskbf
-            </Modal>
+            {
+                isAuthModal
+            && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            }
 
         </div>
     );

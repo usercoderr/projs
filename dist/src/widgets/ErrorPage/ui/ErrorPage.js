@@ -21,5 +21,5 @@ export var ErrorPage = function (_a) {
         // eslint-disable-next-line no-restricted-globals
         location.reload();
     };
-    return (_jsxs("div", __assign({ className: classNames(cls.ErrorPage, {}, [className]) }, { children: [_jsx("p", { children: t('Произошла непредвиденная ошибка') }, void 0), _jsx(Button, __assign({ onClick: reloadPage }, { children: t('Обновить страницу') }), void 0)] }), void 0));
+    return (_jsxs("div", __assign({ className: classNames(cls.ErrorPage, {}, [className]) }, { children: [_jsx("p", { children: t('Произошла непредвиденная ошибка') }, void 0), _jsxs(Button, __assign({ onClick: reloadPage }, { children: [t('Обновить страницу'), "sdsldlsd"] }), void 0)] }), void 0));
 };

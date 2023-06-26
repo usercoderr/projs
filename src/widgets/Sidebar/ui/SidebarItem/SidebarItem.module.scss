@@ -1,0 +1,45 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+}
+
+.link span {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  fill: var(--inverted-primary-color);
+}
+.linkSpan{
+  transition: width 0.3s;
+
+  display: flex;
+}
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .link {
+    display: flex;
+    background-color: saddlebrown;
+    align-items: center;
+  }
+
+  .linkSpan{
+    transition: width 0.3s;
+    display: none;
+  }
+}
+

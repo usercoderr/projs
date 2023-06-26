@@ -23,14 +23,15 @@ var __rest = (this && this.__rest) || function (s, e) {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
-export var ButtonTheme;
-(function (ButtonTheme) {
-    ButtonTheme["CLEAR"] = "clear";
-    ButtonTheme["CLEAR_INVERTED"] = "clearInverted";
-    ButtonTheme["OUTLINE"] = "outline";
-    ButtonTheme["BACKGROUND"] = "background";
-    ButtonTheme["BACKGROUND_INVERTED"] = "background-inverted";
-})(ButtonTheme || (ButtonTheme = {}));
+export var EButtonTheme;
+(function (EButtonTheme) {
+    EButtonTheme["CLEAR"] = "clear";
+    EButtonTheme["CLEAR_INVERTED"] = "clearInverted";
+    EButtonTheme["OUTLINE"] = "outline";
+    EButtonTheme["OUTLINE_RED"] = "outline_red";
+    EButtonTheme["BACKGROUND"] = "background";
+    EButtonTheme["BACKGROUND_INVERTED"] = "background-inverted";
+})(EButtonTheme || (EButtonTheme = {}));
 export var ButtonSize;
 (function (ButtonSize) {
     ButtonSize["M"] = "size_m";
@@ -39,11 +40,12 @@ export var ButtonSize;
 })(ButtonSize || (ButtonSize = {}));
 export var Button = function (props) {
     var _a;
-    var className = props.className, children = props.children, theme = props.theme, square = props.square, _b = props.size, size = _b === void 0 ? ButtonSize.M : _b, otherProps = __rest(props, ["className", "children", "theme", "square", "size"]);
+    var className = props.className, children = props.children, _b = props.theme, theme = _b === void 0 ? EButtonTheme.OUTLINE : _b, square = props.square, _c = props.size, size = _c === void 0 ? ButtonSize.M : _c, disabled = props.disabled, otherProps = __rest(props, ["className", "children", "theme", "square", "size", "disabled"]);
     var mods = (_a = {},
         _a[cls[theme]] = true,
         _a[cls.square] = square,
         _a[cls[size]] = true,
+        _a[cls.disabled] = disabled,
         _a);
-    return (_jsx("button", __assign({ type: "button", className: classNames(cls.Button, mods, [className]) }, otherProps, { children: children }), void 0));
+    return (_jsx("button", __assign({ disabled: disabled, type: "button", className: classNames(cls.Button, mods, [className]) }, otherProps, { children: children }), void 0));
 };
