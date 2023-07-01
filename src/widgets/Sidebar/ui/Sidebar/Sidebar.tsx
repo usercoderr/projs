@@ -38,7 +38,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
             <div className={cls.items}>
                 {
                     SidebarItemsList.map((item) => (
-                        <SidebarItem key={item.path} collapsed={collapsed} item={item} />
+                        <SidebarItem
+                            key={item.path}
+                            collapsed={collapsed}
+                            item={item}
+                        />
                     ))
                 }
 

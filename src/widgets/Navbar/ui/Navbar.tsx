@@ -6,6 +6,7 @@ import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { userActions } from 'entities/User/model/slices/userSlice';
 import { getUserAuthData } from 'entities/User';
+import { useNavigate } from 'react-router';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -16,6 +17,7 @@ export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const authData = useSelector(getUserAuthData);
     const onShowModal = useCallback(() => {
         setIsAuthModal(true);
@@ -26,6 +28,7 @@ export const Navbar = ({ className }: NavbarProps) => {
 
     const onLogOut = useCallback(() => {
         dispatch(userActions.logOut());
+        navigate('/');
     }, [dispatch]);
 
     return (

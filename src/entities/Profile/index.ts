@@ -4,6 +4,9 @@ import { getProfileError } from './model/selectors/getProfileError/getProfileErr
 import { getProfileIsLoading } from './model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileForm } from './model/selectors/getProfileForm/getProfileForm';
+import {
+    getProfileValidateErrors,
+} from './model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 
 export {
     IProfile,
@@ -21,6 +24,7 @@ export {
     getProfileError,
     getProfileIsLoading,
     getProfileReadonly,
+    getProfileValidateErrors,
     getProfileForm,
 };
 export { ProfileCard };

@@ -3,14 +3,74 @@
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "role": "ADMIN"
+    },
+    {
+      "id": "2",
+      "username": "usercoder",
+      "password": "123",
+      "role": "USER"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title":"Javascript News",
+      "subtitle": "What's new in JS 2023",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png?20120221235433",
+      "views": 1223,
+      "createdAt": "01.07.2023",
+      "type": ["IT"],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Title JS",
+          "paragraphs": [
+            "React Context API - это интерфейс, который позволяет сохранять некоторую величину (переменную или объект), и использовать ее между несколькими компонентами. Под самим же контекстным стором, или как его просто называют - контекстом, понимают эту сохраненную величину.\n\nИнтерфейс react-контекста состоит из метода createContext, компонента Context.Provider и хука useContext. \n\nС их помощью вы можете создать контекст, а затем обернуть компоненты в провайдер от этого контекста. Компоненты обернутые в провайдер совместно будут иметь доступ на чтение и изменение контекста."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "title": "Title JS",
+          "code": "const hello = require('hello-react')"
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "title": "Title JS",
+          "src": "https://i.stack.imgur.com/AZUmQ.jpg"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text":"some comment",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text":"some comment two",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "3",
+      "text":"somesndkndknskndksnjdnsljndls comment",
+      "articleId": "1",
+      "userId": "1"
     }
   ],
   "profile": {
     "firstname": "Aidarali",
     "lastname": "Umurzakov",
     "age": 27,
-    "currency": "RUB",
+    "currency": "USD",
     "country": "KAZAKHSTAN",
     "city": "Almaty city",
     "username": "usercoder",
