@@ -15,5 +15,5 @@ export var CurrencySelect = memo(function (_a) {
     var onChangeHandler = useCallback(function (value) {
         onChange === null || onChange === void 0 ? void 0 : onChange(value);
     }, [onChange]);
-    return (_jsx(Select, { label: t('SelectCountry'), options: options, value: value, onChange: onChangeHandler, readonly: readonly, className: classNames('', {}, [className]) }, void 0));
+    return (_jsx(Select, { label: t('SelectCurrency'), options: options, value: value, onChange: onChangeHandler, readonly: readonly, className: classNames('', {}, [className]) }, void 0));
 });

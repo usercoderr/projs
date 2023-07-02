@@ -3,7 +3,6 @@ export {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from './model/selectors/articleDetails';
-
 export { fetchArticleById } from './model/services/fetchArticleById/fetchArticleById';
 
 export {
@@ -12,7 +11,6 @@ export {
 } from './model/slice/articleDetailsSlice';
 
 export { IArticleDetailSchema } from './model/types/articleDetailSchema';
-
-export type { IArticle } from './model/types/article';
+export { IArticle, IArticleBlock, EArticleBlockType } from './model/types/article';
 
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';

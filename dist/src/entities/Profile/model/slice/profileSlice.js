@@ -28,6 +28,7 @@ export var profileSlice = createSlice({
         cancelEdit: function (state) {
             state.readonly = true;
             state.form = state.data;
+            state.validateError = undefined;
         },
         updateProfile: function (state, action) {
             state.form = __assign(__assign({}, state.data), action.payload);
@@ -56,10 +57,12 @@ export var profileSlice = createSlice({
             state.isLoading = false;
             state.data = action.payload;
             state.form = action.payload;
+            state.readonly = true;
+            state.validateError = undefined;
         })
             .addCase(updateProfileData.rejected, function (state, action) {
             state.isLoading = false;
-            state.error = action.payload;
+            state.validateError = action.payload;
         });
     },
 });

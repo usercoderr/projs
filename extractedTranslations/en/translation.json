@@ -18,6 +18,7 @@
   "YourName": "YourName",
   "YourSurname": "YourSurname",
   "YourUsername": "YourUsername",
+  "copy": "copy",
   "error": "error",
   "incorrect_user_age": "incorrect_user_age",
   "incorrect_user_country": "incorrect_user_country",

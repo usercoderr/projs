@@ -36,13 +36,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { getProfileForm } from 'entities/Profile';
+import { EValidateProfileError } from 'entities/Profile/model/types/profile';
+import { validateProfileData } from '../validateProfile/validateProfileData';
 export var updateProfileData = createAsyncThunk('profile/updateProfileData', function (_, thunkApi) { return __awaiter(void 0, void 0, void 0, function () {
-    var extra, rejectWithValue, getState, formData, response, e_1;
+    var extra, rejectWithValue, getState, formData, errors, response, e_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 extra = thunkApi.extra, rejectWithValue = thunkApi.rejectWithValue, getState = thunkApi.getState;
                 formData = getProfileForm(getState());
+                errors = validateProfileData(formData);
+                if (errors.length) {
+                    return [2 /*return*/, rejectWithValue(errors)];
+                }
                 _a.label = 1;
             case 1:
                 _a.trys.push([1, 3, , 4]);
@@ -52,7 +58,7 @@ export var updateProfileData = createAsyncThunk('profile/updateProfileData', fun
                 return [2 /*return*/, response.data];
             case 3:
                 e_1 = _a.sent();
-                return [2 /*return*/, rejectWithValue('error')];
+                return [2 /*return*/, rejectWithValue([EValidateProfileError.SERVER_ERROR])];
             case 4: return [2 /*return*/];
         }
     });

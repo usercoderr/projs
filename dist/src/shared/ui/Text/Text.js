@@ -24,12 +24,18 @@ export var ETextAlign;
     ETextAlign["LEFT"] = "left";
     ETextAlign["CENTER"] = "center";
 })(ETextAlign || (ETextAlign = {}));
+export var ETextSize;
+(function (ETextSize) {
+    ETextSize["M"] = "size_m";
+    ETextSize["L"] = "size_l";
+})(ETextSize || (ETextSize = {}));
 export var Text = memo(function (props) {
     var _a;
-    var className = props.className, text = props.text, title = props.title, _b = props.theme, theme = _b === void 0 ? TextTheme.PRIMARY : _b, _c = props.align, align = _c === void 0 ? ETextAlign.LEFT : _c;
+    var className = props.className, text = props.text, title = props.title, _b = props.theme, theme = _b === void 0 ? TextTheme.PRIMARY : _b, _c = props.align, align = _c === void 0 ? ETextAlign.LEFT : _c, _d = props.size, size = _d === void 0 ? ETextSize.M : _d;
     var mods = (_a = {},
         _a[cls[theme]] = true,
         _a[cls[align]] = true,
+        _a[cls[size]] = true,
         _a);
     return (_jsxs("div", __assign({ className: classNames(cls.Text, mods, [className]) }, { children: [title && _jsx("p", __assign({ className: cls.title }, { children: title }), void 0), text && _jsx("p", __assign({ className: cls.text }, { children: text }), void 0)] }), void 0));
 });

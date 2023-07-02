@@ -4,8 +4,9 @@ import { getProfileError } from './model/selectors/getProfileError/getProfileErr
 import { getProfileIsLoading } from './model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileForm } from './model/selectors/getProfileForm/getProfileForm';
+import { getProfileValidateErrors, } from './model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 export { fetchProfileData } from './model/services/fetchProfileData/fetchProfileData';
 export { updateProfileData } from './model/services/updateProfileData/updateProfileData';
 export { profileActions, profileReducer, } from './model/slice/profileSlice';
-export { getProfileData, getProfileError, getProfileIsLoading, getProfileReadonly, getProfileForm, };
+export { getProfileData, getProfileError, getProfileIsLoading, getProfileReadonly, getProfileValidateErrors, getProfileForm, };
 export { ProfileCard };

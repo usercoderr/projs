@@ -3,10 +3,12 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Select } from 'shared/ui/Select/Select';
 import { memo, useCallback } from 'react';
+import { ECountry } from 'entities/Country/model/types/country';
 var options = [
-    { value: ECurrency.EUR, content: ECurrency.EUR },
-    { value: ECurrency.RUB, content: ECurrency.RUB },
-    { value: ECurrency.USD, content: ECurrency.USD },
+    { value: ECountry.KAZAKHSTAN, content: ECountry.KAZAKHSTAN },
+    { value: ECountry.UKRAINE, content: ECountry.UKRAINE },
+    { value: ECountry.KYRGYZSTAN, content: ECountry.KYRGYZSTAN },
+    { value: ECountry.UZBEKISTAN, content: ECountry.UZBEKISTAN },
 ];
 export var CountrySelect = memo(function (_a) {
     var className = _a.className, readonly = _a.readonly, value = _a.value, onChange = _a.onChange;
