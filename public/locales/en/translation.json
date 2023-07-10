@@ -31,5 +31,6 @@
   "SelectCountry": "SelectCountry",
   "SelectCurrency": "SelectCurrency",
   "sorry": "sorry",
-  "copy": "copy"
+  "copy": "copy",
+  "commentsNotFound": "commentsNotFound"
 }

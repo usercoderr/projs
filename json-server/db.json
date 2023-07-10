@@ -4,13 +4,17 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
+
     },
     {
       "id": "2",
       "username": "usercoder",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
+
     }
   ],
   "articles": [
@@ -74,14 +78,28 @@
       "userId": "1"
     }
   ],
-  "profile": {
-    "firstname": "Aidarali",
-    "lastname": "Umurzakov",
-    "age": 27,
-    "currency": "USD",
-    "country": "KAZAKHSTAN",
-    "city": "Almaty city",
-    "username": "usercoder",
-    "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Aidarali",
+      "lastname": "Umurzakov",
+      "age": 27,
+      "currency": "USD",
+      "country": "KAZAKHSTAN",
+      "city": "Almaty city",
+      "username": "usercoder",
+      "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
+    },
+    {
+      "id": "2",
+      "firstname": "Aidar",
+      "lastname": "User",
+      "age": 27,
+      "currency": "USD",
+      "country": "KAZAKHSTAN",
+      "city": "Almaty city",
+      "username": "sd",
+      "avatar": "https://w0.peakpx.com/wallpaper/462/241/HD-wallpaper-plane-art-blue-sky-clouds.jpg"
+    }
+  ]
 }

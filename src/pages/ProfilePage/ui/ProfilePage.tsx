@@ -21,6 +21,7 @@ import { ECurrency } from 'entities/Currency/model/types/currency';
 import { ECountry } from 'entities/Country/model/types/country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { EValidateProfileError } from 'entities/Profile/model/types/profile';
+import { useParams } from 'react-router-dom';
 
 const reducers: TReducerList = {
     profile: profileReducer,
@@ -38,7 +39,7 @@ const ProfilePage = ({ className }: IProfilePageProps) => {
     const isLoading = useSelector(getProfileIsLoading);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
-
+    const { id } = useParams<{id: string}>();
     const validateErrorTranslates = {
         [EValidateProfileError.SERVER_ERROR]: t('server_error'),
         [EValidateProfileError.NO_DATA]: t('no_data'),
@@ -47,8 +48,10 @@ const ProfilePage = ({ className }: IProfilePageProps) => {
         [EValidateProfileError.INCORRECT_USER_AGE]: t('incorrect_user_age'),
     };
     useEffect(() => {
-        dispatch(fetchProfileData());
-    }, [dispatch]);
+        if (id) {
+            dispatch(fetchProfileData(id));
+        }
+    }, [dispatch, id]);
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ firstname: value || '' }));

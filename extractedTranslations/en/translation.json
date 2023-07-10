@@ -18,6 +18,8 @@
   "YourName": "YourName",
   "YourSurname": "YourSurname",
   "YourUsername": "YourUsername",
+  "comment": "comment",
+  "commentsNotFound": "commentsNotFound",
   "copy": "copy",
   "error": "error",
   "incorrect_user_age": "incorrect_user_age",
