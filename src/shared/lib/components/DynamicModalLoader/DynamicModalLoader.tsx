@@ -19,7 +19,7 @@ export const DynamicModalLoader :FC<IDynamicModalLoaderProps> = (props) => {
     const {
         children,
         reducers,
-        removeAfterUnmount,
+        removeAfterUnmount = true,
     } = props;
     const store = useStore() as IReduxStoreWithManager;
     const dispatch = useDispatch();

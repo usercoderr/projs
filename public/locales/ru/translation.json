@@ -32,5 +32,8 @@
   "SelectCurrency": "SelectCurrency",
   "sorry": "sorry",
   "copy": "copy",
-  "commentsNotFound": "commentsNotFound"
+  "commentsNotFound": "commentsNotFound",
+  "LeaveComment": "LeaveComment",
+  "Send": "Send",
+  "read": "read"
 }

@@ -1,3 +1,5 @@
+export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
+
 export {
     getArticleDetailsData,
     getArticleDetailsError,
@@ -11,6 +13,8 @@ export {
 } from './model/slice/articleDetailsSlice';
 
 export { IArticleDetailSchema } from './model/types/articleDetailSchema';
-export { IArticle, IArticleBlock, EArticleBlockType } from './model/types/article';
+export {
+    IArticle, IArticleBlock, EArticleBlockType, EArticleView,
+} from './model/types/article';
 
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';

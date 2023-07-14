@@ -3,5 +3,7 @@
   "notFound": "notFound",
   "title": "title",
   "sorry": "sorry",
-  "comment": "comment"
+  "comment": "comment",
+  "error": "error",
+  "backToList": "backToList"
 }

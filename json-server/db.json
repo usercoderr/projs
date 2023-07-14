@@ -6,7 +6,6 @@
       "password": "123",
       "role": "ADMIN",
       "avatar": "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
-
     },
     {
       "id": "2",
@@ -14,18 +13,62 @@
       "password": "123",
       "role": "USER",
       "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
-
     }
   ],
   "articles": [
     {
       "id": "1",
-      "title":"Javascript News",
+      "title": "Javascript News",
       "subtitle": "What's new in JS 2023",
       "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png?20120221235433",
       "views": 1223,
+      "userId": "1",
       "createdAt": "01.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Title JS",
+          "paragraphs": [
+            "React Context API - это интерфейс, который позволяет сохранять некоторую величину (переменную или объект), и использовать ее между несколькими компонентами. Под самим же контекстным стором, или как его просто называют - контекстом, понимают эту сохраненную величину.\n\nИнтерфейс react-контекста состоит из метода createContext, компонента Context.Provider и хука useContext. \n\nС их помощью вы можете создать контекст, а затем обернуть компоненты в провайдер от этого контекста. Компоненты обернутые в провайдер совместно будут иметь доступ на чтение и изменение контекста."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "title": "Title JS",
+          "code": "const hello = require('hello-react')"
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "title": "Title JS",
+          "src": "https://i.stack.imgur.com/AZUmQ.jpg"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Title JS",
+          "paragraphs": [
+            "React Context API - это интерфейс, который позволяет сохранять некоторую величину (переменную или объект), и использовать ее между несколькими компонентами. Под самим же контекстным стором, или как его просто называют - контекстом, понимают эту сохраненную величину.\n\nИнтерфейс react-контекста состоит из метода createContext, компонента Context.Provider и хука useContext. \n\nС их помощью вы можете создать контекст, а затем обернуть компоненты в провайдер от этого контекста. Компоненты обернутые в провайдер совместно будут иметь доступ на чтение и изменение контекста."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Javascript News",
+      "subtitle": "What's new in JS 2023",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png?20120221235433",
+      "views": 1223,
+      "userId": "2",
+      "createdAt": "01.07.2023",
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -61,21 +104,45 @@
   "comments": [
     {
       "id": "1",
-      "text":"some comment",
+      "text": "some comment",
       "articleId": "1",
       "userId": "1"
     },
     {
       "id": "2",
-      "text":"some comment two",
+      "text": "some comment two",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
-      "text":"somesndkndknskndksnjdnsljndls comment",
+      "text": "somesndkndknskndksnjdnsljndls comment",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "ssdsd",
+      "id": "LXPPIGj"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "ssdsd",
+      "id": "nZZEUMx"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "hello world",
+      "id": "H58y8yQ"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "kkkk",
+      "id": "wDoaQ4p"
     }
   ],
   "profile": [

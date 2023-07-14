@@ -11,7 +11,7 @@ import cls from './CommentItem.module.scss';
 
 interface ICommentItemProps {
     className?: string
-    comment: IComment
+    comment?: IComment
     isLoading?: boolean
 
 }
@@ -22,7 +22,7 @@ export const CommentItem = memo((props: ICommentItemProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.CommentItem, {}, [className])}>
+            <div className={classNames(cls.CommentItem, {}, [className, cls.loading])}>
                 <div className={cls.header}>
                     <Skeleton width={30} height={30} border="50%" />
                     <Skeleton width={100} height={16} className={cls.username} />
@@ -31,7 +31,9 @@ export const CommentItem = memo((props: ICommentItemProps) => {
             </div>
         );
     }
-
+    if (!comment) {
+        return null;
+    }
     return (
         <div className={classNames(cls.CommentItem, {}, [className])}>
             <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cls.header}>
