@@ -35,5 +35,6 @@
   "commentsNotFound": "commentsNotFound",
   "LeaveComment": "LeaveComment",
   "Send": "Send",
-  "read": "read"
+  "read": "read",
+  "Loading": "Loading"
 }
