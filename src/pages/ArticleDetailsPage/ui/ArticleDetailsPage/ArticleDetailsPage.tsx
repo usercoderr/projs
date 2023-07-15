@@ -19,6 +19,7 @@ import {
 import { AddCommentForm } from 'features/addCommentForm';
 import { Button, EButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import {
     articleDetailsCommentsReducer,
     getArticleDetailsComments,
@@ -53,9 +54,9 @@ const ArticleDetailsPage = ({ className }: IArticleDetailsPageProps) => {
     }, [dispatch, id]);
     if (!id) {
         return (
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 {t('notFound')}
-            </div>
+            </Page>
         );
     }
     if (commentsError) {
@@ -63,8 +64,10 @@ const ArticleDetailsPage = ({ className }: IArticleDetailsPageProps) => {
     }
     return (
         <DynamicModalLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <Button theme={EButtonTheme.OUTLINE} onClick={onBackToList}>{t('backToList')}</Button>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+                <Button theme={EButtonTheme.OUTLINE} onClick={onBackToList}>
+                    {t('backToList')}
+                </Button>
                 <ArticleDetails id={id} />
                 <Text className={cls.commentTitle} title={t('comment')} />
                 <AddCommentForm onSendComment={onSendComment} />
@@ -72,7 +75,7 @@ const ArticleDetailsPage = ({ className }: IArticleDetailsPageProps) => {
                     isLoading={commentsIsLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModalLoader>
     );
 };

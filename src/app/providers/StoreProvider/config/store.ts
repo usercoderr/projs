@@ -1,5 +1,5 @@
 import {
-    CombinedState, configureStore, DeepPartial, Reducer, ReducersMapObject, 
+    CombinedState, configureStore, DeepPartial, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User/model/slices/userSlice';
@@ -13,7 +13,6 @@ import { IThunkExtraArg } from './StateSchema';
 export function createReduxStore(
     initialState?: StateSchema,
     asyncReducers?: ReducersMapObject<StateSchema>,
-    navigate?:(to:To, options?: NavigateOptions)=> void,
 ) {
     const rootReducer: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
@@ -24,7 +23,6 @@ export function createReduxStore(
 
     const extraArg: IThunkExtraArg = {
         api: $api,
-        navigate,
     };
     const store = configureStore({
         reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,

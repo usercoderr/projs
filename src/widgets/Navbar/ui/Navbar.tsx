@@ -32,7 +32,7 @@ export const Navbar = ({ className }: NavbarProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls.Navbar, {}, [className])}>
+        <header className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.links}>
                 {authData ? (
                     <Button
@@ -55,6 +55,6 @@ export const Navbar = ({ className }: NavbarProps) => {
             && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             }
 
-        </div>
+        </header>
     );
 };

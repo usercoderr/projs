@@ -8,11 +8,19 @@ import {
 } from 'shared/lib/components/DynamicModalLoader/DynamicModalLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
+import { Page } from 'shared/ui/Page/Page';
+import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
+import {
+    fetchNextArticlesPage,
+} from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {
     getArticlesPageError,
-    getArticlesPageLoading,
+    getArticlesPageHasMore,
+    getArticlesPageInit,
+    getArticlesPageIsLoading,
+    getArticlesPageNum,
     getArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
+} from '../model/selectors/articlesPageSelectors';
 import { fetchArticlesList } from '../model/services/fetchArticlesList/fetchArticlesList';
 import {
     articlesPageActions,
@@ -31,7 +39,7 @@ const ArticlePage = ({ className }: IArticlePageProps) => {
     const { t } = useTranslation('article');
     const dispatch = useAppDispatch();
     const articles = useSelector(getArticles.selectAll);
-    const isLoading = useSelector(getArticlesPageLoading);
+    const isLoading = useSelector(getArticlesPageIsLoading);
     const error = useSelector(getArticlesPageError);
     const view = useSelector(getArticlesPageView);
 
@@ -39,14 +47,23 @@ const ArticlePage = ({ className }: IArticlePageProps) => {
         dispatch(articlesPageActions.setView(view));
     }, [dispatch]);
 
+    const onLoadNextPart = useCallback(() => {
+        dispatch(fetchNextArticlesPage());
+    }, [dispatch]);
+
     useEffect(() => {
-        dispatch(fetchArticlesList());
-        dispatch(articlesPageActions.initState());
+        dispatch(initArticlesPage());
     }, [dispatch]);
 
     return (
-        <DynamicModalLoader reducers={reducer}>
-            <div className={classNames(cls.ArticlePage, {}, [className])}>
+        <DynamicModalLoader
+            reducers={reducer}
+            removeAfterUnmount={false}
+        >
+            <Page
+                onScrollEnd={onLoadNextPart}
+                className={classNames(cls.ArticlePage, {}, [className])}
+            >
                 <ArticleViewSelector
                     onViewClick={onChangeView}
                     view={view}
@@ -56,7 +73,7 @@ const ArticlePage = ({ className }: IArticlePageProps) => {
                     view={view}
                     articles={articles}
                 />
-            </div>
+            </Page>
         </DynamicModalLoader>
     );
 };

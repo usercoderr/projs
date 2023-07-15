@@ -22,6 +22,7 @@ import { ECountry } from 'entities/Country/model/types/country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { EValidateProfileError } from 'entities/Profile/model/types/profile';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page/Page';
 
 const reducers: TReducerList = {
     profile: profileReducer,
@@ -87,7 +88,7 @@ const ProfilePage = ({ className }: IProfilePageProps) => {
 
     return (
         <DynamicModalLoader reducers={reducers} removeAfterUnmount>
-            <>
+            <Page>
                 <ProfilePageHeader />
                 {validateErrors?.length && validateErrors.map((err) => (
                     <Text
@@ -110,7 +111,7 @@ const ProfilePage = ({ className }: IProfilePageProps) => {
                     onChangeCurrency={onChangeCurrency}
                     onChangeCountry={onChangeCountry}
                 />
-            </>
+            </Page>
         </DynamicModalLoader>
     );
 };

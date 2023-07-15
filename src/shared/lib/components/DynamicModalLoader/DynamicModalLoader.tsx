@@ -25,7 +25,9 @@ export const DynamicModalLoader :FC<IDynamicModalLoaderProps> = (props) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        const mountedReducers = store.reducerManager.getReducerMap();
         Object.entries(reducers).forEach(([name, reducer]:TReducerListEntry) => {
+            const mounted = reducers[name as TStateSchemaKey];
             store.reducerManager.add(name, reducer);
             dispatch({ type: `@INIT ${name} reducer` });
         });
