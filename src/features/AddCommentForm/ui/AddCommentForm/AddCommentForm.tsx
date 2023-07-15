@@ -9,7 +9,7 @@ import {
     addCommentFormReducer,
     getAddCommentFormError,
     getAddCommentFormText,
-} from 'features/addCommentForm';
+} from 'features/AddCommentForm';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 import {

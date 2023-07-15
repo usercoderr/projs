@@ -22,7 +22,7 @@ import { ECountry } from 'entities/Country/model/types/country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { EValidateProfileError } from 'entities/Profile/model/types/profile';
 import { useParams } from 'react-router-dom';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 
 const reducers: TReducerList = {
     profile: profileReducer,

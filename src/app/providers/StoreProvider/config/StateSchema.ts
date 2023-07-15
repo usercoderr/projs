@@ -8,18 +8,21 @@ import { IProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import { IArticleDetailSchema } from 'entities/Article';
 import { IArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
-import { IAddCommentFormSchema } from 'features/addCommentForm';
+import { IAddCommentFormSchema } from 'features/AddCommentForm';
 import { IArticlesPageSchema } from 'pages/ArticlesPage';
+import { IScrollSaverSchema } from 'features/ScrollSaver';
 
 export interface StateSchema{
     counter: CounterSchema;
     user: IUserSchema
+    scrollSaver: IScrollSaverSchema
+
     loginForm?: ILoginSchema,
     profile?: IProfileSchema,
     articleDetails?:IArticleDetailSchema
-    articleDetailsComments ?:IArticleDetailsCommentsSchema
-    addCommentForm:IAddCommentFormSchema,
-    articlesPage?: IArticlesPageSchema
+    articleDetailsComments?:IArticleDetailsCommentsSchema
+    addCommentForm?:IAddCommentFormSchema,
+    articlesPage?: IArticlesPageSchema,
 }
 
 export type TStateSchemaKey = keyof StateSchema;
