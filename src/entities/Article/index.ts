@@ -1,3 +1,9 @@
+export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
+
+export { EArticleType } from './model/types/article';
+
+export { EArticleSortField } from './model/types/article';
+
 export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
 
 export {

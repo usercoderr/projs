@@ -1,6 +1,7 @@
-import { ArticlePageAsync } from './ui/ArticlePage.async';
+import { ArticlePageAsync } from './ui/ArticlePage/ArticlePage.async';
 
 export {
+    getArticlesPageType,
     getArticlesPageHasMore,
     getArticlesPageLimit,
     getArticlesPageNum,

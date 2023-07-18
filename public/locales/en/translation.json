@@ -36,5 +36,19 @@
   "LeaveComment": "LeaveComment",
   "Send": "Send",
   "read": "read",
-  "Loading": "Loading"
+  "Loading": "Loading",
+  "sortBy": "sortBy",
+  "search": "search",
+  "Higher": "Higher",
+  "Lower": "Lower",
+  "By": "By",
+  "createdAt": "createdAt",
+  "views": "views",
+  "aToZ": "aToZ",
+  "zToA": "zToA",
+  "IT": "IT",
+  "ALL": "ALL",
+  "ECONOMICS": "ECONOMICS",
+  "SCIENCE": "SCIENCE",
+  "Empty": "Empty"
 }

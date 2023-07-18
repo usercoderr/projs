@@ -2,7 +2,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { EArticleView, IArticle } from 'entities/Article';
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
+import { ETextSize, Text } from 'shared/ui/Text/Text';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 
@@ -35,6 +36,13 @@ export const ArticleList = memo((props: IArticleListProps) => {
             key={article.id}
         />
     );
+    if (!isLoading && !articles.length) {
+        return (
+            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+                <Text size={ETextSize.L} title={t('Empty')} />
+            </div>
+        );
+    }
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
             {
