@@ -67,8 +67,8 @@ export const ArticlePageFilter = memo(({ className }: IArticlePageFilterProps) =
     const onChangeTab = useCallback((value: EArticleType) => {
         dispatch(articlesPageActions.setType(value));
         dispatch(articlesPageActions.setPage(1));
-        debouncedFetchData();
-    }, [dispatch, debouncedFetchData]);
+        fetchData();
+    }, [dispatch, fetchData]);
 
     return (
         <div className={classNames(cls.ArticlePageFilter, {}, [className])}>
