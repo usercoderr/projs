@@ -12,6 +12,7 @@ import { Button, EButtonTheme } from 'shared/ui/Button/Button';
 import { IArticleTextBlock } from 'entities/Article/model/types/article';
 import { useNavigate } from 'react-router';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 
@@ -28,10 +29,6 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
         view,
     } = props;
     const { t } = useTranslation();
-    const navigate = useNavigate();
-    const onOpenArticle = useCallback(() => {
-        navigate(RoutePath.article_details + article.id);
-    }, [article.id, navigate]);
     const [isHover, bindHover] = useHover();
 
     const types = <Text text={article.type.join(', ')} className={cls.types} />;
@@ -64,9 +61,13 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
                         <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
                     )}
                     <div className={cls.footer}>
-                        <Button onClick={onOpenArticle} theme={EButtonTheme.OUTLINE}>
-                            {t('read')}
-                        </Button>
+                        <AppLink
+                            to={RoutePath.article_details + article.id}
+                        >
+                            <Button theme={EButtonTheme.OUTLINE}>
+                                {t('read')}
+                            </Button>
+                        </AppLink>
                         {views}
                     </div>
                 </Card>
@@ -74,11 +75,12 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
         );
     }
     return (
-        <div
-            {...bindHover}
+        <AppLink
+            to={RoutePath.article_details + article.id}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+            {...bindHover}
         >
-            <Card onClick={onOpenArticle}>
+            <Card>
                 <div className={cls.imageWrapper}>
                     {image}
                     <Text text={article.createdAt} className={cls.date} />
@@ -90,6 +92,6 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
                 <Text text={article.title} className={cls.title} />
 
             </Card>
-        </div>
+        </AppLink>
     );
 });

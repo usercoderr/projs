@@ -1,6 +1,15 @@
 import { ArticleDetailsPageAsync } from './ui/ArticleDetailsPage/ArticleDetailsPage.async';
 
-export { getArticleCommentsError, getArticleCommentsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/comments';
+export {
+    getArticleRecommendationsError,
+    getArticleRecommendationsIsLoading,
+} from 'pages/ArticleDetailsPage/model/selectors/recommendations';
+
+export {
+    IArticleDetailsRecommendationsSchema,
+} from './model/types/IArticleDetailsRecommendationsSchema';
+
+export { getArticleCommentsError, getArticleCommentsIsLoading } from './model/selectors/comments';
 
 export {
     IArticleDetailsCommentsSchema,
