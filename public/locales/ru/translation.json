@@ -50,5 +50,10 @@
   "ALL": "ALL",
   "ECONOMICS": "ECONOMICS",
   "SCIENCE": "SCIENCE",
-  "Empty": "Empty"
+  "Empty": "Empty",
+  "edit": "edit",
+  "EditPage": "EditPage",
+  "NewPage": "NewPage",
+  "Usercoder": "Usercoder",
+  "create": "create"
 }

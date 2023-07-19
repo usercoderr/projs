@@ -23,6 +23,7 @@ import { Button, EButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/Page';
 import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList';
+import { ArticleDetailsPageHeader } from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import {
     fetchArticleRecommendations,
 } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
@@ -61,10 +62,6 @@ const ArticleDetailsPage = ({ className }: IArticleDetailsPageProps) => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
-
     const onSendComment = useCallback(() => {
         dispatch(addCommentForArticle());
     }, [dispatch]);
@@ -86,9 +83,7 @@ const ArticleDetailsPage = ({ className }: IArticleDetailsPageProps) => {
     return (
         <DynamicModalLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <Button theme={EButtonTheme.OUTLINE} onClick={onBackToList}>
-                    {t('backToList')}
-                </Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text
                     size={ETextSize.L}
