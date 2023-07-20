@@ -4,13 +4,17 @@ import { Button, EButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
-import { DynamicModalLoader, TReducerList } from 'shared/lib/components/DynamicModalLoader/DynamicModalLoader';
-import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
-import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword';
-import { getLoginIsLoading } from 'features/AuthByUsername/model/selectors/getLoginIsLoading/getLoginIsLoading';
-import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError/getLoginError';
+import {
+    DynamicModalLoader, TReducerList,
+} from 'shared/lib/components/DynamicModalLoader/DynamicModalLoader';
+import {
+    getLoginUsername,
+} from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/LoginByUsername/loginByUsername';
 import cls from './LoginForm.module.scss';
 
@@ -56,13 +60,13 @@ const LoginForm = ({ className, onSuccess }: ILoginFormProps) => {
                     onChange={onChangeUsername}
                     value={username}
                     type="text"
-                    placeholder="Введите логин"
+                    placeholder={t('Введите логин')}
                 />
                 <Input
                     onChange={onChangePassword}
                     value={password}
                     type="text"
-                    placeholder="Введите пароль"
+                    placeholder={t('Введите пароль')}
                 />
                 <Button
                     disabled={isLoading}

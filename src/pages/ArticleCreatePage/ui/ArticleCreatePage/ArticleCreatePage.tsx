@@ -11,7 +11,7 @@ const ArticleCreatePage = memo(({ className }: IArticleCreatePageProps) => {
     const { t } = useTranslation();
     return (
         <div className={classNames(cls.ArticleCreatePage, {}, [className])}>
-            s
+            {t('NewPage')}
         </div>
     );
 });

@@ -53,7 +53,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                         onClick={onLogOut}
                         theme={EButtonTheme.CLEAR_INVERTED}
                     >
-                        LogOut
+                        {t('logOut')}
                     </Button>
                 </div>
                 {
@@ -72,7 +72,7 @@ export const Navbar = ({ className }: NavbarProps) => {
                     onClick={onShowModal}
                     theme={EButtonTheme.CLEAR_INVERTED}
                 >
-                    LogIn
+                    {t('logIn')}
                 </Button>
             </div>
             {

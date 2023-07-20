@@ -16,7 +16,7 @@ export const NotFoundPage = ({ className }: NotFoundPageProps) => {
         setTimeout(() => {
             navigate('/');
         }, 3000);
-    }, []);
+    }, [navigate]);
     return (
         <div className={classNames(cls.NotFoundPage, {}, [className])}>
             {t('Страница не найдена')}

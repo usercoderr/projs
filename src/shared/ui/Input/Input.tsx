@@ -52,7 +52,7 @@ export const Input = memo((props: IInputProps) => {
             inputRef.current.focus();
             setIsFocused(true);
         }
-    }, []);
+    }, [autofocus]);
 
     const mods: TMods = {
         [cls.readonly]: readonly,

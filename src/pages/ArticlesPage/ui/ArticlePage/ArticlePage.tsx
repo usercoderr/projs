@@ -45,7 +45,7 @@ const ArticlePage = ({ className }: IArticlePageProps) => {
 
     useEffect(() => {
         dispatch(initArticlesPage(searchParams));
-    }, [dispatch]);
+    }, [dispatch, searchParams]);
 
     return (
         <DynamicModalLoader

@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'usercoder-plugin',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -39,7 +40,7 @@ module.exports = {
         'no-unused-vars': 'off',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
-        'react/jsx-props-no-spreading': 'warn',
+        'react/jsx-props-no-spreading': 'off',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
         'import/extensions': 'off',
@@ -56,6 +57,7 @@ module.exports = {
         ],
         'max-len': ['error', { ignoreComments: true, code: 100 }],
         'jsx-a11y/click-events-have-key-events': 'off',
+        'usercoder-plugin/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,

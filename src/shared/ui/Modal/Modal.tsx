@@ -76,8 +76,15 @@ export const Modal = (props: IModalProps) => {
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}>
-                <div onClick={closeHandler} className={cls.overlay}>
-                    <div onClick={(event) => onContentClick(event)} className={cls.content}>
+                {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+                <div
+                    onClick={closeHandler}
+                    className={cls.overlay}
+                >
+                    <div
+                        onClick={(event) => onContentClick(event)}
+                        className={cls.content}
+                    >
                         {children}
                     </div>
                 </div>

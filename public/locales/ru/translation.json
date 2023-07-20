@@ -55,5 +55,9 @@
   "EditPage": "EditPage",
   "NewPage": "NewPage",
   "Usercoder": "Usercoder",
-  "create": "create"
+  "create": "create",
+  "logOut": "logOut",
+  "logIn": "logIn",
+  "Введите логин": "Введите логин",
+  "Введите пароль": "Введите пароль"
 }
