@@ -14,7 +14,7 @@ import {
     IArticleBlock,
 } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useCallback, useEffect } from 'react';
+import { Fragment, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { ETextAlign, ETextSize, Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
@@ -29,6 +29,7 @@ import {
 import {
     ArticleTextBlockComponent,
 } from 'entities/Article/ui/ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { HStack, VStack } from 'shared/ui/Stack';
 import EyeIcon from '../../../../shared/assets/icons/view.svg';
 import CalendarIcon from '../../../../shared/assets/icons/calendar.svg';
 import cls from './ArticleDetails.module.scss';
@@ -100,25 +101,23 @@ export const ArticleDetails = ({ className, id }: IArticleDetailsProps) => {
     } else {
         content = (
             <>
-                <div className={cls.avatarWrapper}>
+                <HStack gap="8" max justify="center">
                     <Avatar
                         size={200}
                         src={article?.img}
-                        className={cls.avatar}
                     />
-                </div>
+                </HStack>
                 <Text
-                    className={cls.title}
                     title={article?.title}
                     text={article?.subtitle}
                     size={ETextSize.L}
                 />
-                <div className={cls.articleInfo}>
-                    <Icon className={cls.icons} Svg={EyeIcon} />
+                <HStack gap="8">
+                    <Icon Svg={EyeIcon} />
                     <Text
                         text={String(article?.views)}
                     />
-                </div>
+                </HStack>
                 <div className={cls.articleInfo}>
                     <Icon className={cls.icons} Svg={CalendarIcon} />
                     <Text
@@ -137,9 +136,9 @@ export const ArticleDetails = ({ className, id }: IArticleDetailsProps) => {
             reducers={reducers}
             removeAfterUnmount
         >
-            <div className={classNames(cls.ArticleDetails, {}, [className])}>
+            <VStack gap="16" className={classNames(cls.ArticleDetails, {}, [className])}>
                 {content}
-            </div>
+            </VStack>
         </DynamicModalLoader>
 
     );

@@ -43,6 +43,8 @@
   "incorrect_user_age": "incorrect_user_age",
   "incorrect_user_country": "incorrect_user_country",
   "incorrect_user_data": "incorrect_user_data",
+  "logIn": "logIn",
+  "logOut": "logOut",
   "no_data": "no_data",
   "notFound": "notFound",
   "pageTittle": "pageTittle",
@@ -59,6 +61,8 @@
   "toggle": "toggle",
   "views": "views",
   "zToA": "zToA",
+  "Введите логин": "Введите логин",
+  "Введите пароль": "Введите пароль",
   "Главная": "Главная",
   "Главная страница": "Главная страница",
   "О сайте": "О сайте",
@@ -66,9 +70,5 @@
   "Обновить страницу": "Обновить страницу",
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Страница не найдена": "Страница не найдена",
-  "Язык": "Язык",
-  "logOut": "logOut",
-  "logIn": "logIn",
-  "Введите логин": "Введите логин",
-  "Введите пароль": "Введите пароль"
+  "Язык": "Язык"
 }

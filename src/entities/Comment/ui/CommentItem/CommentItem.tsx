@@ -7,6 +7,7 @@ import { Text } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { VStack } from 'shared/ui/Stack';
 import cls from './CommentItem.module.scss';
 
 interface ICommentItemProps {
@@ -35,7 +36,7 @@ export const CommentItem = memo((props: ICommentItemProps) => {
         return null;
     }
     return (
-        <div className={classNames(cls.CommentItem, {}, [className])}>
+        <VStack gap="8" max className={classNames(cls.CommentItem, {}, [className])}>
             <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cls.header}>
                 {
                     comment.user?.avatar
@@ -44,6 +45,6 @@ export const CommentItem = memo((props: ICommentItemProps) => {
                 <Text className={cls.username} title={comment.user?.username} />
             </AppLink>
             <Text className={cls.text} text={comment.text} />
-        </div>
+        </VStack>
     );
 });

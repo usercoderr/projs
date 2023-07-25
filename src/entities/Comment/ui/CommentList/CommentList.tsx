@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Fragment, memo } from 'react';
 import { CommentItem, IComment } from 'entities/Comment';
 import { Text } from 'shared/ui/Text/Text';
+import { VStack } from 'shared/ui/Stack';
 import cls from './CommentList.module.scss';
 
 interface ICommentListProps {
@@ -18,15 +19,15 @@ export const CommentList = memo(
 
         if (isLoading) {
             return (
-                <div className={classNames(cls.CommentList, {}, [className])}>
+                <VStack gap="16" max className={classNames('', {}, [className])}>
                     <CommentItem isLoading />
                     <CommentItem isLoading />
                     <CommentItem isLoading />
-                </div>
+                </VStack>
             );
         }
         return (
-            <div className={classNames(cls.CommentList, {}, [className])}>
+            <VStack gap="16" className={classNames('', {}, [className])}>
                 {comments?.length
                     ? comments.map((comment) => (
                         <Fragment key={comment.id}>
@@ -37,7 +38,7 @@ export const CommentList = memo(
                             />
                         </Fragment>
                     )) : <Text text={t('commentsNotFound')} />}
-            </div>
+            </VStack>
         );
     },
 );

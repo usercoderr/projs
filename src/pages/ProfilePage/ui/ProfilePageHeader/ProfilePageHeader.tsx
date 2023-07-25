@@ -7,9 +7,9 @@ import {
     getProfileData, getProfileReadonly, profileActions, updateProfileData,
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useCallback } from 'react';
+import { Fragment, useCallback } from 'react';
 import { getUserAuthData } from 'entities/User';
-import cls from './ProfilePageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack';
 
 interface IProfilePageHeaderProps {
     className?: string
@@ -37,42 +37,37 @@ export const ProfilePageHeader = ({ className }: IProfilePageHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
-            <div className={cls.header}>
-                <Text text={t('Profile')} />
-                {canEdit && (
-                    <div className={cls.btnWrapper}>
-                        {
-                            readonly ? (
+        <HStack max justify="between" className={classNames('', {}, [className])}>
+            <Text text={t('Profile')} />
+            {canEdit && (
+                <>
+                    {
+                        readonly ? (
+                            <Button
+                                theme={EButtonTheme.OUTLINE}
+                                onClick={onEdit}
+                            >
+                                {t('Edit')}
+                            </Button>
+                        ) : (
+                            <HStack gap="8">
                                 <Button
-                                    className={cls.button}
-                                    theme={EButtonTheme.OUTLINE}
-                                    onClick={onEdit}
+                                    theme={EButtonTheme.OUTLINE_RED}
+                                    onClick={onCancelEdit}
                                 >
-                                    {t('Edit')}
+                                    {t('Cancel')}
                                 </Button>
-                            ) : (
-                                <>
-                                    <Button
-                                        className={cls.button}
-                                        theme={EButtonTheme.OUTLINE_RED}
-                                        onClick={onCancelEdit}
-                                    >
-                                        {t('Cancel')}
-                                    </Button>
-                                    <Button
-                                        className={cls.button}
-                                        theme={EButtonTheme.OUTLINE}
-                                        onClick={onSave}
-                                    >
-                                        {t('Save')}
-                                    </Button>
-                                </>
-                            )
-                        }
-                    </div>
-                )}
-            </div>
-        </div>
+                                <Button
+                                    theme={EButtonTheme.OUTLINE}
+                                    onClick={onSave}
+                                >
+                                    {t('Save')}
+                                </Button>
+                            </HStack>
+                        )
+                    }
+                </>
+            )}
+        </HStack>
     );
 };
