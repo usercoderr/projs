@@ -59,7 +59,10 @@ export const ProfileCard = (props: IProfileCardProps) => {
     }
     if (error) {
         return (
-            <HStack justify="center" className={classNames(cls.ProfileCard, mods, [className, cls.error])}>
+            <HStack
+                justify="center"
+                className={classNames(cls.ProfileCard, mods, [className, cls.error])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('error')}
