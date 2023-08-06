@@ -114,7 +114,6 @@ const ProfilePage = ({ className }: IProfilePageProps) => {
                         onChangeCountry={onChangeCountry}
                     />
                 </VStack>
-
             </Page>
         </DynamicModalLoader>
     );
