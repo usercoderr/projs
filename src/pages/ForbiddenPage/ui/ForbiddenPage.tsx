@@ -1,14 +1,14 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import cls from './NotFoundPage.module.scss';
+import cls from './ForbiddenPage.module.scss';
 
-interface NotFoundPageProps {
-    className?: string;
+interface IForbiddenPageProps {
+    className?: string
 }
 
-export const NotFoundPage = ({ className }: NotFoundPageProps) => {
+const ForbiddenPage = memo(({ className }: IForbiddenPageProps) => {
     const { t } = useTranslation();
     const navigate = useNavigate();
 
@@ -18,8 +18,9 @@ export const NotFoundPage = ({ className }: NotFoundPageProps) => {
         }, 2000);
     }, [navigate]);
     return (
-        <div className={classNames(cls.NotFoundPage, {}, [className])}>
-            {t('Страница не найдена')}
+        <div className={classNames(cls.ForbiddenPage, {}, [className])}>
+            {t('access')}
         </div>
     );
-};
+});
+export default ForbiddenPage;

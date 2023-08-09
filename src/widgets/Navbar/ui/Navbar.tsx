@@ -5,7 +5,7 @@ import { Button, EButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { userActions } from 'entities/User/model/slices/userSlice';
-import { getUserAuthData } from 'entities/User';
+import { getUserAuthData, isUserAdmin, isUserManager } from 'entities/User';
 import { useNavigate } from 'react-router';
 import { Text } from 'shared/ui/Text/Text';
 import { AppLink, EAppLinkTheme } from 'shared/ui/AppLink/AppLink';
@@ -24,6 +24,10 @@ export const Navbar = ({ className }: NavbarProps) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const authData = useSelector(getUserAuthData);
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
+
+    const isAdminPanelAvailable = isAdmin || isManager;
     const onShowModal = useCallback(() => {
         setIsAuthModal(true);
     }, []);
@@ -55,6 +59,10 @@ export const Navbar = ({ className }: NavbarProps) => {
                         direction="bottom left"
                         className={cls.dropdown}
                         items={[
+                            ...(isAdminPanelAvailable ? [{
+                                content: t('adminPanelPage'),
+                                href: RoutePath.admin_panel,
+                            }] : []),
                             {
                                 content: t('Profile'),
                                 href: RoutePath.profile + authData.id,

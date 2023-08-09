@@ -10,6 +10,7 @@ import { CommentList } from 'entities/Comment';
 import {
     fetchCommentsByArticleId,
 } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { VStack } from 'shared/ui/Stack';
 import {
     getArticleDetailsComments,
 } from '../../model/slices/articleDetailsCommentsSlice';
@@ -42,7 +43,11 @@ export const ArticleDetailsComments = memo((props: IArticleDetailsCommentsProps)
         return <h2>{t('error')}</h2>;
     }
     return (
-        <div className={classNames(cls.ArticleDetailsComments, {}, [className])}>
+        <VStack
+            gap="16"
+            max
+            className={classNames(cls.ArticleDetailsComments, {}, [className])}
+        >
             <Text
                 size={ETextSize.L}
                 title={t('comment')}
@@ -52,6 +57,6 @@ export const ArticleDetailsComments = memo((props: IArticleDetailsCommentsProps)
                 isLoading={commentsIsLoading}
                 comments={comments}
             />
-        </div>
+        </VStack>
     );
 });

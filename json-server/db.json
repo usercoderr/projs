@@ -4,14 +4,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/c4624e01b1c5930443a727eebf2f8d10-1631995234/pixil-frame-0%20(100)/create-30x30-pixel-punk-avatars-for-you.png"
     },
     {
       "id": "2",
       "username": "usercoder",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
+      "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": ["MANAGER"],
       "avatar": "https://www.springboard.com/blog/wp-content/uploads/2022/06/what-does-a-coder-do-2022-career-guide-1.jpg"
     }
   ],

@@ -1,5 +1,9 @@
-import { getUserAuthData } from './model/selectors/getUserAuthData';
-import { getUserMounted } from './model/selectors/getUserMounted/getUserMounted';
+export {
+    isUserAdmin,
+    isUserManager,
+    getUserRoles,
+} from './model/selectors/roleSelectors';
+
+export { getUserAuthData } from './model/selectors/getUserAuthData';
 
 export { IUser, IUserSchema } from './model/types/user';
-export { getUserAuthData };
