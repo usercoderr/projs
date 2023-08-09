@@ -62,6 +62,7 @@ export const Modal = (props: IModalProps) => {
         }
         return () => {
             window.removeEventListener('keydown', onKeyDown);
+            // @ts-ignore
             clearTimeout();
         };
     }, [isOpen, onKeyDown]);
@@ -81,6 +82,7 @@ export const Modal = (props: IModalProps) => {
                     onClick={closeHandler}
                     className={cls.overlay}
                 >
+                    {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
                     <div
                         onClick={(event) => onContentClick(event)}
                         className={cls.content}

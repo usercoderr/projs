@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { memo } from 'react';
 import { EArticleBlockType, EArticleView, IArticle } from 'entities/Article';
 import { Text } from 'shared/ui/Text/Text';
 import { Icon } from 'shared/ui/Icon/Icon';
@@ -10,7 +10,6 @@ import { useHover } from 'shared/lib/hooks/useHover/useHover';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, EButtonTheme } from 'shared/ui/Button/Button';
 import { IArticleTextBlock } from 'entities/Article/model/types/article';
-import { useNavigate } from 'react-router';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
@@ -45,7 +44,6 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
         ) as IArticleTextBlock;
         return (
             <div
-                {...bindHover}
                 className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
             >
                 <Card>
@@ -78,7 +76,6 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
         <AppLink
             to={RoutePath.article_details + article.id}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
-            {...bindHover}
         >
             <Card>
                 <div className={cls.imageWrapper}>
