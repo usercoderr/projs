@@ -1,21 +1,24 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { memo, useCallback } from 'react';
+import { useSelector } from 'react-redux';
+import { HStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
 import { Button, EButtonTheme } from 'shared/ui/Button/Button';
-import { useSelector } from 'react-redux';
-import {
-    getProfileData, getProfileReadonly, profileActions, updateProfileData,
-} from 'entities/Profile';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Fragment, useCallback } from 'react';
 import { getUserAuthData } from 'entities/User';
-import { HStack } from 'shared/ui/Stack';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {
+    getProfileData,
+    getProfileReadonly,
+} from '../../model/selectors/getEditableProfileSelectors';
+import { profileActions } from '../../model/slice/profileSlice';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 
-interface IProfilePageHeaderProps {
+interface IEditableProfileCardHeaderProps {
     className?: string
 }
 
-export const ProfilePageHeader = ({ className }: IProfilePageHeaderProps) => {
+export const EditableProfileCardHeader = memo(({ className }: IEditableProfileCardHeaderProps) => {
     const { t } = useTranslation();
     const readonly = useSelector(getProfileReadonly);
     const authData = useSelector(getUserAuthData);
@@ -70,4 +73,4 @@ export const ProfilePageHeader = ({ className }: IProfilePageHeaderProps) => {
             )}
         </HStack>
     );
-};
+});

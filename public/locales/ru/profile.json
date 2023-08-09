@@ -3,5 +3,6 @@
   "no_data": "no_data",
   "incorrect_user_data": "incorrect_user_data",
   "incorrect_user_country": "incorrect_user_country",
-  "incorrect_user_age": "incorrect_user_age"
+  "incorrect_user_age": "incorrect_user_age",
+  "profileNotFound": "profileNotFound"
 }

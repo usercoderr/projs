@@ -4,7 +4,6 @@ import { ILoginSchema } from 'features/AuthByUsername';
 import {
     AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { IProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import { IArticleDetailSchema } from 'entities/Article';
 import {
@@ -14,11 +13,14 @@ import {
 import { IAddCommentFormSchema } from 'features/AddCommentForm';
 import { IArticlesPageSchema } from 'pages/ArticlesPage';
 import { IScrollSaverSchema } from 'features/ScrollSaver';
+import { rtkApi } from 'shared/api/rtkApi';
+import { IProfileSchema } from 'features/editableProfileCard';
 
 export interface StateSchema{
     counter: CounterSchema;
     user: IUserSchema
     scrollSaver: IScrollSaverSchema
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
     loginForm?: ILoginSchema,
     profile?: IProfileSchema,
