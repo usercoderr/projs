@@ -32,13 +32,7 @@ const ArticleDetailsPage = ({ className }: IArticleDetailsPageProps) => {
     const { t } = useTranslation('articleDetails');
     const { id } = useParams<{ id: string }>();
 
-    if (!id) {
-        return (
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                {t('notFound')}
-            </Page>
-        );
-    }
+
 
     return (
         <DynamicModalLoader reducers={reducers} removeAfterUnmount>

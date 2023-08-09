@@ -36,7 +36,7 @@ import cls from './ArticleDetails.module.scss';
 
 interface IArticleDetailsProps {
     className?: string
-    id: string
+    id?: string
 }
 
 const reducers: TReducerList = {

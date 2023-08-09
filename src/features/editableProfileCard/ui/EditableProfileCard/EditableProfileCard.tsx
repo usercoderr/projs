@@ -28,7 +28,7 @@ import { EValidateProfileError } from '../../model/types/editableProfileCardSche
 
 interface EditableProfileCardProps {
     className?: string;
-    id: string
+    id?: string
 }
 const reducers: TReducerList = {
     profile: profileReducer,
