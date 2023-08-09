@@ -11,7 +11,8 @@ interface IArticleListProps {
     className?: string
     articles: IArticle[],
     isLoading?: boolean,
-    view?: EArticleView
+    view?: EArticleView,
+    virtualized?: boolean
 
 }
 const getSkeletons = (view:EArticleView) => new Array(view === EArticleView.SMALL ? 9 : 3)
@@ -26,6 +27,7 @@ export const ArticleList = memo((props: IArticleListProps) => {
         articles,
         view = EArticleView.SMALL,
         isLoading,
+        virtualized = true,
     } = props;
 
     const renderArticle = (article: IArticle) => (
