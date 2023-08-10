@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useMemo } from 'react';
 import { ITabItem, Tabs } from 'shared/ui/Tabs/Tabs';
-import { EArticleType } from 'entities/Article';
 import { useSelector } from 'react-redux';
 import { getArticlesPageType } from 'pages/ArticlesPage';
+import { EArticleType } from '../../model/consts/consts';
 import cls from './ArticleTypeTabs.module.scss';
 
 interface IArticleTypeTabsProps {

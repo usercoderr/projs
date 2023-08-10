@@ -10,7 +10,7 @@ import {
     getArticlesPageView,
 } from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
 import {
-    ArticleTypeTabs, ArticleViewSelector, EArticleSortField, EArticleView,
+    ArticleViewSelector, EArticleSortField, EArticleView,
 } from 'entities/Article';
 import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -19,8 +19,8 @@ import { Input } from 'shared/ui/Input/Input';
 import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
 import { TSortOrder } from 'shared/types';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { ITabItem } from 'shared/ui/Tabs/Tabs';
 import { EArticleType } from 'entities/Article/model/consts/consts';
+import { ArticleTypeTabs } from 'entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
 import {
     fetchArticlesList,
 } from '../../model/services/fetchArticlesList/fetchArticlesList';
