@@ -20,7 +20,7 @@ import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/Art
 import { TSortOrder } from 'shared/types';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { ITabItem } from 'shared/ui/Tabs/Tabs';
-import { EArticleType } from 'entities/Article/model/types/article';
+import { EArticleType } from 'entities/Article/model/consts/consts';
 import {
     fetchArticlesList,
 } from '../../model/services/fetchArticlesList/fetchArticlesList';

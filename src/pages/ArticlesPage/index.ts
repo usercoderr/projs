@@ -7,7 +7,7 @@ export {
     getArticlesPageNum,
 } from './model/selectors/articlesPageSelectors';
 
-export { IArticlesPageSchema } from './model/types/articlesPageSchema';
+export type { IArticlesPageSchema } from './model/types/articlesPageSchema';
 
 export {
     ArticlePageAsync as ArticlePage,

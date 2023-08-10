@@ -32,8 +32,6 @@ const ArticleDetailsPage = ({ className }: IArticleDetailsPageProps) => {
     const { t } = useTranslation('articleDetails');
     const { id } = useParams<{ id: string }>();
 
-
-
     return (
         <DynamicModalLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>

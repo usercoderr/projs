@@ -5,13 +5,13 @@ export {
     getArticleRecommendationsIsLoading,
 } from 'pages/ArticleDetailsPage/model/selectors/recommendations';
 
-export {
+export type {
     IArticleDetailsRecommendationsSchema,
 } from './model/types/IArticleDetailsRecommendationsSchema';
 
 export { getArticleCommentsError, getArticleCommentsIsLoading } from './model/selectors/comments';
 
-export {
+export type {
     IArticleDetailsCommentsSchema,
 } from './model/types/IArticleDetailsCommentsSchema';
 

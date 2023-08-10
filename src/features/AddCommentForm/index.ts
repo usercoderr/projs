@@ -10,4 +10,4 @@ export {
     getAddCommentFormError,
 } from './model/selectors/addCommentFormSelector';
 
-export { IAddCommentFormSchema } from './model/types/addCommentForm';
+export type { IAddCommentFormSchema } from './model/types/addCommentForm';

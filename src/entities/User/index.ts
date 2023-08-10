@@ -6,4 +6,4 @@ export {
 
 export { getUserAuthData } from './model/selectors/getUserAuthData';
 
-export { IUser, IUserSchema } from './model/types/user';
+export type { IUser, IUserSchema } from './model/types/user';

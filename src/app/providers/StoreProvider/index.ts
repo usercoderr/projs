@@ -3,4 +3,8 @@ import { AppDispatch } from 'app/providers/StoreProvider/config/store';
 
 export { StoreProvider } from './ui/StoreProvider';
 
-export { StateSchema, IThunkConfig, AppDispatch };
+export type {
+    StateSchema,
+    IThunkConfig,
+    AppDispatch,
+};

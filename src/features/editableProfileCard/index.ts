@@ -1,6 +1,8 @@
+export { EValidateProfileError } from './model/consts/consts';
+
 export {
     EditableProfileCardHeader,
 } from './ui/EditableProfileCardHeader/EditableProfileCardHeader';
 
 export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard';
-export { IProfileSchema } from './model/types/editableProfileCardSchema';
+export type { IProfileSchema } from './model/types/editableProfileCardSchema';

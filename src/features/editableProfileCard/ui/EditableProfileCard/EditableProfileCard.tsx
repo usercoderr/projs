@@ -11,7 +11,7 @@ import {
     DynamicModalLoader,
     TReducerList,
 } from 'shared/lib/components/DynamicModalLoader/DynamicModalLoader';
-import { EditableProfileCardHeader } from 'features/editableProfileCard';
+import { EditableProfileCardHeader, EValidateProfileError } from 'features/editableProfileCard';
 import {
     profileActions,
     profileReducer,
@@ -24,7 +24,6 @@ import {
     getProfileValidateErrors,
 } from '../../model/selectors/getEditableProfileSelectors';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
-import { EValidateProfileError } from '../../model/types/editableProfileCardSchema';
 
 interface EditableProfileCardProps {
     className?: string;

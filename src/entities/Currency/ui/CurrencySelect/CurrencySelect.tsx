@@ -30,7 +30,7 @@ export const CurrencySelect = memo(({
             className={className}
             value={value}
             items={options}
-            label="SelectCurrency"
+            label={t('SelectCurrency')}
             onChange={onChangeHandler}
             direction="top right"
         />
