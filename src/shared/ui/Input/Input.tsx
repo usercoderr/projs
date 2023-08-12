@@ -12,6 +12,7 @@ interface IInputProps extends HTMLInputProps {
     value?: string | number,
     autofocus?: boolean
     readonly?: boolean
+    fullWidth?: boolean
 }
 
 export const Input = memo((props: IInputProps) => {
@@ -23,6 +24,7 @@ export const Input = memo((props: IInputProps) => {
         value,
         type = 'text',
         placeholder,
+        fullWidth,
         readonly,
         ...otherProps
     } = props;
@@ -56,6 +58,7 @@ export const Input = memo((props: IInputProps) => {
 
     const mods: TMods = {
         [cls.readonly]: readonly,
+        [cls.fullWidth]: fullWidth,
     };
     return (
         <>
@@ -64,7 +67,7 @@ export const Input = memo((props: IInputProps) => {
                     {`${placeholder}`}
                 </div>
             )}
-            <div className={cls.caretWrapper}>
+            <div className={fullWidth ? cls.caretWrapperWidth : cls.caretWrapper}>
                 <input
                     ref={inputRef}
                     onSelect={onSelect}

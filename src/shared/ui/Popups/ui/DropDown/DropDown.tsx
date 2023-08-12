@@ -1,6 +1,6 @@
 import { Menu as HMenu } from '@headlessui/react';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { Fragment, ReactNode } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { TDropDownDirection } from '@/shared/types/ui';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import { mapDirectionClass } from '../../styles/consts';
@@ -43,7 +43,7 @@ export function Dropdown(props: IDropDownProps) {
                 className={classNames(cls.menu, {}, menuClasses)}
             >
                 {
-                    items.map((item) => {
+                    items.map((item, index) => {
                         const content = ({ active }: {active: boolean}) => (
                             <button
                                 type="button"
@@ -63,6 +63,7 @@ export function Dropdown(props: IDropDownProps) {
                         if (item.href) {
                             return (
                                 <HMenu.Item
+                                    key={`dropdownKey${index}`}
                                     disabled={item.disabled}
                                     as={AppLink}
                                     to={item.href}
@@ -73,6 +74,7 @@ export function Dropdown(props: IDropDownProps) {
                         }
                         return (
                             <HMenu.Item
+                                key={`dropdownKey${index}`}
                                 disabled={item.disabled}
                                 as={Fragment}
                             >

@@ -1,5 +1,5 @@
-import { classNames, TMods } from '@/shared/lib/classNames/classNames';
 import { ButtonHTMLAttributes, FC } from 'react';
+import { classNames, TMods } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 
 export enum EButtonTheme {
@@ -7,6 +7,7 @@ export enum EButtonTheme {
     CLEAR_INVERTED = 'clearInverted',
     OUTLINE = 'outline',
     OUTLINE_RED = 'outline_red',
+    OUTLINE_GREEN = 'outline_green',
     BACKGROUND = 'background',
     BACKGROUND_INVERTED = 'background-inverted',
 }
@@ -23,6 +24,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean,
     size?: ButtonSize,
     disabled?: boolean
+    fullWidth?: boolean
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -33,6 +35,7 @@ export const Button: FC<ButtonProps> = (props) => {
         square,
         size = ButtonSize.M,
         disabled,
+        fullWidth,
         ...otherProps
     } = props;
 
@@ -41,6 +44,7 @@ export const Button: FC<ButtonProps> = (props) => {
         [cls.square]: square,
         [cls[size]]: true,
         [cls.disabled]: disabled,
+        [cls.fullWidth]: fullWidth,
     };
     return (
         <button

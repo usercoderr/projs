@@ -61,5 +61,8 @@
   "Введите логин": "Введите логин",
   "Введите пароль": "Введите пароль",
   "Error": "Error",
-  "access": "access"
+  "access": "access",
+  "feedback": "feedback",
+  "cancel": "cancel",
+  "send": "send"
 }

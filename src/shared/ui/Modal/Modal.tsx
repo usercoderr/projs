@@ -10,7 +10,7 @@ interface IModalProps {
     className?: string
     children?: ReactNode;
     isOpen: boolean;
-    onClose: () => void;
+    onClose?: () => void;
     lazy?: boolean
 }
 const ANIMATION_DELAY = 500;

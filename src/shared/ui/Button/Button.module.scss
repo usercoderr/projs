@@ -33,6 +33,11 @@
   color: var(--red-light);
   background: none;
 }
+.outline_green {
+  border: 1px solid var(--green-light);
+  color: var(--primary-color);
+  background: var(--green-light);
+}
 
 .background {
   background: var(--bg-color);
@@ -79,4 +84,7 @@
 
 .disabled {
   opacity: 0.5;
+}
+.fullWidth{
+  width: 100%;
 }

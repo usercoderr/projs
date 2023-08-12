@@ -44,3 +44,11 @@ opacity: 0.7;
     opacity: 1;
   }
 }
+.fullWidth{
+  width: 100%;
+}
+.caretWrapperWidth{
+  flex-grow: 1;
+  width: 100%;
+  position: relative;
+}
