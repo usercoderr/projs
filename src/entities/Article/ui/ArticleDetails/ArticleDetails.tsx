@@ -1,13 +1,13 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { useCallback, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     DynamicModalLoader,
     TReducerList,
 } from '@/shared/lib/components/DynamicModalLoader/DynamicModalLoader';
 
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useCallback, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { ETextAlign, ETextSize, Text } from '@/shared/ui/Text/Text';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
@@ -82,9 +82,13 @@ export const ArticleDetails = ({ className, id }: IArticleDetailsProps) => {
     if (isLoading) {
         content = (
             <>
-                <Skeleton className={cls.avatar} width={200} border={100} height={200} />
+                <HStack gap="8" max justify="center">
+                    <Skeleton className={cls.avatar} width={200} border={100} height={200} />
+                </HStack>
                 <Skeleton className={cls.title} width={300} height={50} />
-                <Skeleton className={cls.skeleton} width={300} height={50} />
+                <HStack gap="8">
+                    <Skeleton className={cls.skeleton} width={300} height={50} />
+                </HStack>
                 <Skeleton className={cls.skeleton} width="100%" height={100} />
             </>
         );

@@ -77,5 +77,9 @@
   "Язык": "Язык",
   "feedback": "feedback",
   "cancel": "cancel",
-  "send": "send"
+  "send": "send",
+  "rateArticle": "rateArticle",
+  "leaveFeedback": "leaveFeedback",
+  "thankYou": "thankYou",
+  "rateProfile": "rateProfile"
 }

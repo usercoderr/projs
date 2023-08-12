@@ -20,6 +20,7 @@ import {
     articleDetailsRecommendationsReducer,
 } from '../../model/slices/articleDetailsRecommendationsSlice';
 import cls from './ArticleDetailsPage.module.scss';
+import { ArticleRating } from '@/features/articleRating';
 
 interface IArticleDetailsPageProps {
     className?: string,
@@ -31,12 +32,15 @@ const reducers: TReducerList = {
 const ArticleDetailsPage = ({ className }: IArticleDetailsPageProps) => {
     const { t } = useTranslation('articleDetails');
     const { id } = useParams<{ id: string }>();
-
+    if (!id) {
+        return null;
+    }
     return (
         <DynamicModalLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
+                <ArticleRating articleId={id} />
                 <ArticleRecommendationsList />
                 <ArticleDetailsComments id={id} />
             </Page>

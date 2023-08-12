@@ -17,6 +17,8 @@ interface IRatingProps {
     title?:string
     feedbackTitle?: string
     hasFeedback?: boolean,
+    rate?: number
+    max?: boolean
     onCancel?:(starsCount: number) =>void,
     onAccept?: (starsCount: number, feedback?:string) => void
 }
@@ -29,10 +31,12 @@ export const Rating = memo((props: IRatingProps) => {
         feedbackTitle,
         hasFeedback,
         onAccept,
+        max,
+        rate = 0,
         onCancel,
     } = props;
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [starsCount, setStarsCount] = useState(0);
+    const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
 
     const onSelectStars = useCallback((selectedStarsCount: number) => {
@@ -57,6 +61,7 @@ export const Rating = memo((props: IRatingProps) => {
         <>
             <Text title={feedbackTitle} />
             <Input
+                onChange={setFeedback}
                 value={feedback}
                 fullWidth
                 placeholder={t('feedback')}
@@ -65,10 +70,10 @@ export const Rating = memo((props: IRatingProps) => {
     );
 
     return (
-        <Card className={classNames(cls.Rating, {}, [className])}>
+        <Card className={classNames(cls.Rating, { [cls.max]: max }, [className])}>
             <VStack align="center" gap="8">
-                <Text title={title} />
-                <StarRating size={40} onSelect={onSelectStars} />
+                <Text title={starsCount ? t('thankYou') : title} />
+                <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
             </VStack>
             <BrowserView>
 

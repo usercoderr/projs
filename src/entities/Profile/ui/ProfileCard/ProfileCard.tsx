@@ -1,9 +1,8 @@
-import { classNames, TMods } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { classNames, TMods } from '@/shared/lib/classNames/classNames';
 import { ETextAlign, Text, TextTheme } from '@/shared/ui/Text/Text';
 import { Input } from '@/shared/ui/Input/Input';
 import { IProfile } from '@/entities/Profile';
-import { Loader } from '@/shared/ui/Loader/Loader';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { CurrencySelect } from '@/entities/Currency';
 import { ECurrency } from '@/entities/Currency/model/types/currency';
@@ -11,6 +10,7 @@ import { ECountry } from '@/entities/Country/model/types/country';
 import { CountrySelect } from '@/entities/Country';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import cls from './ProfileCard.module.scss';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 interface IProfileCardProps {
     className?: string,
@@ -52,9 +52,39 @@ export const ProfileCard = (props: IProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}>
-                <Loader />
-            </div>
+            <VStack gap="8" max className={classNames(cls.ProfileCard, mods, [className])}>
+
+                <HStack max justify="center" className={cls.avatarWrapper}>
+                    <Skeleton width={100} height={100} border="50%" />
+                </HStack>
+                <Skeleton className={cls.margin} width={90} height={24} />
+                <Skeleton className={cls.margin} width={177} height={26} />
+                <Skeleton className={cls.margin} width={90} height={24} />
+                <Skeleton className={cls.margin} width={177} height={26} />
+                <Skeleton className={cls.margin} width={90} height={24} />
+                <Skeleton className={cls.margin} width={177} height={26} />
+                <Skeleton className={cls.margin} width={90} height={24} />
+                <Skeleton className={cls.margin} width={177} height={26} />
+                <Skeleton className={cls.margin} width={90} height={24} />
+                <Skeleton className={cls.margin} width={177} height={26} />
+                <Skeleton className={cls.margin} width={90} height={24} />
+                <Skeleton className={cls.margin} width={177} height={26} />
+
+                <HStack justify="between" max>
+
+                    <Skeleton
+                        className={cls.margin}
+                        width={170}
+                        height={50}
+                    />
+                    <Skeleton
+                        className={cls.margin}
+                        width={170}
+                        height={50}
+                    />
+                </HStack>
+            </VStack>
+
         );
     }
     if (error) {

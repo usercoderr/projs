@@ -33,6 +33,128 @@
       "userId": "2"
     }
   ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedback": "",
+      "id": "I7ofk1u"
+    },
+    {
+      "userId": "1",
+      "articleId": "9",
+      "rate": 5,
+      "feedback": "asdasdasdasd",
+      "id": "Y7MhPzo"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 1,
+      "feedback": "отстой",
+      "id": "II0a75O"
+    },
+    {
+      "userId": "1",
+      "articleId": "7",
+      "rate": 3,
+      "feedback": "",
+      "id": "bcPnbbZ"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 4,
+      "id": "s_1DCp3"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 4,
+      "id": "t7BKR48"
+    },
+    {
+      "userId": "1",
+      "articleId": "8",
+      "rate": 1,
+      "id": "7aVE18b"
+    },
+    {
+      "userId": "1",
+      "articleId": "8",
+      "feedback": "",
+      "rate": 1,
+      "id": "16V8HT_"
+    },
+    {
+      "userId": "1",
+      "articleId": "14",
+      "rate": 2,
+      "id": "KOGRYWd"
+    },
+    {
+      "userId": "1",
+      "articleId": "14",
+      "rate": 2,
+      "id": "i3EtKph"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 0,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 0,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "2"
+    },
+    {
+      "userId": "1",
+      "profileId": "1",
+      "rate": 3,
+      "id": "PQ19kfI"
+    },
+    {
+      "userId": "1",
+      "profileId": "1",
+      "feedback": "sd",
+      "rate": 3,
+      "id": "ZZ_x1EC"
+    },
+    {
+      "userId": "1",
+      "profileId": "1",
+      "rate": 3,
+      "id": "XanV6Yt"
+    },
+    {
+      "userId": "1",
+      "profileId": "1",
+      "rate": 3,
+      "id": "_AT4wur"
+    }
+  ],
   "users": [
     {
       "id": "1",

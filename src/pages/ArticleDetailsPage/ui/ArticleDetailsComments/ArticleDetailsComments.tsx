@@ -1,9 +1,9 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import {
-    memo, Suspense, useCallback, useEffect,
+    memo, useCallback, useEffect,
 } from 'react';
 import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '@/pages/ArticleDetailsPage';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ETextSize, Text } from '@/shared/ui/Text/Text';
@@ -11,9 +11,8 @@ import { AddCommentForm } from '@/features/AddCommentForm';
 import { CommentList } from '@/entities/Comment';
 import {
     fetchCommentsByArticleId,
-} from '@/pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { VStack } from '@/shared/ui/Stack';
-import { Loader } from '@/shared/ui/Loader/Loader';
 import {
     getArticleDetailsComments,
 } from '../../model/slices/articleDetailsCommentsSlice';
@@ -55,9 +54,7 @@ export const ArticleDetailsComments = memo((props: IArticleDetailsCommentsProps)
                 size={ETextSize.L}
                 title={t('comment')}
             />
-            <Suspense fallback={<Loader />}>
-                <AddCommentForm onSendComment={onSendComment} />
-            </Suspense>
+            <AddCommentForm onSendComment={onSendComment} />
             <CommentList
                 isLoading={commentsIsLoading}
                 comments={comments}
