@@ -10,8 +10,8 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { Button, ButtonSize, EButtonTheme } from './Button';
 export default {
     title: 'shared/Button',
@@ -20,7 +20,7 @@ export default {
         backgroundColor: { control: 'color' },
     },
 };
-var Template = function (args) { return _jsx(Button, __assign({}, args), void 0); };
+var Template = function (args) { return _jsx(Button, __assign({}, args)); };
 export var Primary = Template.bind({});
 Primary.args = {
     children: 'Text',

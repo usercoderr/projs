@@ -10,8 +10,8 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { Navbar } from './Navbar';
 export default {
     title: 'widget/Navbar',
@@ -20,7 +20,7 @@ export default {
         backgroundColor: { control: 'color' },
     },
 };
-var Template = function (args) { return _jsx(Navbar, __assign({}, args), void 0); };
+var Template = function (args) { return _jsx(Navbar, __assign({}, args)); };
 export var Light = Template.bind({});
 Light.args = {};
 export var Dark = Template.bind({});

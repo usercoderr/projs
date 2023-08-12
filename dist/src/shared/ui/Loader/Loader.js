@@ -10,9 +10,9 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import './Loader.scss';
 export var Loader = function (_a) {
     var className = _a.className;
-    return (_jsxs("div", __assign({ className: classNames('lds-ellipsis', {}, [className]) }, { children: [_jsx("div", {}, void 0), _jsx("div", {}, void 0), _jsx("div", {}, void 0), _jsx("div", {}, void 0)] }), void 0));
+    return (_jsxs("div", __assign({ className: classNames('lds-ellipsis', {}, [className]) }, { children: [_jsx("div", {}), _jsx("div", {}), _jsx("div", {}), _jsx("div", {})] })));
 };

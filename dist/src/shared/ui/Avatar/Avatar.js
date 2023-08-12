@@ -1,5 +1,5 @@
 import { jsx as _jsx } from "react/jsx-runtime";
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
 import cls from './Avatar.module.scss';
@@ -11,5 +11,5 @@ export var Avatar = function (props) {
         width: size || 100,
         height: size || 100,
     }); }, [size]);
-    return (_jsx("img", { src: src, alt: alt, style: styles, className: classNames(cls.Avatar, mods, [className]) }, void 0));
+    return (_jsx("img", { src: src, alt: alt, style: styles, className: classNames(cls.Avatar, mods, [className]) }));
 };

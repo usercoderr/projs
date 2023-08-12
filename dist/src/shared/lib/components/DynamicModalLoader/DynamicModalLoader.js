@@ -2,12 +2,14 @@ import { Fragment as _Fragment, jsx as _jsx } from "react/jsx-runtime";
 import { useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 export var DynamicModalLoader = function (props) {
-    var children = props.children, reducers = props.reducers, removeAfterUnmount = props.removeAfterUnmount;
+    var children = props.children, reducers = props.reducers, _a = props.removeAfterUnmount, removeAfterUnmount = _a === void 0 ? true : _a;
     var store = useStore();
     var dispatch = useDispatch();
     useEffect(function () {
+        var mountedReducers = store.reducerManager.getReducerMap();
         Object.entries(reducers).forEach(function (_a) {
             var name = _a[0], reducer = _a[1];
+            var mounted = reducers[name];
             store.reducerManager.add(name, reducer);
             dispatch({ type: "@INIT ".concat(name, " reducer") });
         });
@@ -24,5 +26,5 @@ export var DynamicModalLoader = function (props) {
     }, []);
     return (
     // eslint-disable-next-line
-    _jsx(_Fragment, { children: children }, void 0));
+    _jsx(_Fragment, { children: children }));
 };

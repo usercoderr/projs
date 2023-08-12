@@ -1,2 +1,2 @@
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 export var StyleDecorator = function (story) { return story(); };

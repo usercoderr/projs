@@ -1,7 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, ReactNode, useCallback } from 'react';
-import { Card, ECardTheme } from 'shared/ui/Card/Card';
+import { Card, ECardTheme } from '@/shared/ui/Card/Card';
 import cls from './Tabs.module.scss';
 
 export interface ITabItem{

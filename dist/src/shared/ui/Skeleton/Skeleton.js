@@ -1,5 +1,5 @@
 import { jsx as _jsx } from "react/jsx-runtime";
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
 import cls from './Skeleton.module.scss';
 export var Skeleton = memo(function (props) {
@@ -9,5 +9,5 @@ export var Skeleton = memo(function (props) {
         height: height,
         borderRadius: border,
     };
-    return (_jsx("div", { className: classNames(cls.Skeleton, {}, [className]), style: styles }, void 0));
+    return (_jsx("div", { className: classNames(cls.Skeleton, {}, [className]), style: styles }));
 });

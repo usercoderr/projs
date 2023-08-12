@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
@@ -8,19 +8,19 @@ import {
     getArticlesPageSort,
     getArticlesPageType,
     getArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
+} from '@/pages/ArticlesPage/model/selectors/articlesPageSelectors';
 import {
     ArticleViewSelector, EArticleSortField, EArticleView,
-} from 'entities/Article';
-import { articlesPageActions } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/Input';
-import { ArticleSortSelector } from 'entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
-import { TSortOrder } from 'shared/types';
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { EArticleType } from 'entities/Article/model/consts/consts';
-import { ArticleTypeTabs } from 'entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
+} from '@/entities/Article';
+import { articlesPageActions } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Card } from '@/shared/ui/Card/Card';
+import { Input } from '@/shared/ui/Input/Input';
+import { ArticleSortSelector } from '@/entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
+import { TSortOrder } from '@/shared/types';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { EArticleType } from '@/entities/Article/model/consts/consts';
+import { ArticleTypeTabs } from '@/entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
 import {
     fetchArticlesList,
 } from '../../model/services/fetchArticlesList/fetchArticlesList';

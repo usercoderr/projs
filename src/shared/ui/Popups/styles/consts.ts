@@ -1,4 +1,4 @@
-import { TDropDownDirection } from 'shared/types/ui';
+import { TDropDownDirection } from '@/shared/types/ui';
 import cls from './popup.module.scss';
 
 export const mapDirectionClass: Record<TDropDownDirection, string> = {

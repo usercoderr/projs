@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ArticleDetails } from 'entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ArticleDetails } from '@/entities/Article';
 import {
     DynamicModalLoader,
     TReducerList,
-} from 'shared/lib/components/DynamicModalLoader/DynamicModalLoader';
-import { Page } from 'widgets/Page/Page';
-import { ArticleRecommendationsList } from 'features/articleRecommendationsList';
+} from '@/shared/lib/components/DynamicModalLoader/DynamicModalLoader';
+import { Page } from '@/widgets/Page/Page';
+import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleDetailsComments';
 import {
     ArticleDetailsPageHeader,

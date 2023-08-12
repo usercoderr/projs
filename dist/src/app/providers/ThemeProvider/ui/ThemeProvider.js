@@ -10,16 +10,16 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { useMemo, useState } from 'react';
+import { useMemo, useState, } from 'react';
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from '../lib/ThemeContext';
 var defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) || Theme.LIGHT;
-var ThemeProvider = function (_a) {
-    var children = _a.children;
-    var _b = useState(defaultTheme), theme = _b[0], setTheme = _b[1];
+var ThemeProvider = function (props) {
+    var defaultTheme = props.defaultTheme, children = props.children;
+    var _a = useState(defaultTheme), theme = _a[0], setTheme = _a[1];
     var defaultProps = useMemo(function () { return ({
         theme: theme,
         setTheme: setTheme,
     }); }, [theme]);
-    return (_jsx(ThemeContext.Provider, __assign({ value: defaultProps }, { children: children }), void 0));
+    return (_jsx(ThemeContext.Provider, __assign({ value: defaultProps }, { children: children })));
 };
 export default ThemeProvider;

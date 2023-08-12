@@ -26,7 +26,7 @@ var __assign = (this && this.__assign) || function () {
 };
 import { jsx as _jsx } from "react/jsx-runtime";
 import React, { Suspense } from 'react';
-import { ErrorPage } from 'widgets/ErrorPage/ui/ErrorPage';
+import { ErrorPage } from '@/widgets/ErrorPage';
 var ErrorBoundary = /** @class */ (function (_super) {
     __extends(ErrorBoundary, _super);
     function ErrorBoundary(props) {
@@ -35,21 +35,20 @@ var ErrorBoundary = /** @class */ (function (_super) {
         return _this;
     }
     ErrorBoundary.getDerivedStateFromError = function (error) {
-        // Update state so the next render will show the fallback UI.
+        // Update state so the next render will show the fallback ScrollSaver.
         return { hasError: true };
     };
     ErrorBoundary.prototype.componentDidCatch = function (error, errorInfo) {
         // You can also log the error to an error reporting service
-        console.log(error, errorInfo);
     };
     ErrorBoundary.prototype.render = function () {
         var hasError = this.state.hasError;
         var children = this.props.children;
         if (hasError) {
-            // You can render any custom fallback UI
-            return (_jsx(Suspense, __assign({ fallback: "" }, { children: _jsx(ErrorPage, {}, void 0) }), void 0));
+            // You can render any custom fallback ScrollSaver
+            return (_jsx(Suspense, __assign({ fallback: "" }, { children: _jsx(ErrorPage, {}) })));
         }
-        return _jsx("div", { children: children }, void 0);
+        return _jsx("div", { children: children });
     };
     return ErrorBoundary;
 }(React.Component));

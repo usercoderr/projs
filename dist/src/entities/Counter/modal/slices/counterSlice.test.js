@@ -1,5 +1,5 @@
-import { counterReducer } from 'entities/Counter';
-import { counterActions } from 'entities/Counter/modal/slices/counterSlice';
+import { counterReducer } from '@/entities/Counter';
+import { counterActions } from '@/entities/Counter/modal/slices/counterSlice';
 describe('counterSlice', function () {
     test('if state = undefined', function () {
         var state = {

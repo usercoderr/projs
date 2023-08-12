@@ -1,16 +1,16 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, EButtonTheme } from 'shared/ui/Button/Button';
-import { Input } from 'shared/ui/Input/Input';
+import { Button, EButtonTheme } from '@/shared/ui/Button/Button';
+import { Input } from '@/shared/ui/Input/Input';
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import {
     DynamicModalLoader, TReducerList,
-} from 'shared/lib/components/DynamicModalLoader/DynamicModalLoader';
+} from '@/shared/lib/components/DynamicModalLoader/DynamicModalLoader';
 import {
     getLoginUsername,
-} from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+} from '@/features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';

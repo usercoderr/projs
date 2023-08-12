@@ -1,12 +1,11 @@
-import { loginReducer } from 'features/AuthByUsername';
-import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice';
+import { loginActions, loginReducer } from './loginSlice';
 describe('loginSlice.test', function () {
     test('test set username', function () {
-        var state = { username: 'admin' };
-        expect(loginReducer(state, loginActions.setUsername('admin'))).toBe({ username: 'admin' });
+        var state = { username: '123' };
+        expect(loginReducer(state, loginActions.setUsername('123123'))).toEqual({ username: '123123' });
     });
     test('test set password', function () {
         var state = { password: '123' };
-        expect(loginReducer(state, loginActions.setPassword('123'))).toBe({ password: '123' });
+        expect(loginReducer(state, loginActions.setPassword('123123'))).toEqual({ password: '123123' });
     });
 });

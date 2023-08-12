@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchArticleById, } from 'entities/Article';
+import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
 var initialState = {
     isLoading: false,
     error: undefined,

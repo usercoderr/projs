@@ -22,7 +22,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { memo, useEffect, useRef, useState, } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 export var Input = memo(function (props) {
     var _a;
@@ -49,9 +49,9 @@ export var Input = memo(function (props) {
             inputRef.current.focus();
             setIsFocused(true);
         }
-    }, []);
+    }, [autofocus]);
     var mods = (_a = {},
         _a[cls.readonly] = readonly,
         _a);
-    return (_jsxs(_Fragment, { children: [placeholder && (_jsx("div", __assign({ className: cls.placeholder }, { children: "".concat(placeholder) }), void 0)), _jsxs("div", __assign({ className: cls.caretWrapper }, { children: [_jsx("input", __assign({ ref: inputRef, onSelect: onSelect, type: type, readOnly: readonly, onChange: onChangeHandler, value: value, onFocus: onFocus, onBlur: onBlur, className: classNames(cls.Input, {}, [className]) }, otherProps, { children: children }), void 0), isCaretVisible && (_jsx("span", { style: { left: "".concat(caretPosition * 9, "px") }, className: cls.caret }, void 0))] }), void 0)] }, void 0));
+    return (_jsxs(_Fragment, { children: [placeholder && (_jsx("div", __assign({ className: cls.placeholder }, { children: "".concat(placeholder) }))), _jsxs("div", __assign({ className: cls.caretWrapper }, { children: [_jsx("input", __assign({ ref: inputRef, onSelect: onSelect, type: type, readOnly: readonly, onChange: onChangeHandler, value: value, onFocus: onFocus, onBlur: onBlur, className: classNames(cls.Input, {}, [className]) }, otherProps, { children: children })), isCaretVisible && (_jsx("span", { style: { left: "".concat(caretPosition * 9, "px") }, className: cls.caret }))] }))] }));
 });

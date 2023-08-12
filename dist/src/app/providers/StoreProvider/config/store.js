@@ -10,16 +10,18 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { configureStore, } from '@reduxjs/toolkit';
-import { counterReducer } from 'entities/Counter';
-import { userReducer } from 'entities/User/model/slices/userSlice';
-import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
-import { $api } from 'shared/api/api';
-export function createReduxStore(initialState, asyncReducers, navigate) {
-    var rootReducer = __assign(__assign({}, asyncReducers), { counter: counterReducer, user: userReducer });
+import { counterReducer } from '@/entities/Counter';
+import { userReducer } from '@/entities/User/model/slices/userSlice';
+import { createReducerManager } from '@/app/providers/StoreProvider/config/reducerManager';
+import { $api } from '@/shared/api/api';
+import { scrollSaverReducer } from '@/features/ScrollSaver';
+import { rtkApi } from '@/shared/api/rtkApi';
+export function createReduxStore(initialState, asyncReducers) {
+    var _a;
+    var rootReducer = __assign(__assign({}, asyncReducers), (_a = { counter: counterReducer, user: userReducer, scrollSaver: scrollSaverReducer }, _a[rtkApi.reducerPath] = rtkApi.reducer, _a));
     var reducerManager = createReducerManager(rootReducer);
     var extraArg = {
         api: $api,
-        navigate: navigate,
     };
     var store = configureStore({
         reducer: reducerManager.reduce,
@@ -29,7 +31,7 @@ export function createReduxStore(initialState, asyncReducers, navigate) {
             thunk: {
                 extraArgument: extraArg,
             },
-        }); },
+        }).concat(rtkApi.middleware); },
     });
     // @ts-ignore
     store.reducerManager = reducerManager;

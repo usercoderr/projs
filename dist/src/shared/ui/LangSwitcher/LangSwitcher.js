@@ -24,7 +24,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -46,10 +46,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { Button, EButtonTheme } from 'shared/ui/Button/Button';
+import { Button, EButtonTheme } from '@/shared/ui/Button/Button';
 export var LangSwitcher = memo(function (_a) {
     var className = _a.className, short = _a.short;
     var _b = useTranslation(), t = _b.t, i18n = _b.i18n;
@@ -59,5 +59,5 @@ export var LangSwitcher = memo(function (_a) {
             return [2 /*return*/];
         });
     }); };
-    return (_jsx(Button, __assign({ className: classNames('', {}, [className]), theme: EButtonTheme.CLEAR, onClick: toggle }, { children: t(short ? 'shortLang' : 'Язык') }), void 0));
+    return (_jsx(Button, __assign({ className: classNames('', {}, [className]), theme: EButtonTheme.CLEAR, onClick: toggle }, { children: t(short ? 'shortLang' : 'Язык') })));
 });

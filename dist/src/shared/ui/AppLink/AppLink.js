@@ -21,17 +21,17 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Link } from 'react-router-dom';
 import cls from './AppLink.module.scss';
-export var AppLinkTheme;
-(function (AppLinkTheme) {
-    AppLinkTheme["PRIMARY"] = "primary";
-    AppLinkTheme["SECONDARY"] = "secondary";
-    AppLinkTheme["RED"] = "red";
-})(AppLinkTheme || (AppLinkTheme = {}));
+export var EAppLinkTheme;
+(function (EAppLinkTheme) {
+    EAppLinkTheme["PRIMARY"] = "primary";
+    EAppLinkTheme["SECONDARY"] = "secondary";
+    EAppLinkTheme["RED"] = "red";
+})(EAppLinkTheme || (EAppLinkTheme = {}));
 export var AppLink = function (props) {
     var _a;
-    var to = props.to, className = props.className, children = props.children, _b = props.theme, theme = _b === void 0 ? AppLinkTheme.PRIMARY : _b, otherProps = __rest(props, ["to", "className", "children", "theme"]);
-    return (_jsx(Link, __assign({ to: to, className: classNames(cls.AppLink, (_a = {}, _a[cls[theme]] = true, _a), [className]) }, otherProps, { children: children }), void 0));
+    var to = props.to, className = props.className, children = props.children, _b = props.theme, theme = _b === void 0 ? EAppLinkTheme.PRIMARY : _b, otherProps = __rest(props, ["to", "className", "children", "theme"]);
+    return (_jsx(Link, __assign({ to: to, className: classNames(cls.AppLink, (_a = {}, _a[cls[theme]] = true, _a), [className]) }, otherProps, { children: children })));
 };

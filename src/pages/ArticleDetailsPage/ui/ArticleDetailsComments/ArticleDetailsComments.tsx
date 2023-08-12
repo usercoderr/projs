@@ -1,19 +1,19 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import {
     memo, Suspense, useCallback, useEffect,
 } from 'react';
 import { useSelector } from 'react-redux';
-import { getArticleCommentsError, getArticleCommentsIsLoading } from 'pages/ArticleDetailsPage';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ETextSize, Text } from 'shared/ui/Text/Text';
-import { AddCommentForm } from 'features/AddCommentForm';
-import { CommentList } from 'entities/Comment';
+import { getArticleCommentsError, getArticleCommentsIsLoading } from '@/pages/ArticleDetailsPage';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ETextSize, Text } from '@/shared/ui/Text/Text';
+import { AddCommentForm } from '@/features/AddCommentForm';
+import { CommentList } from '@/entities/Comment';
 import {
     fetchCommentsByArticleId,
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { VStack } from 'shared/ui/Stack';
-import { Loader } from 'shared/ui/Loader/Loader';
+} from '@/pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { VStack } from '@/shared/ui/Stack';
+import { Loader } from '@/shared/ui/Loader/Loader';
 import {
     getArticleDetailsComments,
 } from '../../model/slices/articleDetailsCommentsSlice';

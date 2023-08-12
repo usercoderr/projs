@@ -11,13 +11,13 @@ var __assign = (this && this.__assign) || function () {
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Text } from 'shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text/Text';
 import cls from './ArticleTextBlockComponent.module.scss';
 export var ArticleTextBlockComponent = memo(function (_a) {
     var className = _a.className, block = _a.block;
     var t = useTranslation().t;
     return (_jsxs("div", __assign({ className: classNames(cls.ArticleTextBlockComponent, {}, [className]) }, { children: [block.title
-                && (_jsx(Text, { title: block.title, className: cls.title }, void 0)), block.paragraphs.map(function (paragraph) { return (_jsx(Text, { text: paragraph, className: cls.paragraph }, paragraph)); })] }), void 0));
+                && (_jsx(Text, { title: block.title, className: cls.title })), block.paragraphs.map(function (paragraph) { return (_jsx(Text, { text: paragraph, className: cls.paragraph }, paragraph)); })] })));
 });

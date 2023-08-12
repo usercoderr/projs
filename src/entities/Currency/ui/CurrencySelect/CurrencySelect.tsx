@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { ECurrency } from 'entities/Currency/model/types/currency';
-import { ListBox } from 'shared/ui/Popups';
+import { ECurrency } from '@/entities/Currency/model/types/currency';
+import { ListBox } from '@/shared/ui/Popups';
 
 interface ICurrencySelectProps{
     className?: string

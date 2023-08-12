@@ -3,7 +3,7 @@ import { ArticleDetailsPageAsync } from './ui/ArticleDetailsPage/ArticleDetailsP
 export {
     getArticleRecommendationsError,
     getArticleRecommendationsIsLoading,
-} from 'pages/ArticleDetailsPage/model/selectors/recommendations';
+} from './model/selectors/recommendations';
 
 export type {
     IArticleDetailsRecommendationsSchema,

@@ -10,7 +10,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import LoginForm from 'features/AuthByUsername/ui/LoginForm/LoginForm';
+import LoginForm from '@/features/AuthByUsername/ui/LoginForm/LoginForm';
 export default {
     title: 'features/LoginForm',
     component: LoginForm,
@@ -18,6 +18,6 @@ export default {
         backgroundColor: { control: 'color' },
     },
 };
-var Template = function (args) { return _jsx(LoginForm, __assign({}, args), void 0); };
+var Template = function (args) { return _jsx(LoginForm, __assign({}, args)); };
 export var Primary = Template.bind({});
 Primary.args = {};

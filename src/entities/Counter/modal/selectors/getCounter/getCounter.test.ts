@@ -1,6 +1,6 @@
-import { getCounter } from 'entities/Counter/modal/selectors/getCounter/getCounter';
+import { getCounter } from '@/entities/Counter/modal/selectors/getCounter/getCounter';
 import { DeepPartial } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
+import { StateSchema } from '@/app/providers/StoreProvider/config/StateSchema';
 
 describe('getCounter', () => {
     test('returnCounter', () => {

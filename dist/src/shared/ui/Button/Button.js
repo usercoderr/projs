@@ -21,7 +21,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Button.module.scss';
 export var EButtonTheme;
 (function (EButtonTheme) {
@@ -47,5 +47,5 @@ export var Button = function (props) {
         _a[cls[size]] = true,
         _a[cls.disabled] = disabled,
         _a);
-    return (_jsx("button", __assign({ disabled: disabled, type: "button", className: classNames(cls.Button, mods, [className]) }, otherProps, { children: children }), void 0));
+    return (_jsx("button", __assign({ disabled: disabled, type: "button", className: classNames(cls.Button, mods, [className]) }, otherProps, { children: children })));
 };

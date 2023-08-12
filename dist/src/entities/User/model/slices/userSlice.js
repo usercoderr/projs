@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
 var initialState = {
     _mounted: false,
 };

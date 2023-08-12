@@ -1,4 +1,4 @@
-import { Flex, IFlexProps } from 'shared/ui/Stack/Flex/Flex';
+import { Flex, IFlexProps } from '@/shared/ui/Stack/Flex/Flex';
 
 type VStackProps = Omit<IFlexProps, 'direction'>
 export const VStack = (props: VStackProps) => {

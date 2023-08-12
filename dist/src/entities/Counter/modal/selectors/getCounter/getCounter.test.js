@@ -1,4 +1,4 @@
-import { getCounter } from 'entities/Counter/modal/selectors/getCounter/getCounter';
+import { getCounter } from '@/entities/Counter/modal/selectors/getCounter/getCounter';
 describe('getCounter', function () {
     test('returnCounter', function () {
         var state = {

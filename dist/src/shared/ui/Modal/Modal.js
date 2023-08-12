@@ -9,51 +9,23 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-import { jsx as _jsx } from "react/jsx-runtime";
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useCallback, useEffect, useRef, useState, } from 'react';
-import { Portal } from 'shared/ui/Portal/Portal';
-import { useTheme } from 'app/providers/ThemeProvider';
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Portal } from '@/shared/ui/Portal/Portal';
+import { useTheme } from '@/app/providers/ThemeProvider';
+import { useModal } from '@/shared/lib/hooks/useModal/useModal';
+import { Overlay } from '../Overlay/Overlay';
 import cls from './Modal.module.scss';
 var ANIMATION_DELAY = 500;
 export var Modal = function (props) {
     var _a;
     var className = props.className, children = props.children, isOpen = props.isOpen, lazy = props.lazy, onClose = props.onClose;
-    var _b = useState(false), isClosing = _b[0], setIsClosing = _b[1];
-    var _c = useState(false), isMounted = _c[0], setIsMounted = _c[1];
-    var timerRef = useRef(null);
     var theme = useTheme().theme;
-    useEffect(function () {
-        if (isOpen) {
-            setIsMounted(true);
-        }
-    }, [isOpen]);
-    var closeHandler = useCallback(function () {
-        if (onClose) {
-            setIsClosing(true);
-            timerRef.current = setTimeout(function () {
-                onClose();
-                setIsClosing(false);
-            }, ANIMATION_DELAY);
-        }
-    }, [onClose]);
-    var onKeyDown = useCallback(function (e) {
-        if (e.key === 'Escape') {
-            closeHandler();
-        }
-    }, [closeHandler]);
-    var onContentClick = function (event) {
-        event.stopPropagation();
-    };
-    useEffect(function () {
-        if (isOpen) {
-            window.addEventListener('keydown', onKeyDown);
-        }
-        return function () {
-            window.removeEventListener('keydown', onKeyDown);
-            clearTimeout();
-        };
-    }, [isOpen, onKeyDown]);
+    var _b = useModal({
+        animationDelay: ANIMATION_DELAY,
+        isOpen: isOpen,
+        onClose: onClose,
+    }), isClosing = _b.isClosing, close = _b.close, isMounted = _b.isMounted;
     var mods = (_a = {},
         _a[cls.opened] = isOpen,
         _a[cls.isClosing] = isClosing,
@@ -61,5 +33,5 @@ export var Modal = function (props) {
     if (lazy && !isMounted) {
         return null;
     }
-    return (_jsx(Portal, { children: _jsx("div", __assign({ className: classNames(cls.Modal, mods, [className, theme, 'app_modal']) }, { children: _jsx("div", __assign({ onClick: closeHandler, className: cls.overlay }, { children: _jsx("div", __assign({ onClick: function (event) { return onContentClick(event); }, className: cls.content }, { children: children }), void 0) }), void 0) }), void 0) }, void 0));
+    return (_jsx(Portal, { children: _jsxs("div", __assign({ className: classNames(cls.Modal, mods, [className, theme, 'app_modal']) }, { children: [_jsx(Overlay, { onClick: close }), _jsx("div", __assign({ className: cls.content }, { children: children }))] })) }));
 };

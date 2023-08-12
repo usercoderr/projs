@@ -10,7 +10,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { Input } from 'shared/ui/Input/Input';
+import { Input } from '@/shared/ui/Input/Input';
 export default {
     title: 'shared/Input',
     component: Input,
@@ -18,7 +18,7 @@ export default {
         backgroundColor: { control: 'color' },
     },
 };
-var Template = function (args) { return _jsx(Input, __assign({}, args), void 0); };
+var Template = function (args) { return _jsx(Input, __assign({}, args)); };
 export var Primary = Template.bind({});
 Primary.args = {
     placeholder: 'Text',

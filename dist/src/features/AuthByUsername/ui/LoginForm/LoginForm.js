@@ -24,7 +24,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -46,19 +46,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, EButtonTheme } from 'shared/ui/Button/Button';
-import { Input } from 'shared/ui/Input/Input';
+import { Button, EButtonTheme } from '@/shared/ui/Button/Button';
+import { Input } from '@/shared/ui/Input/Input';
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
-import { DynamicModalLoader } from 'shared/lib/components/DynamicModalLoader/DynamicModalLoader';
-import { getLoginUsername } from 'features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
-import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword';
-import { getLoginIsLoading } from 'features/AuthByUsername/model/selectors/getLoginIsLoading/getLoginIsLoading';
-import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError/getLoginError';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { DynamicModalLoader, } from '@/shared/lib/components/DynamicModalLoader/DynamicModalLoader';
+import { getLoginUsername, } from '@/features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/LoginByUsername/loginByUsername';
 import cls from './LoginForm.module.scss';
 var initialReducers = {
@@ -92,6 +92,6 @@ var LoginForm = function (_a) {
             }
         });
     }); }, [dispatch, username, password, onSuccess]);
-    return (_jsx(DynamicModalLoader, __assign({ reducers: initialReducers, removeAfterUnmount: true }, { children: _jsxs("div", __assign({ className: classNames(cls.LoginForm, {}, [className]) }, { children: [_jsx(Input, { autofocus: true, onChange: onChangeUsername, value: username, type: "text", placeholder: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043B\u043E\u0433\u0438\u043D" }, void 0), _jsx(Input, { onChange: onChangePassword, value: password, type: "text", placeholder: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0430\u0440\u043E\u043B\u044C" }, void 0), _jsx(Button, __assign({ disabled: isLoading, onClick: onLoginClick, className: cls.loginBtn, theme: EButtonTheme.BACKGROUND_INVERTED }, { children: t('Login') }), void 0)] }), void 0) }), void 0));
+    return (_jsx(DynamicModalLoader, __assign({ reducers: initialReducers, removeAfterUnmount: true }, { children: _jsxs("div", __assign({ className: classNames(cls.LoginForm, {}, [className]) }, { children: [_jsx(Input, { autofocus: true, onChange: onChangeUsername, value: username, type: "text", placeholder: t('Введите логин') }), _jsx(Input, { onChange: onChangePassword, value: password, type: "text", placeholder: t('Введите пароль') }), _jsx(Button, __assign({ disabled: isLoading, onClick: onLoginClick, className: cls.loginBtn, theme: EButtonTheme.BACKGROUND_INVERTED }, { children: t('Login') }))] })) })));
 };
 export default LoginForm;

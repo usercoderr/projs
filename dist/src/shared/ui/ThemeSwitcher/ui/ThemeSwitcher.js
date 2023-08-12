@@ -10,13 +10,13 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Theme, useTheme } from 'app/providers/ThemeProvider';
-import LightIcon from 'shared/assets/icons/theme-light.svg';
-import DarkIcon from 'shared/assets/icons/theme-dark.svg';
-import { Button, EButtonTheme } from 'shared/ui/Button/Button';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Theme, useTheme } from '@/app/providers/ThemeProvider';
+import LightIcon from '@/shared/assets/icons/theme-light.svg';
+import DarkIcon from '@/shared/assets/icons/theme-dark.svg';
+import { Button, EButtonTheme } from '@/shared/ui/Button/Button';
 export var ThemeSwitcher = function (_a) {
     var className = _a.className;
     var _b = useTheme(), theme = _b.theme, toggleTheme = _b.toggleTheme;
-    return (_jsx(Button, __assign({ theme: EButtonTheme.CLEAR, className: classNames('', {}, [className]), onClick: toggleTheme }, { children: theme === Theme.DARK ? _jsx(DarkIcon, {}, void 0) : _jsx(LightIcon, {}, void 0) }), void 0));
+    return (_jsx(Button, __assign({ theme: EButtonTheme.CLEAR, className: classNames('', {}, [className]), onClick: toggleTheme }, { children: theme === Theme.DARK ? _jsx(DarkIcon, {}) : _jsx(LightIcon, {}) })));
 };

@@ -10,9 +10,9 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button/Button';
 import cls from './ErrorPage.module.scss';
 export var ErrorPage = function (_a) {
     var className = _a.className;
@@ -21,5 +21,5 @@ export var ErrorPage = function (_a) {
         // eslint-disable-next-line no-restricted-globals
         location.reload();
     };
-    return (_jsxs("div", __assign({ className: classNames(cls.ErrorPage, {}, [className]) }, { children: [_jsx("p", { children: t('Произошла непредвиденная ошибка') }, void 0), _jsxs(Button, __assign({ onClick: reloadPage }, { children: [t('Обновить страницу'), "sdsldlsd"] }), void 0)] }), void 0));
+    return (_jsxs("div", __assign({ className: classNames(cls.ErrorPage, {}, [className]) }, { children: [_jsx("p", { children: t('Произошла непредвиденная ошибка') }), _jsx(Button, __assign({ onClick: reloadPage }, { children: t('Обновить страницу') }))] })));
 };

@@ -1,4 +1,4 @@
-import { CountrySelect } from 'entities/Country/ui/CountrySelect/CountrySelect';
+import { CountrySelect } from './ui/CountrySelect/CountrySelect';
 
 export {
     CountrySelect,

@@ -11,14 +11,14 @@ var __assign = (this && this.__assign) || function () {
 };
 import { jsx as _jsx } from "react/jsx-runtime";
 import { render, screen } from '@testing-library/react';
-import { Button, EButtonTheme } from 'shared/ui/Button/Button';
+import { Button, EButtonTheme } from '@/shared/ui/Button/Button';
 describe('Button', function () {
     test('Test render', function () {
-        render(_jsx(Button, { children: "TEST" }, void 0));
+        render(_jsx(Button, { children: "TEST" }));
         expect(screen.getByText('TEST')).toBeInTheDocument();
     });
     test('Test clear theme', function () {
-        render(_jsx(Button, __assign({ theme: EButtonTheme.CLEAR }, { children: "TEST" }), void 0));
+        render(_jsx(Button, __assign({ theme: EButtonTheme.CLEAR }, { children: "TEST" })));
         expect(screen.getByText('TEST')).toHaveClass('clear');
     });
 });

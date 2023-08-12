@@ -1,8 +1,9 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useTranslation } from 'react-i18next';
-import { Counter } from 'entities/Counter';
+import { Counter } from '@/entities/Counter';
+import { Page } from '@/widgets/Page/Page';
 var AboutPage = function () {
     var t = useTranslation('about').t;
-    return (_jsxs("div", { children: [t('О сайте'), _jsx(Counter, {}, void 0)] }, void 0));
+    return (_jsxs(Page, { children: [t('О сайте'), _jsx(Counter, {})] }));
 };
 export default AboutPage;

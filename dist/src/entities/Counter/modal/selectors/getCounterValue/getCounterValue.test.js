@@ -1,4 +1,4 @@
-import { getCounterValue } from 'entities/Counter/modal/selectors/getCounterValue/getCounterValue';
+import { getCounterValue } from '@/entities/Counter/modal/selectors/getCounterValue/getCounterValue';
 describe('getCounterValue', function () {
     test('return CounterValue', function () {
         var state = {

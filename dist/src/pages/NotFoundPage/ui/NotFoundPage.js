@@ -10,7 +10,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
@@ -22,7 +22,7 @@ export var NotFoundPage = function (_a) {
     useEffect(function () {
         setTimeout(function () {
             navigate('/');
-        }, 3000);
-    }, []);
-    return (_jsx("div", __assign({ className: classNames(cls.NotFoundPage, {}, [className]) }, { children: t('Страница не найдена') }), void 0));
+        }, 2000);
+    }, [navigate]);
+    return (_jsx("div", __assign({ className: classNames(cls.NotFoundPage, {}, [className]) }, { children: t('Страница не найдена') })));
 };

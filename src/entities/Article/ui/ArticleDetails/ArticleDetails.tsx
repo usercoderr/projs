@@ -1,18 +1,18 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import {
     DynamicModalLoader,
     TReducerList,
-} from 'shared/lib/components/DynamicModalLoader/DynamicModalLoader';
+} from '@/shared/lib/components/DynamicModalLoader/DynamicModalLoader';
 
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { ETextAlign, ETextSize, Text } from 'shared/ui/Text/Text';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { ETextAlign, ETextSize, Text } from '@/shared/ui/Text/Text';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import EyeIcon from '../../../../shared/assets/icons/view.svg';
 import CalendarIcon from '../../../../shared/assets/icons/calendar.svg';
 import cls from './ArticleDetails.module.scss';

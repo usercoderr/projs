@@ -1,16 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { getArticles } from 'pages/ArticlesPage/model/slices/articlesPageSlice';
+import { getArticles } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
     getArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+} from '@/pages/ArticlesPage/model/selectors/articlesPageSelectors';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSearchParams } from 'react-router-dom';
-import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList';
-import { Text } from 'shared/ui/Text/Text';
+import { ArticleList } from '@/entities/Article/ui/ArticleList/ArticleList';
+import { Text } from '@/shared/ui/Text/Text';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 
 interface IArticleInfiniteListProps {

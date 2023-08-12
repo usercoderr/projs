@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IProfileSchema } from 'features/editableProfileCard';
-import { IProfile } from 'entities/Profile';
+import { IProfileSchema } from '@/features/editableProfileCard';
+import { IProfile } from '@/entities/Profile';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 

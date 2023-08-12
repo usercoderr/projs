@@ -4,8 +4,8 @@ import {
     EArticleType,
     EArticleView,
     IArticle,
-} from 'entities/Article';
-import { TSortOrder } from 'shared/types';
+} from '@/entities/Article';
+import { TSortOrder } from '@/shared/types';
 
 export interface IArticlesPageSchema extends EntityState<IArticle>{
     isLoading?: boolean,

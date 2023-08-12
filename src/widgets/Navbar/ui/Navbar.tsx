@@ -1,16 +1,16 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import React, { useCallback, useState } from 'react';
-import { Button, EButtonTheme } from 'shared/ui/Button/Button';
-import { LoginModal } from 'features/AuthByUsername';
+import { Button, EButtonTheme } from '@/shared/ui/Button/Button';
+import { LoginModal } from '@/features/AuthByUsername';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
-import { Text } from 'shared/ui/Text/Text';
-import { AppLink, EAppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { HStack } from 'shared/ui/Stack';
-import { NotificationButton } from 'features/notificationButton';
-import { AvatarDropdown } from 'features/avatarDropdown';
+import { getUserAuthData } from '@/entities/User';
+import { Text } from '@/shared/ui/Text/Text';
+import { AppLink, EAppLinkTheme } from '@/shared/ui/AppLink/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { HStack } from '@/shared/ui/Stack';
+import { NotificationButton } from '@/features/notificationButton';
+import { AvatarDropdown } from '@/features/avatarDropdown';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {

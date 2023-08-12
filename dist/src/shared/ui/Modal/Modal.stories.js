@@ -10,9 +10,9 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { Modal } from "shared/ui/Modal/Modal";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "app/providers/ThemeProvider";
+import { Modal } from '@/shared/ui/Modal/Modal';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 export default {
     title: 'shared/modal',
     component: Modal,
@@ -20,7 +20,7 @@ export default {
         backgroundColor: { control: 'color' },
     },
 };
-var Template = function (args) { return _jsx(Modal, __assign({}, args), void 0); };
+var Template = function (args) { return _jsx(Modal, __assign({}, args)); };
 export var Primary = Template.bind({});
 Primary.args = {
     children: 'Text',

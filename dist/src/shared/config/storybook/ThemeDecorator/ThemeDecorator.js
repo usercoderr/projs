@@ -10,4 +10,5 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-export var ThemeDecorator = function (theme) { return function (StoryComponent) { return (_jsx("div", __assign({ className: "app ".concat(theme) }, { children: _jsx(StoryComponent, {}, void 0) }), void 0)); }; };
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
+export var ThemeDecorator = function (theme) { return function (StoryComponent) { return (_jsx(ThemeProvider, __assign({ defaultTheme: theme }, { children: _jsx("div", __assign({ className: "app ".concat(theme) }, { children: _jsx(StoryComponent, {}) })) }))); }; };

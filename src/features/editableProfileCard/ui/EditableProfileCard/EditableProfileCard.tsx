@@ -1,16 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useEffect } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 
-import { ECurrency } from 'entities/Currency/model/types/currency';
-import { ECountry } from 'entities/Country/model/types/country';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { ProfileCard } from 'entities/Profile';
+import { ECurrency } from '@/entities/Currency/model/types/currency';
+import { ECountry } from '@/entities/Country/model/types/country';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { ProfileCard } from '@/entities/Profile';
 import {
     DynamicModalLoader,
     TReducerList,
-} from 'shared/lib/components/DynamicModalLoader/DynamicModalLoader';
+} from '@/shared/lib/components/DynamicModalLoader/DynamicModalLoader';
 import {
     profileActions,
     profileReducer,

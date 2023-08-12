@@ -10,9 +10,9 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { AppLink, AppLinkTheme } from './AppLink';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { AppLink, EAppLinkTheme } from './AppLink';
 export default {
     title: 'shared/AppLink',
     component: AppLink,
@@ -23,37 +23,37 @@ export default {
         to: '/',
     },
 };
-var Template = function (args) { return _jsx(AppLink, __assign({}, args), void 0); };
+var Template = function (args) { return _jsx(AppLink, __assign({}, args)); };
 export var Primary = Template.bind({});
 Primary.args = {
     children: 'Text',
-    theme: AppLinkTheme.PRIMARY,
+    theme: EAppLinkTheme.PRIMARY,
 };
 export var Secondary = Template.bind({});
 Secondary.args = {
     children: 'Text',
-    theme: AppLinkTheme.SECONDARY,
+    theme: EAppLinkTheme.SECONDARY,
 };
 export var Red = Template.bind({});
 Red.args = {
     children: 'Text',
-    theme: AppLinkTheme.RED,
+    theme: EAppLinkTheme.RED,
 };
 export var PrimaryDark = Template.bind({});
 PrimaryDark.args = {
     children: 'Text',
-    theme: AppLinkTheme.PRIMARY,
+    theme: EAppLinkTheme.PRIMARY,
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 export var SecondaryDark = Template.bind({});
 SecondaryDark.args = {
     children: 'Text',
-    theme: AppLinkTheme.SECONDARY,
+    theme: EAppLinkTheme.SECONDARY,
 };
 SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 export var RedDark = Template.bind({});
 RedDark.args = {
     children: 'Text',
-    theme: AppLinkTheme.RED,
+    theme: EAppLinkTheme.RED,
 };
 RedDark.decorators = [ThemeDecorator(Theme.DARK)];

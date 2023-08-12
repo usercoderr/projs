@@ -10,13 +10,13 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { Code } from 'shared/ui/Code/Code';
+import { Code } from '@/shared/ui/Code/Code';
 import cls from './ArticleCodeBlockComponent.module.scss';
 export var ArticleCodeBlockComponent = memo(function (_a) {
     var className = _a.className, block = _a.block;
     var t = useTranslation().t;
-    return (_jsx("div", __assign({ className: classNames(cls.ArticleCodeBlockComponent, {}, [className]) }, { children: _jsx(Code, { text: block === null || block === void 0 ? void 0 : block.code }, void 0) }), void 0));
+    return (_jsx("div", __assign({ className: classNames(cls.ArticleCodeBlockComponent, {}, [className]) }, { children: _jsx(Code, { text: block === null || block === void 0 ? void 0 : block.code }) })));
 });

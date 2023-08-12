@@ -1,5 +1,4 @@
-import { Counter } from 'entities/Counter/ui/Counter';
+export { Counter } from './ui/Counter';
 
-export { counterReducer } from 'entities/Counter/modal/slices/counterSlice';
+export { counterReducer } from './modal/slices/counterSlice';
 export type { CounterSchema } from './modal/types/counterSchema';
-export { Counter };

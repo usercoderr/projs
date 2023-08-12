@@ -10,7 +10,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { Button } from 'shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button/Button';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 // Компонент для тестирования ErrorBoundary
@@ -23,5 +23,5 @@ export var BugButton = function () {
             throw new Error();
         }
     }, [error]);
-    return (_jsx(Button, __assign({ onClick: onThrow }, { children: t('throw error') }), void 0));
+    return (_jsx(Button, __assign({ onClick: onThrow }, { children: t('throw error') })));
 };
