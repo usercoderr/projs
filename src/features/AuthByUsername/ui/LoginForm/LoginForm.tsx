@@ -9,7 +9,7 @@ import {
 } from '@/shared/lib/components/DynamicModalLoader/DynamicModalLoader';
 import {
     getLoginUsername,
-} from '@/features/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
+} from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';

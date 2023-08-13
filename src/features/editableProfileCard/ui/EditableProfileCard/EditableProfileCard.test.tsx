@@ -1,12 +1,11 @@
 import { userEvent } from '@storybook/testing-library';
 import { screen } from '@testing-library/react';
 import { IProfile } from '@/entities/Profile';
-import { ECurrency } from '@/entities/Currency/model/types/currency';
-import { ECountry } from '@/entities/Country/model/types/country';
-import { profileReducer } from '@/features/editableProfileCard/model/slice/profileSlice';
-import { EditableProfileCard } from '@/features/editableProfileCard';
+import { EditableProfileCard, profileReducer } from '@/features/editableProfileCard';
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import { $api } from '@/shared/api/api';
+import { ECurrency } from '@/entities/Currency';
+import { ECountry } from '@/entities/Country';
 
 const axios = require('axios');
 

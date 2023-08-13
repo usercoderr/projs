@@ -1,20 +1,9 @@
-import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
-import { useNavigate } from 'react-router';
+import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { EArticleBlockType, EArticleView, IArticle } from '@/entities/Article';
-import { Text } from '@/shared/ui/Text/Text';
-import { Icon } from '@/shared/ui/Icon/Icon';
-import EyeIcon from '@/shared/assets/icons/view.svg';
+import { EArticleView } from '@/entities/Article';
 import { Card } from '@/shared/ui/Card/Card';
-import { useHover } from '@/shared/lib/hooks/useHover/useHover';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Button, EButtonTheme } from '@/shared/ui/Button/Button';
-import { IArticleTextBlock } from '@/entities/Article/model/types/article';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
-import { RoutePath } from '@/shared/const/router';
 
 interface IArticleListItemSkeletonProps {
     className?: string

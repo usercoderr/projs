@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { ILoginFormProps } from '@/features/AuthByUsername/ui/LoginForm/LoginForm';
+import { ILoginFormProps } from '../../ui/LoginForm/LoginForm';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 const LoginFormLazy = lazy(() => import('./LoginForm'));

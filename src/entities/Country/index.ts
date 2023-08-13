@@ -1,5 +1,2 @@
-import { CountrySelect } from './ui/CountrySelect/CountrySelect';
-
-export {
-    CountrySelect,
-};
+export { CountrySelect } from './ui/CountrySelect/CountrySelect';
+export { ECountry } from './model/types/country';

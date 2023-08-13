@@ -5,8 +5,9 @@ import { useNavigate } from 'react-router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Dropdown } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { getUserAuthData, isUserAdmin, isUserManager } from '@/entities/User';
-import { userActions } from '@/entities/User/model/slices/userSlice';
+import {
+    getUserAuthData, isUserAdmin, isUserManager, userActions, 
+} from '@/entities/User';
 import cls from './AvatarDropdown.module.scss';
 import { RoutePath } from '@/shared/const/router';
 

@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { Dispatch } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { userActions } from '@/entities/User/model/slices/userSlice';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { loginByUsername } from './loginByUsername';
+import { userActions } from '@/entities/User';
 
 jest.mock('axios');
 const mockedAxios: jest.MockedObjectDeep<typeof axios> = jest.mocked(axios, true);

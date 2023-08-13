@@ -3,8 +3,8 @@ import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
-import { ECurrency } from '@/entities/Currency/model/types/currency';
-import { ECountry } from '@/entities/Country/model/types/country';
+import { ECurrency } from '@/entities/Currency';
+import { ECountry } from '@/entities/Country';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { ProfileCard } from '@/entities/Profile';
 import {

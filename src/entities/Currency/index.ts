@@ -1,5 +1,3 @@
-import { CurrencySelect } from '@/entities/Currency/ui/CurrencySelect/CurrencySelect';
+export { CurrencySelect } from './ui/CurrencySelect/CurrencySelect';
 
-export {
-    CurrencySelect,
-};
+export { ECurrency } from './model/types/currency';
