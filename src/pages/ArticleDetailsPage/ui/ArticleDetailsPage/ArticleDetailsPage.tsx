@@ -7,7 +7,7 @@ import {
     DynamicModalLoader,
     TReducerList,
 } from '@/shared/lib/components/DynamicModalLoader/DynamicModalLoader';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleDetailsComments';
 import {

@@ -1,3 +1,5 @@
+export { EUserRole } from './model/consts/consts';
+
 export {
     isUserAdmin,
     isUserManager,

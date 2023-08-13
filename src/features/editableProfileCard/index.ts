@@ -1,3 +1,5 @@
+export { profileReducer } from './model/slice/profileSlice';
+
 export { EValidateProfileError } from './model/consts/consts';
 
 export {

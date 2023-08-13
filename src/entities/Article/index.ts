@@ -1,3 +1,9 @@
+export { ArticleList } from './ui/ArticleList/ArticleList';
+
+export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
+
+export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
+
 export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
 
 export {
@@ -6,7 +12,6 @@ export {
     getArticleDetailsIsLoading,
 } from './model/selectors/articleDetails';
 export { fetchArticleById } from './model/services/fetchArticleById/fetchArticleById';
-
 export {
     articleDetailsActions,
     articleDetailsReducer,

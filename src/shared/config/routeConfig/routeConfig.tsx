@@ -8,7 +8,7 @@ import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
 import { ArticleEditPage } from '@/pages/ArticleEditPage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
-import { EUserRole } from '@/entities/User/model/consts/consts';
+import { EUserRole } from '@/entities/User';
 
 export type AppRouteProps = RouteProps & {
     authOnly?: boolean,

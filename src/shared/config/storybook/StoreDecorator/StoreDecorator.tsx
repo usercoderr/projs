@@ -1,11 +1,11 @@
 import { Story } from '@storybook/react';
 import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
-import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
-import { profileReducer } from '@/features/editableProfileCard/model/slice/profileSlice';
 import { TReducerList } from '@/shared/lib/components/DynamicModalLoader/DynamicModalLoader';
 import { addCommentFormReducer } from '@/features/AddCommentForm';
+import { loginReducer } from '@/features/AuthByUsername';
+import { profileReducer } from '@/features/editableProfileCard';
+import { articleDetailsReducer } from '@/entities/Article';
 
 const defaultAsyncReducers: TReducerList = {
     loginForm: loginReducer,
