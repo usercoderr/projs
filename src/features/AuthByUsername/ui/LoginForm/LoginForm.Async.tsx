@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { ILoginFormProps } from '../../ui/LoginForm/LoginForm';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 const LoginFormLazy = lazy(() => import('./LoginForm'));
 export const LoginFormAsync = (props: ILoginFormProps) => (

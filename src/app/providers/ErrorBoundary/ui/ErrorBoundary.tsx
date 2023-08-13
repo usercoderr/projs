@@ -17,12 +17,10 @@ class ErrorBoundary
     }
 
     static getDerivedStateFromError(error: Error) {
-        // Update state so the next render will show the fallback ScrollSaver.
         return { hasError: true };
     }
 
     componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-        // You can also log the error to an error reporting service
     }
 
     render() {
@@ -30,7 +28,6 @@ class ErrorBoundary
         const { children } = this.props;
 
         if (hasError) {
-            // You can render any custom fallback ScrollSaver
             return (
                 <Suspense fallback="">
                     <ErrorPage />

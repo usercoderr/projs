@@ -1,4 +1,3 @@
-import path from 'path';
 import { createSelector } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
 

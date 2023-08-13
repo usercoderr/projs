@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '@/pages/ArticleDetailsPage';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ETextSize, Text } from '@/shared/ui/Text/Text';
+import { ETextSize, Text } from '@/shared/ui/Text';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { CommentList } from '@/entities/Comment';
 import {

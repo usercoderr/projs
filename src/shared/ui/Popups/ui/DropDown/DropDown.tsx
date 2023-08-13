@@ -2,7 +2,7 @@ import { Menu as HMenu } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { TDropDownDirection } from '@/shared/types/ui';
-import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { AppLink } from '@/shared/ui/AppLink';
 import { mapDirectionClass } from '../../styles/consts';
 import cls from './DropDown.module.scss';
 import popupCls from '../../styles/popup.module.scss';

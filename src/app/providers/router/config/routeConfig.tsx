@@ -3,13 +3,13 @@ import { AboutPage } from '@/pages/AboutPage';
 import { ArticlePage } from '@/pages/ArticlesPage';
 import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
 import { ArticleEditPage } from '@/pages/ArticleEditPage';
-import { ProfilePage } from '@/pages/ProfilePage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { EUserRole } from '@/entities/User';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { EAppRoutes, RoutePath } from '@/shared/const/router';
-import { EAppRouteProps } from '@/app/providers/router/model/types/router';
+import { EAppRouteProps } from '../model/types/router';
+import { ProfilePage } from '@/pages/ProfilePage';
 
 export const routeConfig: Record<EAppRoutes, EAppRouteProps> = {
     [EAppRoutes.MAIN]: {

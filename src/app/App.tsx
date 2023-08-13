@@ -1,17 +1,16 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import './styles/index.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useTheme } from '@/app/providers/ThemeProvider';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { userActions, getUserMounted } from '@/entities/User';
-import { AppRouter } from '@/app/providers/router';
+import { AppRouter } from './providers/router';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 function App() {
     const { theme } = useTheme();
     const dispatch = useDispatch();
-    const [isOpen, setIsOpen] = useState(false);
     const mounted = useSelector(getUserMounted);
 
     useEffect(() => {

@@ -2,10 +2,10 @@ import React, { memo, useState } from 'react';
 import { BrowserView, isMobile, MobileView } from 'react-device-detect';
 import NotificationIcon from '@/shared/assets/icons/popUp.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, EButtonTheme } from '@/shared/ui/Button/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Button, EButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 import { NotificationList } from '@/entities/Notification';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { Drawer } from '@/shared/ui/Drawer';
 import { Popover } from '@/shared/ui/Popups';
 import cls from './NotificationButton.module.scss';
 

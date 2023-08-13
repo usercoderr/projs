@@ -1,4 +1,4 @@
-import { Flex, IFlexProps } from '@/shared/ui/Stack/Flex/Flex';
+import { Flex, IFlexProps } from '@/shared/ui/Stack';
 
 type HStackProps = Omit<IFlexProps, 'direction'>
 export const HStack = (props: HStackProps) => {

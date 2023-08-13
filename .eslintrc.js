@@ -23,10 +23,12 @@ module.exports = {
         'i18next',
         'react-hooks',
         'usercoder-plugin',
+        'unused-imports',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
         'no-param-reassign': 'off',
+        'unused-imports/no-unused-imports': 'error',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         'react/jsx-indent-props': [2, 4],
@@ -69,6 +71,13 @@ module.exports = {
         'max-len': ['error', { ignoreComments: true, code: 100 }],
         'jsx-a11y/click-events-have-key-events': 'off',
         'usercoder-plugin/path-checker': ['error', { alias: '@' }],
+        'usercoder-plugin/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportsPatterns: ['**/StoreProvider', '**/ThemeDecorator.tsx'],
+            },
+        ],
         'usercoder-plugin/public-api-imports': [
             'error',
             {

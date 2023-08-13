@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { classNames, TMods } from '@/shared/lib/classNames/classNames';
-import { ETextAlign, Text, TextTheme } from '@/shared/ui/Text/Text';
-import { Input } from '@/shared/ui/Input/Input';
+import { ETextAlign, Text, TextTheme } from '@/shared/ui/Text';
+import { Input } from '@/shared/ui/Input';
 import { IProfile } from '@/entities/Profile';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { CurrencySelect, ECurrency } from '@/entities/Currency';
-import { ECountry, CountrySelect } from '@/entities/Country';
+import { Avatar } from '@/shared/ui/Avatar';
 import { HStack, VStack } from '@/shared/ui/Stack';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { CurrencySelect, ECurrency } from '@/entities/Currency';
+import { CountrySelect, ECountry } from '@/entities/Country';
 import cls from './ProfileCard.module.scss';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 interface IProfileCardProps {
     className?: string,

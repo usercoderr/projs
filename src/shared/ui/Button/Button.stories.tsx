@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { Button, ButtonSize, EButtonTheme } from './Button';
+import { ETheme } from '@/shared/const/theme';
 
 export default {
     title: 'shared/Button',
@@ -52,7 +52,7 @@ OutlineDark.args = {
     children: 'Text',
     theme: EButtonTheme.OUTLINE,
 };
-OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+OutlineDark.decorators = [ThemeDecorator(ETheme.DARK)];
 export const Background = Template.bind({});
 Background.args = {
     children: 'Text',

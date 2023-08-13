@@ -1,7 +1,9 @@
 import { Story } from '@storybook/react';
-import { Theme, ThemeProvider } from '@/app/providers/ThemeProvider';
+import { ETheme } from '@/shared/const/theme';
+// eslint-disable-line usercoder-plugin/layer-imports
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 
-export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => (
+export const ThemeDecorator = (theme: ETheme) => (StoryComponent: Story) => (
     <ThemeProvider defaultTheme={theme}>
         <div className={`app ${theme}`}>
             <StoryComponent />
