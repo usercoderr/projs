@@ -11,10 +11,10 @@ import { useHover } from '@/shared/lib/hooks/useHover/useHover';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Button, EButtonTheme } from '@/shared/ui/Button/Button';
 import { IArticleTextBlock } from '@/entities/Article/model/types/article';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
+import { RoutePath } from '@/shared/const/router';
 
 interface IArticleListItemSkeletonProps {
     className?: string

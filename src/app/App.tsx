@@ -5,8 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
-import { userActions } from '@/entities/User/model/slices/userSlice';
-import { getUserMounted } from '@/entities/User/model/selectors/getUserMounted/getUserMounted';
+import { userActions, getUserMounted } from '@/entities/User';
 import { AppRouter } from '@/app/providers/router';
 
 function App() {

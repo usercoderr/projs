@@ -69,7 +69,13 @@ module.exports = {
         'max-len': ['error', { ignoreComments: true, code: 100 }],
         'jsx-a11y/click-events-have-key-events': 'off',
         'usercoder-plugin/path-checker': ['error', { alias: '@' }],
-        'usercoder-plugin/public-api-imports': ['error', { alias: '@' }],
+        'usercoder-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilePatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,

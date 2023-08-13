@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Dropdown } from '@/shared/ui/Popups';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { getUserAuthData, isUserAdmin, isUserManager } from '@/entities/User';
 import { userActions } from '@/entities/User/model/slices/userSlice';
 import cls from './AvatarDropdown.module.scss';
+import { RoutePath } from '@/shared/const/router';
 
 interface IAvatarDropdownProps {
     className?: string

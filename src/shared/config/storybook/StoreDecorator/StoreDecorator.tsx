@@ -3,9 +3,9 @@ import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { TReducerList } from '@/shared/lib/components/DynamicModalLoader/DynamicModalLoader';
 import { addCommentFormReducer } from '@/features/AddCommentForm';
-import { loginReducer } from '@/features/AuthByUsername';
 import { profileReducer } from '@/features/editableProfileCard';
 import { articleDetailsReducer } from '@/entities/Article';
+import { loginReducer } from '@/features/AuthByUsername';
 
 const defaultAsyncReducers: TReducerList = {
     loginForm: loginReducer,
