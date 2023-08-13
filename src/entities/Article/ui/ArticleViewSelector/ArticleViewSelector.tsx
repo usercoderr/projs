@@ -1,6 +1,6 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import ListIcon from '@/shared/assets/icons/bi_list.svg';
 import TiledIcon from '@/shared/assets/icons/fe_tiled.svg';
 import { Button, EButtonTheme } from '@/shared/ui/Button/Button';

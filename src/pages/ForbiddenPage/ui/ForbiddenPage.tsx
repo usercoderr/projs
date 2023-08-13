@@ -1,7 +1,7 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useEffect } from 'react';
 import { useNavigate } from 'react-router';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ForbiddenPage.module.scss';
 
 interface IForbiddenPageProps {

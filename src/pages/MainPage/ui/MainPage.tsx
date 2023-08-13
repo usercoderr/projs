@@ -11,7 +11,6 @@ const MainPage = () => {
         <Page>
             {t('Главная страница')}
             <Counter />
-            <Rating title="like it ?" feedbackTitle="leave your feedback" />
         </Page>
     );
 };

@@ -114,7 +114,9 @@ export const ArticleDetails = ({ className, id }: IArticleDetailsProps) => {
                     size={ETextSize.L}
                 />
                 <HStack gap="8">
-                    <Icon Svg={EyeIcon} />
+                    <Icon
+                        Svg={EyeIcon}
+                    />
                     <Text
                         text={String(article?.views)}
                     />

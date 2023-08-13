@@ -1,10 +1,10 @@
 import { ReactNode, useEffect } from 'react';
+import { Reducer } from '@reduxjs/toolkit';
+import { useDispatch, useStore } from 'react-redux';
 import {
     IReduxStoreWithManager,
     TStateSchemaKey,
 } from '@/app/providers/StoreProvider/config/StateSchema';
-import { Reducer } from '@reduxjs/toolkit';
-import { useDispatch, useStore } from 'react-redux';
 
 type TReducerListEntry = [TStateSchemaKey, Reducer]
 

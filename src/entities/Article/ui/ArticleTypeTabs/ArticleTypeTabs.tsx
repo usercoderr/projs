@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useMemo } from 'react';
-import { ITabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
 import { useSelector } from 'react-redux';
+import { ITabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
 import { getArticlesPageType } from '@/pages/ArticlesPage';
 import { EArticleType } from '../../model/consts/consts';
 import cls from './ArticleTypeTabs.module.scss';

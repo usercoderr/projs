@@ -1,6 +1,7 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
+import { useNavigate } from 'react-router';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { EArticleBlockType, EArticleView, IArticle } from '@/entities/Article';
 import { Text } from '@/shared/ui/Text/Text';
 import { Icon } from '@/shared/ui/Icon/Icon';
@@ -10,7 +11,6 @@ import { useHover } from '@/shared/lib/hooks/useHover/useHover';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Button, EButtonTheme } from '@/shared/ui/Button/Button';
 import { IArticleTextBlock } from '@/entities/Article/model/types/article';
-import { useNavigate } from 'react-router';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';

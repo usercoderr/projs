@@ -1,6 +1,6 @@
-import { classNames, TMods } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, ReactNode } from 'react';
+import { classNames, TMods } from '@/shared/lib/classNames/classNames';
 import cls from './Flex.module.scss';
 
 export type TFlexJustify = 'start' | 'center' | 'between' | 'end'

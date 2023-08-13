@@ -1,8 +1,8 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import React, { memo } from 'react';
-import { Button, EButtonTheme } from '@/shared/ui/Button/Button';
 import theme from '@storybook/addon-interactions/dist/ts3.9/theme';
+import { Button, EButtonTheme } from '@/shared/ui/Button/Button';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface LangSwitcherProps {
     className?: string;

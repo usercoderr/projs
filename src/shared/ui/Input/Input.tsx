@@ -77,11 +77,9 @@ export const Input = memo((props: IInputProps) => {
                     value={value}
                     onFocus={onFocus}
                     onBlur={onBlur}
-                    className={classNames(cls.Input, {}, [className])}
+                    className={classNames(cls.Input, mods, [className])}
                     {...otherProps}
-                >
-                    {children}
-                </input>
+                />
                 {
                     isCaretVisible && (
                         <span

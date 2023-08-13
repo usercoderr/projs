@@ -4,12 +4,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input } from '@/shared/ui/Input/Input';
 import { Button, EButtonTheme } from '@/shared/ui/Button/Button';
-import {
-    addCommentFormActions,
-    addCommentFormReducer,
-    getAddCommentFormError,
-    getAddCommentFormText,
-} from '@/features/AddCommentForm';
+
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 import {
@@ -17,6 +12,14 @@ import {
     TReducerList,
 } from '@/shared/lib/components/DynamicModalLoader/DynamicModalLoader';
 import cls from './AddCommentForm.module.scss';
+import {
+    addCommentFormActions,
+    addCommentFormReducer,
+} from '../../model/slices/AddCommentFormSlice';
+import {
+    getAddCommentFormError,
+    getAddCommentFormText,
+} from '../../model/selectors/addCommentFormSelector';
 
 export interface IAddCommentFormProps {
     className?: string,
