@@ -14,7 +14,7 @@ import { Button, EButtonTheme } from '@/shared/ui/Button';
 import { AppLink } from '@/shared/ui/AppLink';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 
 interface IArticleListItemProps {
     className?: string
@@ -61,7 +61,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
                     )}
                     <div className={cls.footer}>
                         <AppLink
-                            to={RoutePath.article_details + article.id}
+                            to={getRouteArticleDetails(article.id)}
                         >
                             <Button theme={EButtonTheme.OUTLINE}>
                                 {t('read')}
@@ -75,7 +75,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
     }
     return (
         <AppLink
-            to={RoutePath.article_details + article.id}
+            to={getRouteArticleDetails(article?.id)}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
         >
             <Card>

@@ -24,10 +24,10 @@ export interface StateSchema{
 
     loginForm?: ILoginSchema,
     profile?: IProfileSchema,
-    articleDetails?:IArticleDetailSchema
     articleDetailsComments?:IArticleDetailsCommentsSchema
     articleDetailsRecommendations?:IArticleDetailsRecommendationsSchema
     addCommentForm?:IAddCommentFormSchema,
+    articleDetails?:IArticleDetailSchema
     articlesPage?: IArticlesPageSchema,
 }
 

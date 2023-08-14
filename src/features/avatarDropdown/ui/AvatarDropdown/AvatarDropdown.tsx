@@ -6,10 +6,10 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Dropdown } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar';
 import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions, 
+    getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
 import cls from './AvatarDropdown.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
 interface IAvatarDropdownProps {
     className?: string
@@ -38,11 +38,12 @@ export const AvatarDropdown = memo(({ className }: IAvatarDropdownProps) => {
             items={[
                 ...(isAdminPanelAvailable ? [{
                     content: t('adminPanelPage'),
-                    href: RoutePath.admin_panel,
+                    href: getRouteAdmin(),
                 }] : []),
                 {
                     content: t('Profile'),
-                    href: RoutePath.profile + authData.id,
+
+                    href: getRouteProfile(authData.id),
                 },
                 {
                     content: t('logOut'),

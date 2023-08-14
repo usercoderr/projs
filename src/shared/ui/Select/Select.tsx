@@ -11,8 +11,8 @@ interface ISelectProps<T extends string> {
     className?: string
     label?: string
     options?: ISelectOptions<T>[],
-    value?: string
-    onChange?: (value: string) => void
+    value?: T
+    onChange?: (value: T) => void
     readonly?: boolean
 }
 

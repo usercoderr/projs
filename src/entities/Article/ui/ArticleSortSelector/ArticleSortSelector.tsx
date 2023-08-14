@@ -34,7 +34,7 @@ export const ArticleSortSelector = memo((props: IArticleSortSelectorProps) => {
         },
     ], [t]);
 
-    const sortFieldOptions = useMemo < ISelectOptions<EArticleSortField>[]>(() => [
+    const sortFieldOptions = useMemo <ISelectOptions<EArticleSortField>[]>(() => [
         {
             value: EArticleSortField.CREATED,
             content: t('createdAt'),
@@ -49,12 +49,6 @@ export const ArticleSortSelector = memo((props: IArticleSortSelectorProps) => {
         },
     ], [t]);
 
-    // const changeSortHandler = useCallback((newSort: string) => {
-    //     onChangeSort(newSort as EArticleSortField);
-    // }, [onChangeSort]);
-    // const changeOrderHandler = useCallback((newOrder: string) => {
-    //     onChangeOrder(newOrder as TSortOrder);
-    // }, [onChangeOrder]);
     return (
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
             <Select<EArticleSortField>

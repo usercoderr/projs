@@ -1,5 +1,10 @@
 import { ArticleDetailsPageAsync } from './ui/ArticleDetailsPage/ArticleDetailsPage.async';
 
+export { articleDetailsCommentsReducer } from './model/slices/articleDetailsCommentsSlice';
+export {
+    articleDetailsRecommendationsReducer,
+} from './model/slices/articleDetailsRecommendationsSlice';
+
 export {
     getArticleRecommendationsError,
     getArticleRecommendationsIsLoading,

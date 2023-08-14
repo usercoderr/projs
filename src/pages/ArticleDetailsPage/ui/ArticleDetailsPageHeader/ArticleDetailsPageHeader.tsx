@@ -7,7 +7,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { getCanEditArticle } from '../../model/selectors/article';
 import { getArticleDetailsData } from '@/entities/Article';
 import cls from './ArticleDetailsPageHeader.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails, getRouteArticles } from '@/shared/const/router';
 
 interface IArticleDetailsPageHeaderProps {
     className?: string
@@ -19,11 +19,13 @@ export const ArticleDetailsPageHeader = memo(({ className }: IArticleDetailsPage
     const canEdit = useSelector(getCanEditArticle);
     const article = useSelector(getArticleDetailsData);
     const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
+        navigate(getRouteArticles());
     }, [navigate]);
     const onEditArticle = useCallback(() => {
-        navigate(`${RoutePath.article_details}${article?.id}/edit`);
-    }, [article?.id, navigate]);
+        if (article) {
+            navigate(getRouteArticleDetails(article.id));
+        }
+    }, [article, navigate]);
     return (
         <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
             <Button theme={EButtonTheme.OUTLINE} onClick={onBackToList}>
