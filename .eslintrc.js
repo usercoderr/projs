@@ -68,7 +68,7 @@ module.exports = {
                 ],
             },
         ],
-        'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'max-len': ['error', { ignoreComments: true, code: 240 }],
         'jsx-a11y/click-events-have-key-events': 'off',
         'usercoder-plugin/path-checker': ['error', { alias: '@' }],
         'usercoder-plugin/layer-imports': [
