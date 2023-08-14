@@ -3,8 +3,8 @@ import { memo, useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { ITabItem, Tabs } from '@/shared/ui/Tabs';
 import { getArticlesPageType } from '@/pages/ArticlesPage';
-import { EArticleType } from '../../model/consts/consts';
 import cls from './ArticleTypeTabs.module.scss';
+import { EArticleType } from '@/entities/Article';
 
 interface IArticleTypeTabsProps {
     className?: string,

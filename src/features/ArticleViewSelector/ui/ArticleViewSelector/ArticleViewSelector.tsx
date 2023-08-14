@@ -5,8 +5,8 @@ import ListIcon from '@/shared/assets/icons/bi_list.svg';
 import TiledIcon from '@/shared/assets/icons/fe_tiled.svg';
 import { Button, EButtonTheme } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
-import { EArticleView } from '../../model/consts/consts';
 import cls from './ArticleViewSelector.module.scss';
+import { EArticleView } from '@/entities/Article';
 
 const viewTypes = [
     {

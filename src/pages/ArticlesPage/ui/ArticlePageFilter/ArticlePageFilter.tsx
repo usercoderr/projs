@@ -10,8 +10,7 @@ import {
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import {
-    ArticleSortSelector, ArticleTypeTabs,
-    ArticleViewSelector, EArticleSortField, EArticleType, EArticleView,
+    EArticleSortField, EArticleType, EArticleView,
 } from '@/entities/Article';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -23,6 +22,9 @@ import {
     fetchArticlesList,
 } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import cls from './ArticlePageFilter.module.scss';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 
 interface IArticlePageFilterProps {
     className?: string
