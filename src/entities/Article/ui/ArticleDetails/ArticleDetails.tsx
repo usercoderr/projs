@@ -108,25 +108,27 @@ export const ArticleDetails = ({ className, id }: IArticleDetailsProps) => {
                         src={article?.img}
                     />
                 </HStack>
-                <Text
-                    title={article?.title}
-                    text={article?.subtitle}
-                    size={ETextSize.L}
-                />
-                <HStack gap="8">
-                    <Icon
-                        Svg={EyeIcon}
-                    />
+                <VStack gap="4" max data-testid="ArticleDetails.Info">
                     <Text
-                        text={String(article?.views)}
+                        title={article?.title}
+                        text={article?.subtitle}
+                        size={ETextSize.L}
                     />
-                </HStack>
-                <div className={cls.articleInfo}>
-                    <Icon className={cls.icons} Svg={CalendarIcon} />
-                    <Text
-                        text={article?.createdAt}
-                    />
-                </div>
+                    <HStack gap="8">
+                        <Icon
+                            Svg={EyeIcon}
+                        />
+                        <Text
+                            text={String(article?.views)}
+                        />
+                    </HStack>
+                    <div className={cls.articleInfo}>
+                        <Icon className={cls.icons} Svg={CalendarIcon} />
+                        <Text
+                            text={article?.createdAt}
+                        />
+                    </div>
+                </VStack>
                 {article?.blocks.map(renderBlock)}
             </>
         );

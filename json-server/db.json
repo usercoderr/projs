@@ -856,6 +856,32 @@
           ]
         }
       ]
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "hO4S885"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
+      "views": 1022,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [],
+      "id": "KXlnPIB"
     }
   ],
   "comments": [
@@ -905,14 +931,14 @@
   "profile": [
     {
       "id": "1",
-      "firstname": "Aidar",
-      "lastname": "Umurzakov",
-      "age": 27,
-      "currency": "USD",
+      "firstname": "test",
+      "lastname": "user",
+      "age": 465,
+      "currency": "EUR",
       "country": "KAZAKHSTAN",
-      "city": "Almaty city",
-      "username": "usercoder",
-      "avatar": "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/c4624e01b1c5930443a727eebf2f8d10-1631995234/pixil-frame-0%20(100)/create-30x30-pixel-punk-avatars-for-you.png"
+      "city": "Moscow",
+      "username": "testuser",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     },
     {
       "id": "2",

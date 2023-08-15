@@ -46,6 +46,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
         ) as IArticleTextBlock;
         return (
             <div
+                data-testid="ArticleListItem"
                 className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
             >
                 <Card>
@@ -81,6 +82,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
     }
     return (
         <AppLink
+            data-testid="ArticleListItem"
             to={getRouteArticleDetails(article?.id)}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
         >

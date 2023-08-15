@@ -5,7 +5,7 @@ import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorat
 import {
     SuspenseDecorator,
 } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
-import { ETheme } from '../../src/shared/const/theme';
+import { Theme } from '../../src/shared/const/theme';
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -19,14 +19,14 @@ export const parameters = {
     themes: {
         default: 'light',
         list: [
-            { name: 'light', class: ETheme.LIGHT, color: '#ffffff' },
-            { name: 'dark', class: ETheme.DARK, color: '#000000' },
-            { name: 'orange', class: ETheme.ORANGE, color: '#ffb005' },
+            { name: 'light', class: Theme.LIGHT, color: '#ffffff' },
+            { name: 'dark', class: Theme.DARK, color: '#000000' },
+            { name: 'orange', class: Theme.ORANGE, color: '#ffb005' },
         ],
     },
 };
 
 addDecorator(StyleDecorator);
-addDecorator(ThemeDecorator(ETheme.LIGHT));
+addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouterDecorator);
 addDecorator(SuspenseDecorator);

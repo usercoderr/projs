@@ -1,6 +1,7 @@
-import path from 'path';
 import { Configuration, DefinePlugin, RuleSetRule } from 'webpack';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
+
+const path = require('path');
 
 export default {
     stories: ['../../src/**/*.stories.@(js|jsx|ts|tsx)'],

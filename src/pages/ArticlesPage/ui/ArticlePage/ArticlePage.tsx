@@ -35,6 +35,7 @@ const ArticlePage = ({ className }: IArticlePageProps) => {
             removeAfterUnmount={false}
         >
             <Page
+                data-testid="ArticlesPage"
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlePage, {}, [className])}
             >
