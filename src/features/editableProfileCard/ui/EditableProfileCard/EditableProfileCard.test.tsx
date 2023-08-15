@@ -2,10 +2,10 @@ import { userEvent } from '@storybook/testing-library';
 import { screen } from '@testing-library/react';
 import { IProfile } from '@/entities/Profile';
 import { EditableProfileCard, profileReducer } from '@/features/editableProfileCard';
-import { TestComponentRender } from '@/shared/lib/tests/componentRender/testComponentRender';
 import { $api } from '@/shared/api/api';
 import { ECurrency } from '@/entities/Currency';
 import { ECountry } from '@/entities/Country';
+import { componentRender } from '@/shared/lib/tests/componentRender/TestComponentRender';
 
 const axios = require('axios');
 
@@ -38,13 +38,13 @@ const options = {
 jest.mock('axios');
 describe('features/EditableProfileCard', () => {
     test('Режим рид онли должен переключиться', async () => {
-        TestComponentRender(<EditableProfileCard id="1" />, options);
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditBtn'));
         expect(screen.getByTestId('EditableProfileCardHeader.CancelBtn')).toBeInTheDocument();
     });
 
     test('При отмене значения должны обнуляться', async () => {
-        TestComponentRender(<EditableProfileCard id="1" />, options);
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditBtn'));
 
         await userEvent.clear(screen.getByTestId('ProfileCard.firstname'));
@@ -63,7 +63,7 @@ describe('features/EditableProfileCard', () => {
     });
 
     test('Должна появиться ошибка', async () => {
-        TestComponentRender(<EditableProfileCard id="1" />, options);
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditBtn'));
 
         await userEvent.clear(screen.getByTestId('ProfileCard.firstname'));
@@ -75,7 +75,7 @@ describe('features/EditableProfileCard', () => {
 
     test('Если нет ошибок валидации, то на сервер должен уйти PUT запрос', async () => {
         const mockPutReq = jest.spyOn($api, 'put');
-        TestComponentRender(<EditableProfileCard id="1" />, options);
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditBtn'));
 
         await userEvent.type(screen.getByTestId('ProfileCard.firstname'), 'user');

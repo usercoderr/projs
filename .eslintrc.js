@@ -28,6 +28,7 @@ module.exports = {
     rules: {
         'react/jsx-indent': [2, 4],
         'no-param-reassign': 'off',
+        'react/no-unstable-nested-components': 'off',
         'unused-imports/no-unused-imports': 'error',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',

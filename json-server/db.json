@@ -160,6 +160,10 @@
       "id": "1",
       "username": "admin",
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": false
+      },
       "roles": [
         "ADMIN"
       ],
@@ -169,6 +173,10 @@
       "id": "2",
       "username": "usercoder",
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": false ,
+        "isCounterEnabled": true
+      },
       "roles": [
         "USER"
       ],
@@ -178,6 +186,10 @@
       "id": "3",
       "username": "manager",
       "password": "123",
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
       "roles": [
         "MANAGER"
       ],

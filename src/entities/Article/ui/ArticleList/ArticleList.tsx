@@ -1,11 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { EArticleView, IArticle } from '@/entities/Article';
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+
 import { ETextSize, Text } from '@/shared/ui/Text';
-import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
+import { IArticle } from '../../model/types/article';
+import { EArticleView } from '../../model/consts/consts';
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
+import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 
 interface IArticleListProps {
     className?: string

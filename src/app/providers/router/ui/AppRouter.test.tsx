@@ -1,12 +1,12 @@
 import { screen } from '@testing-library/react';
-import { TestComponentRender } from '@/shared/lib/tests/componentRender/testComponentRender';
 import AppRouter from './AppRouter';
 import { getRouteAbout, getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { EUserRole } from '@/entities/User';
+import { componentRender } from '@/shared/lib/tests/componentRender/TestComponentRender';
 
 describe('app/router/AppRouter', () => {
     test('Страница должна отрендериться', async () => {
-        TestComponentRender(<AppRouter />, {
+        componentRender(<AppRouter />, {
             route: getRouteAbout(),
         });
 
@@ -15,7 +15,7 @@ describe('app/router/AppRouter', () => {
     });
 
     test('Страница не найдена', async () => {
-        TestComponentRender(<AppRouter />, {
+        componentRender(<AppRouter />, {
             route: '/asfasfasfasf',
         });
 
@@ -24,7 +24,7 @@ describe('app/router/AppRouter', () => {
     });
 
     test('Редирект неавторизованного пользователя на главную', async () => {
-        TestComponentRender(<AppRouter />, {
+        componentRender(<AppRouter />, {
             route: getRouteProfile('1'),
         });
 
@@ -33,7 +33,7 @@ describe('app/router/AppRouter', () => {
     });
 
     test('Доступ к закрытой страницы для авторизованного пользователя', async () => {
-        TestComponentRender(<AppRouter />, {
+        componentRender(<AppRouter />, {
             route: getRouteProfile('1'),
             initialState: {
                 user: { _mounted: true, authData: {} },
@@ -45,7 +45,7 @@ describe('app/router/AppRouter', () => {
     });
 
     test('Доступ запрещен (отсутствует роль)', async () => {
-        TestComponentRender(<AppRouter />, {
+        componentRender(<AppRouter />, {
             route: getRouteAdmin(),
             initialState: {
                 user: { _mounted: true, authData: {} },
@@ -57,7 +57,7 @@ describe('app/router/AppRouter', () => {
     });
 
     test('Доступ разрешен (присутствует роль)', async () => {
-        TestComponentRender(<AppRouter />, {
+        componentRender(<AppRouter />, {
             route: getRouteAdmin(),
             initialState: {
                 user: { _mounted: true, authData: { roles: [EUserRole.ADMIN] } },

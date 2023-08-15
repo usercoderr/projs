@@ -21,6 +21,9 @@ import {
 } from '../../model/slices/articleDetailsRecommendationsSlice';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleRating } from '@/features/articleRating';
+import { getFeatureFlag, toggleFeatures } from '@/shared/features';
+import { Counter } from '@/entities/Counter';
+import { Text } from '@/shared/ui/Text';
 
 interface IArticleDetailsPageProps {
     className?: string,
@@ -29,18 +32,27 @@ const reducers: TReducerList = {
     articleDetailsComments: articleDetailsCommentsReducer,
     articleDetailsRecommendations: articleDetailsRecommendationsReducer,
 };
+
 const ArticleDetailsPage = ({ className }: IArticleDetailsPageProps) => {
     const { t } = useTranslation('articleDetails');
     const { id } = useParams<{ id: string }>();
+    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
     if (!id) {
         return null;
     }
+
+    const counter = toggleFeatures({
+        name: 'isCounterEnabled',
+        on: () => <div><Text text="sd" /></div>,
+        off: () => <Counter />,
+    });
     return (
         <DynamicModalLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
-                <ArticleRating articleId={id} />
+                { isArticleRatingEnabled
+                && <ArticleRating articleId={id} />}
                 <ArticleRecommendationsList />
                 <ArticleDetailsComments id={id} />
             </Page>

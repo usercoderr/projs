@@ -2,8 +2,8 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
-    EArticleBlockType, EArticleView, IArticle, IArticleTextBlock,
-} from '@/entities/Article';
+    IArticle, IArticleTextBlock,
+} from '../../model/types/article';
 import { Text } from '@/shared/ui/Text';
 import { Icon } from '@/shared/ui/Icon';
 import EyeIcon from '@/shared/assets/icons/view.svg';
@@ -17,6 +17,7 @@ import cls from './ArticleListItem.module.scss';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppImage } from '@/shared/ui/AppImage';
 import { Skeleton } from '@/shared/ui/Skeleton';
+import { EArticleBlockType, EArticleView } from '../../model/consts/consts';
 
 interface IArticleListItemProps {
     className?: string
