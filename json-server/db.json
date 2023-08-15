@@ -164,6 +164,11 @@
         "isArticleRatingEnabled": true,
         "isCounterEnabled": false
       },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": false
+      },
       "roles": [
         "ADMIN"
       ],
@@ -176,6 +181,11 @@
       "features": {
         "isArticleRatingEnabled": false ,
         "isCounterEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_light_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpen": true
       },
       "roles": [
         "USER"

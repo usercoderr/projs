@@ -1,3 +1,10 @@
+export {
+    getJsonSettings,
+    getJsonSettingsByKey,
+    useJsonSettings,
+    useJsonSettingsByKey,
+} from './model/selectors/jsonSettings';
+
 export { getUserMounted } from './model/selectors/getUserMounted/getUserMounted';
 
 export { userActions, userReducer } from './model/slices/userSlice';
