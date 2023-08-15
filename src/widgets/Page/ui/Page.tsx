@@ -11,8 +11,9 @@ import { getScrollByPath, scrollSaverActions } from '@/features/ScrollSaver';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
+import { ITestProps } from '@/shared/types/tests';
 
-interface IPageProps {
+interface IPageProps extends ITestProps{
     className?: string,
     children: ReactNode,
     onScrollEnd?: () => void
@@ -48,6 +49,7 @@ export const Page = memo((props: IPageProps) => {
     }, [scrollPosition]);
     return (
         <section
+            data-testid={props['data-testid'] ?? 'Page'}
             ref={wrapperRef}
             className={classNames(cls.Page, {}, [className])}
             onScroll={onScroll}

@@ -14,7 +14,7 @@ const ProfilePage = () => {
         return null;
     }
     return (
-        <Page>
+        <Page data-testid="ProfilePage">
             <VStack gap="16" max>
                 <EditableProfileCard id={id} />
                 <Suspense fallback={<Skeleton width="100%" height={120} />}>

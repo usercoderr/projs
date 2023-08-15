@@ -15,6 +15,8 @@ import { AppLink } from '@/shared/ui/AppLink';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface IArticleListItemProps {
     className?: string
@@ -38,7 +40,6 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
             <Icon Svg={EyeIcon} />
         </>
     );
-    const image = <img className={cls.img} src={article.img} alt={article.title} />;
     if (view === EArticleView.BIG) {
         const textBlock = article.blocks.find(
             (block) => block.type === EArticleBlockType.TEXT,
@@ -55,7 +56,12 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
                     </div>
                     <Text text={article.title} className={cls.title} />
                     {types}
-                    {image}
+                    <AppImage
+                        fallback={<Skeleton width="100%" height={250} />}
+                        className={cls.img}
+                        src={article.img}
+                        alt={article.title}
+                    />
                     {textBlock && (
                         <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />
                     )}
@@ -80,7 +86,12 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
         >
             <Card>
                 <div className={cls.imageWrapper}>
-                    {image}
+                    <AppImage
+                        fallback={<Skeleton width={200} height={200} />}
+                        className={cls.img}
+                        src={article.img}
+                        alt={article.title}
+                    />
                     <Text text={article.createdAt} className={cls.date} />
                 </div>
                 <div className={cls.infoWrapper}>

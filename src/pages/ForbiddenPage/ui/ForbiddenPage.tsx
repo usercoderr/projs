@@ -3,6 +3,7 @@ import { memo, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ForbiddenPage.module.scss';
+import { Page } from '@/widgets/Page';
 
 interface IForbiddenPageProps {
     className?: string
@@ -18,9 +19,9 @@ const ForbiddenPage = memo(({ className }: IForbiddenPageProps) => {
         }, 2000);
     }, [navigate]);
     return (
-        <div className={classNames(cls.ForbiddenPage, {}, [className])}>
+        <Page data-testid="ForbiddenPage" className={classNames(cls.ForbiddenPage, {}, [className])}>
             {t('access')}
-        </div>
+        </Page>
     );
 });
 export default ForbiddenPage;
