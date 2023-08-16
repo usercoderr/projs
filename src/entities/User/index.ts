@@ -1,8 +1,10 @@
+export { initAuthData } from './model/services/initAuthData';
+
+export { saveJsonSettings } from './model/services/saveJsonSettings';
+
 export {
     getJsonSettings,
-    getJsonSettingsByKey,
     useJsonSettings,
-    useJsonSettingsByKey,
 } from './model/selectors/jsonSettings';
 
 export { getUserMounted } from './model/selectors/getUserMounted/getUserMounted';

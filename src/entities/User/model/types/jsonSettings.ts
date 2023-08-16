@@ -4,4 +4,5 @@ export interface IJsonSettings{
     theme?: ETheme,
     isFirstVisit?: boolean,
     settingsPageHasBeenOpen?: boolean
+    isArticlesPageWasOpened?: boolean
 }

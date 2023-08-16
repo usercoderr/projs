@@ -165,9 +165,10 @@
         "isCounterEnabled": false
       },
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageWasOpened": true
       },
       "roles": [
         "ADMIN"
@@ -179,7 +180,7 @@
       "username": "usercoder",
       "password": "123",
       "features": {
-        "isArticleRatingEnabled": false ,
+        "isArticleRatingEnabled": false,
         "isCounterEnabled": true
       },
       "jsonSettings": {
