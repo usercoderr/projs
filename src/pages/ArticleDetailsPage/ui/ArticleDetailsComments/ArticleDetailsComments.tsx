@@ -6,13 +6,11 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '@/pages/ArticleDetailsPage';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ETextSize, Text } from '@/shared/ui/Text';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { CommentList } from '@/entities/Comment';
 import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { VStack } from '@/shared/ui/Stack';
 import {
     getArticleDetailsComments,
 } from '../../model/slices/articleDetailsCommentsSlice';
@@ -20,6 +18,8 @@ import {
     addCommentForArticle,
 } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import cls from './ArticleDetailsComments.module.scss';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { ETextSize, Text } from '@/shared/ui/deprecated/Text';
 
 interface IArticleDetailsCommentsProps {
     className?: string,

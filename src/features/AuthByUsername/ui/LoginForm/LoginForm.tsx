@@ -2,8 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, EButtonTheme } from '@/shared/ui/Button';
-import { Input } from '@/shared/ui/Input';
 import {
     DynamicModalLoader, TReducerList,
 } from '@/shared/lib/components/DynamicModalLoader/DynamicModalLoader';
@@ -17,6 +15,8 @@ import { getLoginError } from '../../model/selectors/getLoginError/getLoginError
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/LoginByUsername/loginByUsername';
 import cls from './LoginForm.module.scss';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { Button, EButtonTheme } from '@/shared/ui/deprecated/Button';
 
 export interface ILoginFormProps {
     className?: string

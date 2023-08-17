@@ -12,12 +12,14 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import cls from './Page.module.scss';
 import { ITestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/features';
 
 interface IPageProps extends ITestProps{
     className?: string,
     children: ReactNode,
     onScrollEnd?: () => void
 }
+export const PAGE_ID = 'PAGE_ID';
 
 export const Page = memo((props: IPageProps) => {
     const { t } = useTranslation();
@@ -48,17 +50,22 @@ export const Page = memo((props: IPageProps) => {
         wrapperRef.current.scrollTop = scrollPosition;
     }, [scrollPosition]);
     return (
-        <section
+        <main
             data-testid={props['data-testid'] ?? 'Page'}
             ref={wrapperRef}
-            className={classNames(cls.Page, {}, [className])}
+            className={classNames(toggleFeatures({
+                name: 'isAppRedesigned',
+                on: () => cls.PageRedesigned,
+                off: () => cls.Page,
+            }), {}, [className])}
             onScroll={onScroll}
+            id={PAGE_ID}
         >
             {children}
             {onScrollEnd
                 ? (
                     <div className={cls.trigger} ref={triggerRef} />
                 ) : null}
-        </section>
+        </main>
     );
 });

@@ -9,9 +9,9 @@ import {
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Text } from '@/shared/ui/Text';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticleList } from '@/entities/Article';
+import { Text } from '@/shared/ui/deprecated/Text';
 
 interface IArticleInfiniteListProps {
     className?: string

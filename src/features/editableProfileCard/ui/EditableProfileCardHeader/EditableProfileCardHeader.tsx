@@ -2,9 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { HStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text';
-import { Button, EButtonTheme } from '@/shared/ui/Button';
 import { getUserAuthData } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
@@ -13,6 +10,9 @@ import {
 } from '../../model/selectors/getEditableProfileSelectors';
 import { profileActions } from '../../model/slice/profileSlice';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { HStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { Button, EButtonTheme } from '@/shared/ui/deprecated/Button';
 
 interface IEditableProfileCardHeaderProps {
     className?: string

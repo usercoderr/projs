@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
 import { Suspense } from 'react';
-import { VStack } from '@/shared/ui/Stack';
 import {
     EditableProfileCard,
 } from '@/features/editableProfileCard';
 import { ProfileRating } from '@/features/profileRating';
 import { Page } from '@/widgets/Page';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 const ProfilePage = () => {
     const { id } = useParams<{id: string}>();

@@ -9,6 +9,9 @@ import { AppRouter } from './providers/router';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { PageLoader } from '@/widgets/PageLoader';
+import { ToggleFeatures } from '@/shared/features';
+import { MainLayout } from '@/shared/layouts/MainLayout';
+import { Loader } from '@/shared/ui/deprecated/Loader';
 
 function App() {
     const { theme } = useTheme();
@@ -21,17 +24,30 @@ function App() {
     if (!mounted) {
         return <PageLoader />;
     }
-    return (
-        <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className="content-page">
-                    <Sidebar />
-                    {mounted && <AppRouter />}
-                </div>
 
-            </Suspense>
-        </div>
+    return (
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={(
+                <div className={classNames('app_redesigned', {}, [theme])}>
+                    <Suspense fallback={<Loader />}>
+                        <MainLayout header={<Navbar />} content={<AppRouter />} sidebar={<Sidebar />} />
+                    </Suspense>
+                </div>
+            )}
+            off={(
+                <div className={classNames('app', {}, [theme])}>
+                    <Suspense fallback="">
+                        <Navbar />
+                        <div className="content-page">
+                            <Sidebar />
+                            {mounted && <AppRouter />}
+                        </div>
+
+                    </Suspense>
+                </div>
+            )}
+        />
     );
 }
 

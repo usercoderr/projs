@@ -5,7 +5,6 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 
 import { ECurrency } from '@/entities/Currency';
 import { ECountry } from '@/entities/Country';
-import { Text, TextTheme } from '@/shared/ui/Text';
 import { ProfileCard } from '@/entities/Profile';
 import {
     DynamicModalLoader,
@@ -25,6 +24,7 @@ import {
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { EValidateProfileError } from '../../model/consts/consts';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
+import { ETextTheme, Text } from '@/shared/ui/deprecated/Text';
 
 interface EditableProfileCardProps {
     className?: string;
@@ -93,7 +93,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             {validateErrors?.length && validateErrors.map((err) => (
                 <Text
                     key={err}
-                    theme={TextTheme.ERROR}
+                    theme={ETextTheme.ERROR}
                     text={validateErrorTranslates[err]}
                     data-testid="EditableProfileCard"
                 />

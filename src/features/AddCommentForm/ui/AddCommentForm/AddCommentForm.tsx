@@ -2,8 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Input } from '@/shared/ui/Input';
-import { Button, EButtonTheme } from '@/shared/ui/Button';
 
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
@@ -20,6 +18,8 @@ import {
     getAddCommentFormError,
     getAddCommentFormText,
 } from '../../model/selectors/addCommentFormSelector';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { Button, EButtonTheme } from '@/shared/ui/deprecated/Button';
 
 export interface IAddCommentFormProps {
     className?: string,

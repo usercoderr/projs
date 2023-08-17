@@ -1,6 +1,6 @@
-import { Button } from '@/shared/ui/Button';
 import { useCounterValue } from '../modal/selectors/getCounterValue/getCounterValue';
 import { useCounterActions } from '../modal/slices/counterSlice';
+import { Button } from '@/shared/ui/deprecated/Button';
 
 export const Counter = () => {
     const counterValue = useCounterValue();

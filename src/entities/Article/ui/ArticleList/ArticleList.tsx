@@ -2,12 +2,12 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { ETextSize, Text } from '@/shared/ui/Text';
 import cls from './ArticleList.module.scss';
 import { IArticle } from '../../model/types/article';
 import { EArticleView } from '../../model/consts/consts';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
+import { ETextSize, Text } from '@/shared/ui/deprecated/Text';
 
 interface IArticleListProps {
     className?: string

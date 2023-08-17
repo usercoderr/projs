@@ -162,7 +162,8 @@
       "password": "123",
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": false
+        "isCounterEnabled": true,
+        "isAppRedesigned": true
       },
       "jsonSettings": {
         "theme": "app_light_theme",
@@ -181,12 +182,14 @@
       "password": "123",
       "features": {
         "isArticleRatingEnabled": false,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isAppRedesigned": false
       },
       "jsonSettings": {
         "theme": "app_light_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": true
+        "settingsPageHasBeenOpen": true,
+        "isArticlesPageWasOpened": true
       },
       "roles": [
         "USER"
@@ -199,7 +202,8 @@
       "password": "123",
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isAppRedesigned": true
       },
       "roles": [
         "MANAGER"

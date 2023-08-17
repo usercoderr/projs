@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { Fragment, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text';
-import { VStack } from '@/shared/ui/Stack';
 import cls from './CommentList.module.scss';
 import { IComment } from '../../model/types/comment';
 import { CommentItem } from '../CommentItem/CommentItem';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/deprecated/Text';
 
 interface ICommentListProps {
     className?: string

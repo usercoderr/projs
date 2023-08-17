@@ -3,8 +3,8 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { useGetProfileRating, useRateProfile } from '../../api/profileRatingApi';
-import { Skeleton } from '@/shared/ui/Skeleton';
 import { Rating } from '@/entities/Rating';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 export interface IProfileRatingProps {
     className?: string

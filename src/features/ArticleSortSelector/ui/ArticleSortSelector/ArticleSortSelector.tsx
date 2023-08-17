@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ISelectOptions, Select } from '@/shared/ui/Select';
 import { EArticleSortField } from '@/entities/Article';
 import { TSortOrder } from '@/shared/types';
 import cls from './ArticleSortSelector.module.scss';
+import { ISelectOption, Select } from '@/shared/ui/deprecated/Select';
 
 interface IArticleSortSelectorProps {
     className?: string,
@@ -23,7 +23,7 @@ export const ArticleSortSelector = memo((props: IArticleSortSelectorProps) => {
         onChangeOrder,
         onChangeSort,
     } = props;
-    const orderOptions = useMemo<ISelectOptions<TSortOrder>[]>(() => [
+    const orderOptions = useMemo<ISelectOption<TSortOrder>[]>(() => [
         {
             value: 'asc',
             content: t('aToZ'),
@@ -34,7 +34,7 @@ export const ArticleSortSelector = memo((props: IArticleSortSelectorProps) => {
         },
     ], [t]);
 
-    const sortFieldOptions = useMemo <ISelectOptions<EArticleSortField>[]>(() => [
+    const sortFieldOptions = useMemo <ISelectOption<EArticleSortField>[]>(() => [
         {
             value: EArticleSortField.CREATED,
             content: t('createdAt'),

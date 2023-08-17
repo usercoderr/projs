@@ -3,14 +3,14 @@ import React, { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Rating.module.scss';
-import { Card } from '@/shared/ui/Card';
-import { HStack, VStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text';
-import { StarRating } from '@/shared/ui/StarRating';
-import { Modal } from '@/shared/ui/Modal';
-import { Input } from '@/shared/ui/Input';
-import { Button, EButtonTheme } from '@/shared/ui/Button';
-import { Drawer } from '@/shared/ui/Drawer';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { StarRating } from '@/shared/ui/deprecated/StarRating';
+import { Modal } from '@/shared/ui/redesigned/Modal';
+import { Button, EButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
 
 interface IRatingProps {
     className?: string
@@ -63,7 +63,6 @@ export const Rating = memo((props: IRatingProps) => {
             <Input
                 onChange={setFeedback}
                 value={feedback}
-                fullWidth
                 placeholder={t('feedback')}
             />
         </>
@@ -89,7 +88,7 @@ export const Rating = memo((props: IRatingProps) => {
                             </Button>
                             <Button
                                 onClick={acceptHandler}
-                                theme={EButtonTheme.OUTLINE_GREEN}
+                                theme={EButtonTheme.OUTLINE}
                             >
                                 {
                                     t('send')
@@ -107,7 +106,7 @@ export const Rating = memo((props: IRatingProps) => {
                         <Button
                             fullWidth
                             onClick={acceptHandler}
-                            theme={EButtonTheme.OUTLINE_GREEN}
+                            theme={EButtonTheme.OUTLINE}
                         >
                             {
                                 t('send')

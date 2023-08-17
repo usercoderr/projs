@@ -8,11 +8,6 @@ import {
 } from '@/shared/lib/components/DynamicModalLoader/DynamicModalLoader';
 
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ETextAlign, ETextSize, Text } from '@/shared/ui/Text';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Icon } from '@/shared/ui/Icon';
-import { HStack, VStack } from '@/shared/ui/Stack';
 import EyeIcon from '../../../../shared/assets/icons/view.svg';
 import CalendarIcon from '../../../../shared/assets/icons/calendar.svg';
 import cls from './ArticleDetails.module.scss';
@@ -30,6 +25,11 @@ import {
 } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { ETextAlign, ETextSize, Text } from '@/shared/ui/deprecated/Text';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Icon } from '@/shared/ui/deprecated/Icon';
 
 interface IArticleDetailsProps {
     className?: string
@@ -83,7 +83,7 @@ export const ArticleDetails = ({ className, id }: IArticleDetailsProps) => {
         content = (
             <>
                 <HStack gap="8" max justify="center">
-                    <Skeleton className={cls.avatar} width={200} border={100} height={200} />
+                    <Skeleton className={cls.avatar} width={200} border="100" height={200} />
                 </HStack>
                 <Skeleton className={cls.title} width={300} height={50} />
                 <HStack gap="8">

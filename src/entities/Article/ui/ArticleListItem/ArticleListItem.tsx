@@ -4,20 +4,20 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     IArticle, IArticleTextBlock,
 } from '../../model/types/article';
-import { Text } from '@/shared/ui/Text';
-import { Icon } from '@/shared/ui/Icon';
 import EyeIcon from '@/shared/assets/icons/view.svg';
-import { Card } from '@/shared/ui/Card';
 import { useHover } from '@/shared/lib/hooks/useHover/useHover';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Button, EButtonTheme } from '@/shared/ui/Button';
-import { AppLink } from '@/shared/ui/AppLink';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 import { getRouteArticleDetails } from '@/shared/const/router';
-import { AppImage } from '@/shared/ui/AppImage';
-import { Skeleton } from '@/shared/ui/Skeleton';
 import { EArticleBlockType, EArticleView } from '../../model/consts/consts';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { AppImage } from '@/shared/ui/redesigned/AppImage';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { AppLink } from '@/shared/ui/deprecated/AppLink';
+import { Button, EButtonTheme } from '@/shared/ui/deprecated/Button';
 
 interface IArticleListItemProps {
     className?: string

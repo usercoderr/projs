@@ -2,12 +2,12 @@ import React, { memo, useState } from 'react';
 import { BrowserView, isMobile, MobileView } from 'react-device-detect';
 import NotificationIcon from '@/shared/assets/icons/popUp.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, EButtonTheme } from '@/shared/ui/Button';
-import { Icon } from '@/shared/ui/Icon';
 import { NotificationList } from '@/entities/Notification';
-import { Drawer } from '@/shared/ui/Drawer';
-import { Popover } from '@/shared/ui/Popups';
 import cls from './NotificationButton.module.scss';
+import { Button, EButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Drawer } from '@/shared/ui/redesigned/Drawer';
+import { Popover } from '@/shared/ui/deprecated/Popups';
 
 interface INotificationButtonProps {
     className?: string
@@ -25,7 +25,7 @@ export const NotificationButton = memo(({ className }: INotificationButtonProps)
 
     const trigger = (
         <Button onClick={onOpenDrawer} theme={EButtonTheme.CLEAR}>
-            <Icon inverted Svg={NotificationIcon} />
+            <Icon width={20} height={20} inverted Svg={NotificationIcon} />
         </Button>
     );
     if (isMobile) {

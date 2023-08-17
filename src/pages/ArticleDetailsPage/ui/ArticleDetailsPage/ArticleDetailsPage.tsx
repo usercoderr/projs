@@ -21,9 +21,9 @@ import {
 } from '../../model/slices/articleDetailsRecommendationsSlice';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleRating } from '@/features/articleRating';
-import { getFeatureFlag, toggleFeatures } from '@/shared/features';
+import { getFeatureFlag, ToggleFeatures, toggleFeatures } from '@/shared/features';
 import { Counter } from '@/entities/Counter';
-import { Text } from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/deprecated/Text';
 
 interface IArticleDetailsPageProps {
     className?: string,
@@ -51,8 +51,12 @@ const ArticleDetailsPage = ({ className }: IArticleDetailsPageProps) => {
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
-                { isArticleRatingEnabled
-                && <ArticleRating articleId={id} />}
+                <ArticleRating articleId={id} />
+                <ToggleFeatures
+                    feature="isArticleRatingEnabled"
+                    on={<ArticleRating articleId={id} />}
+                    off={<h2>{t('sorry')}</h2>}
+                />
                 <ArticleRecommendationsList />
                 <ArticleDetailsComments id={id} />
             </Page>

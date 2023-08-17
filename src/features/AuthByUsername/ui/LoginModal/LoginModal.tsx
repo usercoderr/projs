@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Modal } from '@/shared/ui/Modal';
 import { LoginFormAsync } from '../LoginForm/LoginForm.Async';
 import cls from './LoginModal.module.scss';
+import { Modal } from '@/shared/ui/redesigned/Modal';
 
 interface ILoginModalProps{
     className?: string,

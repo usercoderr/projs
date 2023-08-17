@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { ITabItem, Tabs } from '@/shared/ui/Tabs';
 import { getArticlesPageType } from '@/pages/ArticlesPage';
 import cls from './ArticleTypeTabs.module.scss';
 import { EArticleType } from '@/entities/Article';
+import { ITabItem, Tabs } from '@/shared/ui/deprecated/Tabs';
 
 interface IArticleTypeTabsProps {
     className?: string,

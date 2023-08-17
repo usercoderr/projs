@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { classNames, TMods } from '@/shared/lib/classNames/classNames';
-import { ETextAlign, Text, TextTheme } from '@/shared/ui/Text';
-import { Input } from '@/shared/ui/Input';
 import { IProfile } from '@/entities/Profile';
-import { Avatar } from '@/shared/ui/Avatar';
-import { HStack, VStack } from '@/shared/ui/Stack';
-import { Skeleton } from '@/shared/ui/Skeleton';
 import { CurrencySelect, ECurrency } from '@/entities/Currency';
 import { CountrySelect, ECountry } from '@/entities/Country';
 import cls from './ProfileCard.module.scss';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { ETextAlign, ETextTheme, Text } from '@/shared/ui/deprecated/Text';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Input } from '@/shared/ui/deprecated/Input';
 
 interface IProfileCardProps {
     className?: string,
@@ -92,7 +92,7 @@ export const ProfileCard = (props: IProfileCardProps) => {
                 className={classNames(cls.ProfileCard, mods, [className, cls.error])}
             >
                 <Text
-                    theme={TextTheme.ERROR}
+                    theme={ETextTheme.ERROR}
                     title={t('error')}
                     text={t('reload')}
                     align={ETextAlign.CENTER}
