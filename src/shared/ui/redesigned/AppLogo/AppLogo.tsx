@@ -9,7 +9,7 @@ interface AppLogoProps {
     size?: number;
 }
 
-export const AppLogo = memo(({ className, size = 50 }: AppLogoProps) => (
+export const AppLogo = memo(({ className, size = 30 }: AppLogoProps) => (
     <HStack
         max
         justify="center"

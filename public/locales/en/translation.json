@@ -1,7 +1,11 @@
 {
   "Тестовый пример": "Test example",
   "Перевод": "Translate",
-  "Главная страница": "Main page",
+  "aboutPage": "About us",
+  "profilePage": "Profile",
+  "articlesPage": "Articles",
+
+  "mainPage": "Main Page",
   "Язык": "English",
   "shortLang": "En",
   "новый перевод": "новый перевод",
@@ -9,8 +13,6 @@
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Обновить страницу": "Reload page",
   "throw error": "throw error",
-  "Главная": "Main",
-  "О сайте": "About us",
   "toggle": "Toggle",
   "Login": "Login",
   "Profile": "Profile",

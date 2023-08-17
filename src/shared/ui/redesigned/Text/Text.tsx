@@ -2,32 +2,32 @@ import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
 
-export type TextVariant = 'primary' | 'error' | 'accent';
+export type TTextVariant = 'primary' | 'error' | 'accent';
 
-export type TextAlign = 'right' | 'left' | 'center';
+export type TTextAlign = 'right' | 'left' | 'center';
 
-export type TextSize = 's' | 'm' | 'l';
+export type TTextSize = 's' | 'm' | 'l';
 
 interface TextProps {
     className?: string;
     title?: string;
     text?: string;
-    variant?: TextVariant;
-    align?: TextAlign;
-    size?: TextSize;
+    variant?: TTextVariant;
+    align?: TTextAlign;
+    size?: TTextSize;
     bold?: boolean;
     'data-testid'?: string;
 }
 
 type HeaderTagType = 'h1' | 'h2' | 'h3';
 
-const mapSizeToClass: Record<TextSize, string> = {
+const mapSizeToClass: Record<TTextSize, string> = {
     s: cls.size_s,
     m: cls.size_m,
     l: cls.size_l,
 };
 
-const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+const mapSizeToHeaderTag: Record<TTextSize, HeaderTagType> = {
     s: 'h3',
     m: 'h2',
     l: 'h1',

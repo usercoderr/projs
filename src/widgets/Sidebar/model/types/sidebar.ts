@@ -3,6 +3,6 @@ import React from 'react';
 export interface ISidebarItemType {
     path: string,
     text: string,
-    Icon: React.VFC<React.SVGProps<SVGElement>>
+    Icon: React.VFC<React.SVGProps<SVGSVGElement>>;
     authOnly?: boolean
 }
