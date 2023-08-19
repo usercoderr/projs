@@ -4,7 +4,9 @@ import { useSelector } from 'react-redux';
 import { getArticlesPageType } from '@/pages/ArticlesPage';
 import cls from './ArticleTypeTabs.module.scss';
 import { EArticleType } from '@/entities/Article';
-import { ITabItem, Tabs } from '@/shared/ui/deprecated/Tabs';
+import { ITabItem, Tabs as TabsDeprecated } from '@/shared/ui/deprecated/Tabs';
+import { ToggleFeatures } from '@/shared/features';
+import { Tabs } from '@/shared/ui/redesigned/Tabs';
 
 interface IArticleTypeTabsProps {
     className?: string,
@@ -38,11 +40,26 @@ export const ArticleTypeTabs = memo(({ className, onChangeType, value }: IArticl
         onChangeType(tab.value as EArticleType);
     }, [onChangeType]);
     return (
-        <Tabs
-            className={cls.tabs}
-            tabs={typeTabs}
-            value={value}
-            onTabClick={onChangeTab}
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={(
+                <Tabs
+                    direction="column"
+                    className={cls.tabs}
+                    tabs={typeTabs}
+                    value={value}
+                    onTabClick={onChangeTab}
+                />
+            )}
+            off={(
+                <TabsDeprecated
+                    className={cls.tabs}
+                    tabs={typeTabs}
+                    value={value}
+                    onTabClick={onChangeTab}
+                />
+            )}
         />
+
     );
 });

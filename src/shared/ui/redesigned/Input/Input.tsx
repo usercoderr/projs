@@ -21,8 +21,8 @@ type InputSize = 's' | 'm' | 'l';
 interface InputProps extends HTMLInputProps {
     className?: string;
     value?: string | number;
-    label?: string;
     onChange?: (value: string) => void;
+    label?: string;
     autofocus?: boolean;
     readonly?: boolean;
     addonLeft?: ReactNode;

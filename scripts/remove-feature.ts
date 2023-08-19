@@ -33,7 +33,7 @@ function isToggleFunction(node: Node) {
     node.forEachChild((child) => {
         if (
             child.isKind(SyntaxKind.Identifier)
-            && child.getText() === toggleFunctionName
+          && child.getText() === toggleFunctionName
         ) {
             isToggleFeatures = true;
         }
@@ -134,7 +134,7 @@ files.forEach((sourceFile) => {
 
         if (
             node.isKind(SyntaxKind.JsxSelfClosingElement)
-            && isToggleComponent(node)
+          && isToggleComponent(node)
         ) {
             return replaceComponent(node);
         }

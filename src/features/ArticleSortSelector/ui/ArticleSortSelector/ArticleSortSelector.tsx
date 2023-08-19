@@ -5,6 +5,10 @@ import { EArticleSortField } from '@/entities/Article';
 import { TSortOrder } from '@/shared/types';
 import cls from './ArticleSortSelector.module.scss';
 import { ISelectOption, Select } from '@/shared/ui/deprecated/Select';
+import { ToggleFeatures } from '@/shared/features';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface IArticleSortSelectorProps {
     className?: string,
@@ -50,20 +54,43 @@ export const ArticleSortSelector = memo((props: IArticleSortSelectorProps) => {
     ], [t]);
 
     return (
-        <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
-            <Select<EArticleSortField>
-                options={sortFieldOptions}
-                label={t('sortBy')}
-                value={sort}
-                onChange={onChangeSort}
-            />
-            <Select<TSortOrder>
-                options={orderOptions}
-                label={t('sortBy')}
-                value={order}
-                className={cls.order}
-                onChange={onChangeOrder}
-            />
-        </div>
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={(
+                <div className={classNames(cls.ArticleSortSelectorRedesigned, {}, [className])}>
+                    <VStack gap="8" align="start">
+                        <Text text="sortBy" />
+                        <ListBox
+                            items={sortFieldOptions}
+                            value={sort}
+                            onChange={onChangeSort}
+                        />
+                        <ListBox
+                            items={orderOptions}
+                            value={order}
+                            onChange={onChangeOrder}
+                        />
+                    </VStack>
+                </div>
+            )}
+            off={(
+                <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
+                    <Select<EArticleSortField>
+                        options={sortFieldOptions}
+                        label={t('sortBy')}
+                        value={sort}
+                        onChange={onChangeSort}
+                    />
+                    <Select<TSortOrder>
+                        options={orderOptions}
+                        label={t('sortBy')}
+                        value={order}
+                        className={cls.order}
+                        onChange={onChangeOrder}
+                    />
+                </div>
+            )}
+        />
+
     );
 });

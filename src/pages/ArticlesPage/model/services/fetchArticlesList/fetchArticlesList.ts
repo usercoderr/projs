@@ -5,13 +5,12 @@ import {
     getArticlesPageLimit,
     getArticlesPageNum,
     getArticlesPageType,
-} from '@/pages/ArticlesPage';
-import { addQueryParams } from '@/shared/url/addQueryParams/addQueryParams';
-import {
+
     getArticlesPageOrder,
     getArticlesPageSearch,
-    getArticlesPageSort,
+    getArticlesPageSort, 
 } from '../../selectors/articlesPageSelectors';
+import { addQueryParams } from '@/shared/url/addQueryParams/addQueryParams';
 
 interface IFetchArticlesListProps{
     replace?: boolean
