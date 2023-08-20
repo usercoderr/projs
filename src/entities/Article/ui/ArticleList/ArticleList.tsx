@@ -5,9 +5,11 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleList.module.scss';
 import { IArticle } from '../../model/types/article';
 import { EArticleView } from '../../model/consts/consts';
-import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
-import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
+import { ArticleListItemSkeleton } from '../ArticleListItemSkeleton/ArticleListItemSkeleton';
 import { ETextSize, Text } from '@/shared/ui/deprecated/Text';
+import { ToggleFeatures } from '@/shared/features';
+import { ArticleListItemRedesigned } from '../ArticleListItemRedesigned/ArticleListItemRedesigned';
+import { ArticleListItemDeprecated } from '../ArticleListItemDeprecated/ArticleListItemDeprecated';
 
 interface IArticleListProps {
     className?: string
@@ -33,12 +35,26 @@ export const ArticleList = memo((props: IArticleListProps) => {
     } = props;
 
     const renderArticle = (article: IArticle) => (
-        <ArticleListItem
-            article={article}
-            view={view}
-            className={cls.card}
-            key={article.id}
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={(
+                <ArticleListItemRedesigned
+                    article={article}
+                    view={view}
+                    className={cls.card}
+                    key={article.id}
+                />
+            )}
+            off={(
+                <ArticleListItemDeprecated
+                    article={article}
+                    view={view}
+                    className={cls.card}
+                    key={article.id}
+                />
+            )}
         />
+
     );
     if (!isLoading && !articles.length) {
         return (

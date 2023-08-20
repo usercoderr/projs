@@ -7,7 +7,7 @@ import {
 import EyeIcon from '@/shared/assets/icons/view.svg';
 import { useHover } from '@/shared/lib/hooks/useHover/useHover';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import cls from './ArticleListItem.module.scss';
+import cls from './ArticleListItemDeprecated.module.scss';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { EArticleBlockType, EArticleView } from '../../model/consts/consts';
 import { Text } from '@/shared/ui/deprecated/Text';
@@ -19,13 +19,13 @@ import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { Button, EButtonTheme } from '@/shared/ui/deprecated/Button';
 
-interface IArticleListItemProps {
-    className?: string
-    article: IArticle,
-    view: EArticleView
+interface IArticleListItemDeprecatedProps {
+  className?: string
+  article: IArticle,
+  view: EArticleView
 }
 
-export const ArticleListItem = memo((props: IArticleListItemProps) => {
+export const ArticleListItemDeprecated = memo((props: IArticleListItemDeprecatedProps) => {
     const {
         className,
         article,

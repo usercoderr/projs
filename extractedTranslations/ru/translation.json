@@ -82,5 +82,10 @@
   "leaveFeedback": "leaveFeedback",
   "thankYou": "thankYou",
   "rateProfile": "rateProfile",
-  "welcome": "welcome"
+  "welcome": "welcome",
+  "settings": "settings",
+  "settingsPage": "settingsPage",
+  "new": "new",
+  "old": "old",
+  "interface": "interface"
 }

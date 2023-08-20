@@ -71,5 +71,13 @@
   "leaveFeedback": "leaveFeedback",
   "thankYou": "thankYou",
   "rateProfile": "rateProfile",
-  "welcome": "welcome"
+  "welcome": "welcome",
+  "settings": "settings",
+  "settingsPage": "settingsPage",
+  "new": "new",
+  "old": "old",
+  "interface": "interface",
+  "{{count}} просмотров_zero": "{{count}} views",
+  "{{count}} просмотров_one": "{{count}} view",
+  "{{count}} просмотров_other": "{{count}} views"
 }

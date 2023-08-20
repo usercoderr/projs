@@ -1,9 +1,12 @@
 import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { EArticleView } from '../../model/consts/consts';
-import { Card } from '@/shared/ui/deprecated/Card';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import cls from './ArticleListItem.module.scss';
+import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { toggleFeatures } from '@/shared/features';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
+import { Card as CardRedesigned } from '@/shared/ui/redesigned/Card';
+import cls from './ArticleListItemSkeleton.module.scss';
 
 interface IArticleListItemSkeletonProps {
     className?: string
@@ -15,9 +18,20 @@ export const ArticleListItemSkeleton = memo((props: IArticleListItemSkeletonProp
         className,
         view,
     } = props;
+    const Card = toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => CardRedesigned,
+        off: () => CardDeprecated,
+    });
+    const Skeleton = toggleFeatures({
+        name: 'isAppRedesigned',
+        on: () => SkeletonRedesigned,
+        off: () => SkeletonDeprecated,
+    });
 
     if (view === EArticleView.BIG) {
         return (
+
             <div
                 className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
             >
@@ -34,6 +48,7 @@ export const ArticleListItemSkeleton = memo((props: IArticleListItemSkeletonProp
                     </div>
                 </Card>
             </div>
+
         );
     }
     return (
@@ -52,5 +67,6 @@ export const ArticleListItemSkeleton = memo((props: IArticleListItemSkeletonProp
                 <Skeleton width={150} height={16} className={cls.title} />
             </Card>
         </div>
+
     );
 });

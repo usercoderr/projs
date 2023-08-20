@@ -21,9 +21,10 @@ import {
 } from '../../model/slices/articleDetailsRecommendationsSlice';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleRating } from '@/features/articleRating';
-import { getFeatureFlag, ToggleFeatures, toggleFeatures } from '@/shared/features';
+import { getFeatureFlags, ToggleFeatures, toggleFeatures } from '@/shared/features';
 import { Counter } from '@/entities/Counter';
 import { Text } from '@/shared/ui/deprecated/Text';
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 
 interface IArticleDetailsPageProps {
     className?: string,
@@ -36,7 +37,7 @@ const reducers: TReducerList = {
 const ArticleDetailsPage = ({ className }: IArticleDetailsPageProps) => {
     const { t } = useTranslation('articleDetails');
     const { id } = useParams<{ id: string }>();
-    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
+    const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled');
     if (!id) {
         return null;
     }
@@ -48,18 +49,30 @@ const ArticleDetailsPage = ({ className }: IArticleDetailsPageProps) => {
     });
     return (
         <DynamicModalLoader reducers={reducers} removeAfterUnmount>
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <ArticleDetailsPageHeader />
-                <ArticleDetails id={id} />
-                <ArticleRating articleId={id} />
-                <ToggleFeatures
-                    feature="isArticleRatingEnabled"
-                    on={<ArticleRating articleId={id} />}
-                    off={<h2>{t('sorry')}</h2>}
-                />
-                <ArticleRecommendationsList />
-                <ArticleDetailsComments id={id} />
-            </Page>
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={(
+                    <StickyContentLayout content={(
+                        <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+                            <ArticleDetailsPageHeader />
+                            <ArticleDetails id={id} />
+                            <ArticleRating articleId={id} />
+                            <ArticleRecommendationsList />
+                            <ArticleDetailsComments id={id} />
+                        </Page>
+                    )}
+                    />
+                )}
+                off={(
+                    <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+                        <ArticleDetailsPageHeader />
+                        <ArticleDetails id={id} />
+                        <ArticleRating articleId={id} />
+                        <ArticleRecommendationsList />
+                        <ArticleDetailsComments id={id} />
+                    </Page>
+                )}
+            />
         </DynamicModalLoader>
     );
 };

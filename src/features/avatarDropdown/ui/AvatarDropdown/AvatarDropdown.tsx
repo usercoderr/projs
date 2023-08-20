@@ -7,7 +7,7 @@ import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
 import cls from './AvatarDropdown.module.scss';
-import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { getRouteAdmin, getRouteProfile, getRouteSettings } from '@/shared/const/router';
 import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { ToggleFeatures } from '@/shared/features';
@@ -42,8 +42,11 @@ export const AvatarDropdown = memo(({ className }: IAvatarDropdownProps) => {
         }] : []),
         {
             content: t('Profile'),
-
             href: getRouteProfile(authData.id),
+        },
+        {
+            content: t('settingsPage'),
+            href: getRouteSettings(),
         },
         {
             content: t('logOut'),

@@ -1,5 +1,4 @@
-export { ArticleListItemSkeleton } from './ui/ArticleListItem/ArticleListItemSkeleton';
-export { ArticleListItem } from './ui/ArticleListItem/ArticleListItem';
+export { ArticleListItemSkeleton } from '@/entities/Article/ui/ArticleListItemSkeleton/ArticleListItemSkeleton';
 
 export { ArticleList } from './ui/ArticleList/ArticleList';
 export {

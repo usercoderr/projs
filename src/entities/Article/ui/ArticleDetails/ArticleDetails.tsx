@@ -81,7 +81,11 @@ export const ArticleDetails = ({ className, id }: IArticleDetailsProps) => {
 
     if (isLoading) {
         content = (
-            <>
+            <VStack
+                gap="16"
+                max
+                className={classNames(cls.ArticleDetails, {}, [className])}
+            >
                 <HStack gap="8" max justify="center">
                     <Skeleton className={cls.avatar} width={200} border="100" height={200} />
                 </HStack>
@@ -90,7 +94,7 @@ export const ArticleDetails = ({ className, id }: IArticleDetailsProps) => {
                     <Skeleton className={cls.skeleton} width={300} height={50} />
                 </HStack>
                 <Skeleton className={cls.skeleton} width="100%" height={100} />
-            </>
+            </VStack>
         );
     } else if (error) {
         content = (
@@ -141,14 +145,7 @@ export const ArticleDetails = ({ className, id }: IArticleDetailsProps) => {
             reducers={reducers}
             removeAfterUnmount
         >
-            <VStack
-                gap="16"
-                max
-                className={classNames(cls.ArticleDetails, {}, [className])}
-            >
-
-                {content}
-            </VStack>
+            {content}
         </DynamicModalLoader>
 
     );

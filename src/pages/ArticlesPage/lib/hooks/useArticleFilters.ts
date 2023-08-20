@@ -28,6 +28,7 @@ export function useArticleFilters() {
     const debouncedFetchData = useDebounce(fetchData, 500);
     const onChangeView = useCallback((view: EArticleView) => {
         dispatch(articlesPageActions.setView(view));
+        console.log('set');
     }, [dispatch]);
     const onChangeOrder = useCallback((newOrder: TSortOrder) => {
         dispatch(articlesPageActions.setOrder(newOrder));

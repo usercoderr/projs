@@ -1,0 +1,26 @@
+.ProfileCardDeprecated  {
+  display: flex;
+  width: 100%;
+  padding: 4px  20px;
+  border: 2px solid var(--inverted-bg-color);
+}
+
+.margin{
+  margin: 10px 0;
+}
+.avatarWrapper{
+  display: flex;
+  justify-content: center;
+}
+
+
+.loading,
+.error {
+  height: 400px;
+}
+
+.editing{
+  border: 2px solid var(--inverted-primary-color);
+
+}
+

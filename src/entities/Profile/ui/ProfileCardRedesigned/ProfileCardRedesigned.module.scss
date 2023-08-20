@@ -1,0 +1,27 @@
+.ProfileCardRedesigned {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 4px  20px;
+}
+
+.margin{
+  margin: 10px 0;
+}
+.avatarWrapper{
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.loading,
+.error {
+  height: 400px;
+}
+
+.editing{
+  border: 2px solid var(--inverted-primary-color);
+
+}
+

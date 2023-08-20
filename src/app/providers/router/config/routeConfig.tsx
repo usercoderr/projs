@@ -13,10 +13,11 @@ import {
     getRouteAdmin, getRouteArticleCreate,
     getRouteArticleDetails, getRouteArticleEdit,
     getRouteArticles, getRouteForbidden,
-    getRouteMain, getRouteProfile,
+    getRouteMain, getRouteProfile, getRouteSettings,
 } from '@/shared/const/router';
 import { EAppRouteProps } from '../model/types/router';
 import { ProfilePage } from '@/pages/ProfilePage';
+import { SettingsPage } from '@/pages/SettingsPage';
 
 export const routeConfig: Record<EAppRoutes, EAppRouteProps> = {
     [EAppRoutes.MAIN]: {
@@ -26,6 +27,10 @@ export const routeConfig: Record<EAppRoutes, EAppRouteProps> = {
     [EAppRoutes.ABOUT]: {
         path: getRouteAbout(),
         element: <AboutPage />,
+    },
+    [EAppRoutes.SETTINGS]: {
+        path: getRouteSettings(),
+        element: <SettingsPage />,
     },
     [EAppRoutes.ARTICLES]: {
         path: getRouteArticles(),

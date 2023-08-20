@@ -3,7 +3,7 @@ import { classNames, TMods } from '@/shared/lib/classNames/classNames';
 import { IProfile } from '@/entities/Profile';
 import { CurrencySelect, ECurrency } from '@/entities/Currency';
 import { CountrySelect, ECountry } from '@/entities/Country';
-import cls from './ProfileCard.module.scss';
+import cls from './ProfileCardDeprecated.module.scss';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { ETextAlign, ETextTheme, Text } from '@/shared/ui/deprecated/Text';
@@ -11,23 +11,23 @@ import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Input } from '@/shared/ui/deprecated/Input';
 // TODO
 // декомпозировать
-interface IProfileCardProps {
-    className?: string,
-    data?: IProfile,
-    isLoading?: boolean,
-    error?: string,
-    readonly?: boolean
-    onChangeFirstname?: (value?: string) => void,
-    onChangeLastname?: (value?: string) => void
-    onChangeAge?: (value?: string) => void,
-    onChangeCity?: (value?: string) => void
-    onChangeUsername?: (value?: string) => void
-    onChangeAvatar?: (value?: string) => void
-    onChangeCurrency?: (currency: ECurrency) => void
-    onChangeCountry?: (currency: ECountry) => void
+interface IProfileCardDeprecatedProps {
+  className?: string,
+  data?: IProfile,
+  isLoading?: boolean,
+  error?: string,
+  readonly?: boolean
+  onChangeFirstname?: (value?: string) => void,
+  onChangeLastname?: (value?: string) => void
+  onChangeAge?: (value?: string) => void,
+  onChangeCity?: (value?: string) => void
+  onChangeUsername?: (value?: string) => void
+  onChangeAvatar?: (value?: string) => void
+  onChangeCurrency?: (currency: ECurrency) => void
+  onChangeCountry?: (currency: ECountry) => void
 }
 
-export const ProfileCard = (props: IProfileCardProps) => {
+export const ProfileCardDeprecated = (props: IProfileCardDeprecatedProps) => {
     const {
         className,
         data,
@@ -51,7 +51,7 @@ export const ProfileCard = (props: IProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <VStack gap="8" max className={classNames(cls.ProfileCard, mods, [className])}>
+            <VStack gap="8" max className={classNames(cls.ProfileCardDeprecated, mods, [className])}>
 
                 <HStack max justify="center" className={cls.avatarWrapper}>
                     <Skeleton width={100} height={100} border="50%" />

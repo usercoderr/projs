@@ -5,7 +5,6 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 
 import { ECurrency } from '@/entities/Currency';
 import { ECountry } from '@/entities/Country';
-import { ProfileCard } from '@/entities/Profile';
 import {
     DynamicModalLoader,
     TReducerList,
@@ -25,6 +24,8 @@ import { fetchProfileData } from '../../model/services/fetchProfileData/fetchPro
 import { EValidateProfileError } from '../../model/consts/consts';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { ETextTheme, Text } from '@/shared/ui/deprecated/Text';
+import { ToggleFeatures } from '@/shared/features';
+import { ProfileCardDeprecated, ProfileCardRedesigned } from '@/entities/Profile';
 
 interface EditableProfileCardProps {
     className?: string;
@@ -98,20 +99,42 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                     data-testid="EditableProfileCard"
                 />
             ))}
-            <ProfileCard
-                data={formData}
-                isLoading={isLoading}
-                error={error}
-                readonly={readonly}
-                onChangeFirstname={onChangeFirstname}
-                onChangeLastname={onChangeLastname}
-                onChangeAge={onChangeAge}
-                onChangeCity={onChangeCity}
-                onChangeUsername={onChangeUsername}
-                onChangeAvatar={onChangeAvatar}
-                onChangeCurrency={onChangeCurrency}
-                onChangeCountry={onChangeCountry}
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={(
+                    <ProfileCardRedesigned
+                        data={formData}
+                        isLoading={isLoading}
+                        error={error}
+                        readonly={readonly}
+                        onChangeFirstname={onChangeFirstname}
+                        onChangeLastname={onChangeLastname}
+                        onChangeAge={onChangeAge}
+                        onChangeCity={onChangeCity}
+                        onChangeUsername={onChangeUsername}
+                        onChangeAvatar={onChangeAvatar}
+                        onChangeCurrency={onChangeCurrency}
+                        onChangeCountry={onChangeCountry}
+                    />
+                )}
+                off={(
+                    <ProfileCardDeprecated
+                        data={formData}
+                        isLoading={isLoading}
+                        error={error}
+                        readonly={readonly}
+                        onChangeFirstname={onChangeFirstname}
+                        onChangeLastname={onChangeLastname}
+                        onChangeAge={onChangeAge}
+                        onChangeCity={onChangeCity}
+                        onChangeUsername={onChangeUsername}
+                        onChangeAvatar={onChangeAvatar}
+                        onChangeCurrency={onChangeCurrency}
+                        onChangeCountry={onChangeCountry}
+                    />
+                )}
             />
+
         </DynamicModalLoader>
     );
 });
