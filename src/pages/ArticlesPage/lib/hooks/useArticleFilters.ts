@@ -26,10 +26,12 @@ export function useArticleFilters() {
     }, [dispatch]);
 
     const debouncedFetchData = useDebounce(fetchData, 500);
-    const onChangeView = useCallback((view: EArticleView) => {
-        dispatch(articlesPageActions.setView(view));
-        console.log('set');
-    }, [dispatch]);
+    const onChangeView = useCallback(
+        (view: EArticleView) => {
+            dispatch(articlesPageActions.setView(view));
+        },
+        [dispatch],
+    );
     const onChangeOrder = useCallback((newOrder: TSortOrder) => {
         dispatch(articlesPageActions.setOrder(newOrder));
         dispatch(articlesPageActions.setPage(1));

@@ -19,7 +19,6 @@ export const initAuthData = createAsyncThunk<IUser, void, IThunkConfig<string>>(
             const response = await dispatch(
                 getUserApiQuery(userId),
             ).unwrap();
-
             return response;
         } catch (e) {
             console.log(e);

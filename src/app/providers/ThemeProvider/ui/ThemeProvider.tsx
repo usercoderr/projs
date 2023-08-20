@@ -1,5 +1,5 @@
 import React, {
-    ReactNode, useEffect, useMemo, useState, 
+    ReactNode, useEffect, useMemo, useState,
 } from 'react';
 import { ETheme } from '@/shared/const/theme';
 import { ThemeContext } from '@/shared/lib/context/ThemeContext/ThemeContext';
@@ -9,6 +9,7 @@ interface IThemeProviderProps{
     defaultTheme?:ETheme
     children: ReactNode
 }
+
 const ThemeProvider = (props: IThemeProviderProps) => {
     const {
         defaultTheme,

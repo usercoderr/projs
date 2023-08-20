@@ -52,7 +52,7 @@ export const ArticleListItemRedesigned = memo((props: IArticleListItemRedesigned
                 padding="24"
                 max
                 data-testid="ArticleListItem"
-                className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+                className={classNames(cls.ArticleListItemRedesigned, {}, [className, cls[view]])}
             >
                 <VStack max gap="16">
                     <HStack gap="8">
@@ -91,9 +91,9 @@ export const ArticleListItemRedesigned = memo((props: IArticleListItemRedesigned
         <AppLink
             data-testid="ArticleListItem"
             to={getRouteArticleDetails(article?.id)}
-            className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+            className={classNames(cls.ArticleListItemRedesigned, {}, [className, cls[view]])}
         >
-            <Card>
+            <Card max padding="8">
                 <div className={cls.imageWrapper}>
                     <AppImage
                         fallback={<Skeleton width={200} height={200} />}

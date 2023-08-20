@@ -12,12 +12,13 @@ import { PageLoader } from '@/widgets/PageLoader';
 import { ToggleFeatures } from '@/shared/features';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { Loader } from '@/shared/ui/deprecated/Loader';
+import { useAppToolbar } from './lib/useAppToolbar';
 
 function App() {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
     const mounted = useSelector(getUserMounted);
-
+    const toolbar = useAppToolbar();
     useEffect(() => {
         dispatch(initAuthData());
     }, [dispatch]);
@@ -31,7 +32,12 @@ function App() {
             on={(
                 <div id="app" className={classNames('app_redesigned', {}, [theme])}>
                     <Suspense fallback={<Loader />}>
-                        <MainLayout header={<Navbar />} content={<AppRouter />} sidebar={<Sidebar />} />
+                        <MainLayout
+                            header={<Navbar />}
+                            content={<AppRouter />}
+                            sidebar={<Sidebar />}
+                            toolbar={toolbar}
+                        />
                     </Suspense>
                 </div>
             )}
