@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     DynamicModalLoader, TReducerList,
@@ -21,6 +22,7 @@ import { ToggleFeatures } from '@/shared/features';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { ViewSelectorContainer } from '../ViewSelectorContainer/ViewSelectorContainer';
 import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 
 interface IArticlePageProps{
     className?: string
@@ -30,11 +32,14 @@ const reducer:TReducerList = {
 };
 const ArticlePage = ({ className }: IArticlePageProps) => {
     const { t } = useTranslation('article');
+    const [searchParams] = useSearchParams();
     const dispatch = useAppDispatch();
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
-
+    useEffect(() => {
+        dispatch(initArticlesPage(searchParams));
+    }, [dispatch, searchParams]);
     const content = (
         <ToggleFeatures
             feature="isAppRedesigned"

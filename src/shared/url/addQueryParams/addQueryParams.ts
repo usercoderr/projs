@@ -8,8 +8,6 @@ export function getQueryParams(params: OptionalRecord<string, string>) {
     });
     return `?${searchParams.toString()}`;
 }
-// eslint-disable-next-line no-undef
 export function addQueryParams(params: OptionalRecord<string, string>) {
-    // @ts-ignore
     window.history.pushState(null, '', getQueryParams(params));
 }

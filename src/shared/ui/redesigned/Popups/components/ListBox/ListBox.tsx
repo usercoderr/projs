@@ -56,7 +56,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                 value={value}
                 onChange={onChange}
             >
-                <HListBox.Button className={cls.trigger}>
+                <HListBox.Button as="div" className={cls.trigger}>
                     <Button
                         variant="filled"
                         disabled={readonly}
