@@ -3,7 +3,6 @@ import React, {
 } from 'react';
 import { ETheme } from '@/shared/const/theme';
 import { ThemeContext } from '@/shared/lib/context/ThemeContext/ThemeContext';
-import { useJsonSettings } from '@/entities/User';
 
 interface IThemeProviderProps{
     defaultTheme?:ETheme
@@ -15,9 +14,8 @@ const ThemeProvider = (props: IThemeProviderProps) => {
         defaultTheme,
         children,
     } = props;
-    const { theme: initialTheme } = useJsonSettings();
     const [isMounted, setIsMounted] = useState(false);
-    const [theme, setTheme] = useState<ETheme>(defaultTheme || initialTheme || ETheme.LIGHT);
+    const [theme, setTheme] = useState<ETheme>(defaultTheme || ETheme.LIGHT);
 
     const defaultProps = useMemo(() => ({
         theme,
@@ -25,11 +23,11 @@ const ThemeProvider = (props: IThemeProviderProps) => {
     }), [theme]);
 
     useEffect(() => {
-        if (!isMounted && initialTheme) {
-            setTheme(initialTheme);
+        if (!isMounted && defaultTheme) {
+            setTheme(defaultTheme);
             setIsMounted(true);
         }
-    }, [initialTheme, isMounted]);
+    }, [defaultTheme, isMounted]);
     return (
         <ThemeContext.Provider value={defaultProps}>
             {children}
